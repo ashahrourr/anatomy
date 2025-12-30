@@ -6,15 +6,18 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
+  const BASE = process.env.NEXT_PUBLIC_ASSETS_BASE_URL;
 
 /* ----------------------------------------------------
    🦴 Models
 ---------------------------------------------------- */
 function AnatomyModels({ highlightData }: { highlightData: any }) {
-  const skeleton = useGLTF("/models/skeleton.glb").scene;
-  const muscles = useGLTF("/models/muscles.glb").scene;
-  const joints = useGLTF("/models/joints.glb").scene;
-  const nerves = useGLTF("/models/nerves.glb").scene;
+
+  const skeleton = useGLTF(`${BASE}/models/skeleton.glb`).scene;
+  const muscles  = useGLTF(`${BASE}/models/muscles.glb`).scene;
+  const joints   = useGLTF(`${BASE}/models/joints.glb`).scene;
+  const nerves   = useGLTF(`${BASE}/models/nerves.glb`).scene;
+
 
 
   /* Center models */
@@ -208,10 +211,11 @@ highlightData.supporting?.forEach((s: any, index: number) => {
   );
 }
 
-useGLTF.preload("/models/skeleton.glb");
-useGLTF.preload("/models/muscles.glb");
-useGLTF.preload("/models/joints.glb");
-useGLTF.preload("/models/nerves.glb");
+useGLTF.preload(`${BASE}/models/skeleton.glb`);
+useGLTF.preload(`${BASE}/models/muscles.glb`);
+useGLTF.preload(`${BASE}/models/joints.glb`);
+useGLTF.preload(`${BASE}/models/nerves.glb`);
+
 
 
 /* ----------------------------------------------------
