@@ -108,7 +108,7 @@ useEffect(() => {
       const { data } = await supabase.auth.getSession();
       const token = data.session?.access_token;
 
-      const res = await fetch("http://localhost:8000/credits", {
+      const res = await fetch("https://talktoanatomy.onrender.com/credits", {
         headers: {
           "x-device-id": deviceId,
           ...(token ? { Authorization: `Bearer ${token}` } : {}),
@@ -224,7 +224,7 @@ const sendMagicLink = async () => {
       const { data: sess } = await supabase.auth.getSession();
       const token = sess.session?.access_token;
 
-      const res = await fetch("http://localhost:8000/predict-structure", {
+      const res = await fetch("https://talktoanatomy.onrender.com/predict-structure", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
