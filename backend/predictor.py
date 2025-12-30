@@ -54,9 +54,19 @@ STRUCTURE_BY_ID = {s["id"]: s for s in STRUCTURES}
 # --------------------------------------------------------------------
 # PREP STRUCTURE EMBEDDINGS INTO NUMPY MATRIX
 # --------------------------------------------------------------------
-all_embs = np.array([s["embedding"] for s in STRUCTURES], dtype=float)
-norms = np.linalg.norm(all_embs, axis=1, keepdims=True)
-structure_matrix = all_embs / norms
+# recheck
+# all_embs = np.array([s["embedding"] for s in STRUCTURES], dtype=float)
+# norms = np.linalg.norm(all_embs, axis=1, keepdims=True)
+# structure_matrix = all_embs / norms
+STRUCTURE_MATRIX = None
+def get_structure_matrix():
+    global STRUCTURE_MATRIX
+    if STRUCTURE_MATRIX is None:
+        print("🧠 Building embedding matrix (lazy)")
+        all_embs = np.array([s["embedding"] for s in STRUCTURES], dtype=float)
+        norms = np.linalg.norm(all_embs, axis=1, keepdims=True)
+        STRUCTURE_MATRIX = all_embs / norms
+    return STRUCTURE_MATRIX
 
 # --------------------------------------------------------------------
 # LEXICAL MATCHING HELPERS (TOKEN + FUZZY)
@@ -224,7 +234,11 @@ def gpt_reason(pain_text: str):
 
 def find_top_k_with_side(query_emb, side: str | None, k: int = 5):
     q = query_emb / np.linalg.norm(query_emb)
-    sims = structure_matrix @ q
+    # recheck
+    # sims = structure_matrix @ q
+    matrix = get_structure_matrix()
+    sims = matrix @ q
+
 
     candidates = []
     for i, s in enumerate(STRUCTURES):
