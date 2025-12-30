@@ -40,10 +40,13 @@ STRUCTURES_URL = os.getenv("STRUCTURES_URL")
 STRUCTURES_PATH = "/tmp/structures.json"
 
 if not os.path.exists(STRUCTURES_PATH):
-    r = requests.get(STRUCTURES_URL, timeout=30)
-    r.raise_for_status()
-    with open(STRUCTURES_PATH, "wb") as f:
-        f.write(r.content)
+    with requests.get(STRUCTURES_URL, stream=True, timeout=60) as r:
+        r.raise_for_status()
+        with open(STRUCTURES_PATH, "wb") as f:
+            for chunk in r.iter_content(chunk_size=1024 * 1024):
+                if chunk:
+                    f.write(chunk)
+
 
 with open(STRUCTURES_PATH, "r") as f:
     STRUCTURES = json.load(f)
@@ -54,19 +57,23 @@ STRUCTURE_BY_ID = {s["id"]: s for s in STRUCTURES}
 # --------------------------------------------------------------------
 # PREP STRUCTURE EMBEDDINGS INTO NUMPY MATRIX
 # --------------------------------------------------------------------
-# recheck
 # all_embs = np.array([s["embedding"] for s in STRUCTURES], dtype=float)
 # norms = np.linalg.norm(all_embs, axis=1, keepdims=True)
 # structure_matrix = all_embs / norms
-STRUCTURE_MATRIX = None
-def get_structure_matrix():
-    global STRUCTURE_MATRIX
-    if STRUCTURE_MATRIX is None:
-        print("🧠 Building embedding matrix (lazy)")
-        all_embs = np.array([s["embedding"] for s in STRUCTURES], dtype=float)
-        norms = np.linalg.norm(all_embs, axis=1, keepdims=True)
-        STRUCTURE_MATRIX = all_embs / norms
-    return STRUCTURE_MATRIX
+# 1) build compact float32 matrix
+all_embs = np.asarray([s["embedding"] for s in STRUCTURES], dtype=np.float32)
+
+# 2) normalize in-place (keeps memory down)
+norms = np.linalg.norm(all_embs, axis=1, keepdims=True).astype(np.float32)
+all_embs /= norms
+structure_matrix = all_embs  # normalized cosine-ready
+
+# 3) IMPORTANT: drop python embedding lists (saves huge RAM)
+for s in STRUCTURES:
+    s.pop("embedding", None)
+
+# optional: if you want the file to free faster in CPython
+del norms
 
 # --------------------------------------------------------------------
 # LEXICAL MATCHING HELPERS (TOKEN + FUZZY)
@@ -234,11 +241,7 @@ def gpt_reason(pain_text: str):
 
 def find_top_k_with_side(query_emb, side: str | None, k: int = 5):
     q = query_emb / np.linalg.norm(query_emb)
-    # recheck
-    # sims = structure_matrix @ q
-    matrix = get_structure_matrix()
-    sims = matrix @ q
-
+    sims = structure_matrix @ q
 
     candidates = []
     for i, s in enumerate(STRUCTURES):
