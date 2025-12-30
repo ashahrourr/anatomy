@@ -1,0 +1,52 @@
+# =========================
+# ENV FILES (ALL)
+# =========================
+.env
+.env.*
+backend/.env
+frontend/.env
+frontend/.env.local
+
+# =========================
+# PYTHON
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+.venv/
+env/
+
+# =========================
+# NODE / NEXT
+# =========================
+node_modules/
+.next/
+dist/
+build/
+out/
+
+# =========================
+# LARGE / GENERATED FILES
+# =========================
+structures.json
+*.npy
+
+# GLB MODELS (now hosted on R2)
+frontend/public/models/
+
+# =========================
+# PROJECT-SPECIFIC
+# =========================
+graveyard/
+
+# =========================
+# OS
+# =========================
+.DS_Store
+
+# =========================
+# LOGS
+# =========================
+*.log
