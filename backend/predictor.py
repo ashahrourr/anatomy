@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from upstash_redis import Redis
 from difflib import SequenceMatcher
+import requests
+
 
 
 # --------------------------------------------------------------------
@@ -29,11 +31,23 @@ client = OpenAI(api_key=api_key)
 # --------------------------------------------------------------------
 # LOAD STRUCTURES + PRECOMPUTED EMBEDDINGS
 # --------------------------------------------------------------------
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STRUCTURES_PATH = os.path.join(BASE_DIR, "structures.json")
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# STRUCTURES_PATH = os.path.join(BASE_DIR, "structures.json")
+
+# with open(STRUCTURES_PATH, "r") as f:
+#     STRUCTURES = json.load(f)
+STRUCTURES_URL = os.getenv("STRUCTURES_URL")
+STRUCTURES_PATH = "/tmp/structures.json"
+
+if not os.path.exists(STRUCTURES_PATH):
+    r = requests.get(STRUCTURES_URL, timeout=30)
+    r.raise_for_status()
+    with open(STRUCTURES_PATH, "wb") as f:
+        f.write(r.content)
 
 with open(STRUCTURES_PATH, "r") as f:
     STRUCTURES = json.load(f)
+
 
 STRUCTURE_BY_ID = {s["id"]: s for s in STRUCTURES}
 
