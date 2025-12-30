@@ -414,8 +414,7 @@ window.dispatchEvent(
       <div className="relative flex-1">
         <ModelViewer />
 
-        <div className="absolute bottom-[calc(1.5rem+env(safe-area-inset-bottom))]
- left-1/2 -translate-x-1/2 w-[820px] max-w-[90vw]">
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[820px] max-w-[90vw]">
           {credits && (
             <div className="mb-2 text-xs text-center text-[#afafaf]">
               Credits: {credits.remaining} / {credits.limit} today
