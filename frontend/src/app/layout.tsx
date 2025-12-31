@@ -2,8 +2,14 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "AnatomyGPT",
+  title: "TalktoAnatomy",
   description: "AI-driven 3D anatomy viewer",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
@@ -13,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-[#1c1c1c] text-white">
+      <body className="min-h-[100svh] bg-[#1c1c1c] text-white">
         {children}
       </body>
     </html>

@@ -6,6 +6,8 @@ import Navbar from "../components/NavBar";
 import ModelViewer from "../components/ModelViewer";
 import { supabase } from "../lib/supabase";
 import { useAuth } from "../lib/useAuth";
+import Spinner from "../components/Spinner";
+
 
 type Credits = {
   type: "device" | "user";
@@ -15,24 +17,8 @@ type Credits = {
   locked?: boolean;
 };
 
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL!;
 const MAX_TEXTAREA_HEIGHT = 140; // ~5 lines
-
-function Spinner() {
-  return (
-    <span
-      className="
-        inline-block
-        h-4 w-4
-        rounded-full
-        border-2
-        border-white/30
-        border-t-white
-        animate-spin
-      "
-      aria-label="Loading"
-    />
-  );
-}
 
 export default function Home() {
   const [input, setInput] = useState("");
@@ -55,6 +41,10 @@ export default function Home() {
 >([]);
 const [legendOpen, setLegendOpen] = useState(false);
 const [noAnswerMessage, setNoAnswerMessage] = useState<string | null>(null);
+const [modelReady, setModelReady] = useState(false);
+const [creditsBootDone, setCreditsBootDone] = useState(false);
+
+
 
 
 
@@ -92,12 +82,17 @@ useEffect(() => {
 
   /* ---------------- device id ---------------- */
   useEffect(() => {
-    let id = localStorage.getItem("device_id");
-    if (!id) {
-      id = crypto.randomUUID();
-      localStorage.setItem("device_id", id);
-    }
-    setDeviceId(id);
+let id = localStorage.getItem("device_id");
+if (!id) {
+  id =
+    typeof crypto !== "undefined" && crypto.randomUUID
+      ? crypto.randomUUID()
+      : Math.random().toString(36).slice(2) + Date.now().toString(36);
+
+  localStorage.setItem("device_id", id);
+}
+setDeviceId(id);
+
   }, []);
 
   /* ---------------- credits ---------------- */
@@ -108,7 +103,7 @@ useEffect(() => {
       const { data } = await supabase.auth.getSession();
       const token = data.session?.access_token;
 
-      const res = await fetch("https://talktoanatomy.onrender.com/credits", {
+      const res = await fetch(`${API_BASE}/credits`, {
         headers: {
           "x-device-id": deviceId,
           ...(token ? { Authorization: `Bearer ${token}` } : {}),
@@ -123,10 +118,28 @@ useEffect(() => {
     }
   }, [deviceId]);
 
-  useEffect(() => {
-    if (!deviceId || !ready) return;
-    fetchCredits();
-  }, [deviceId, ready, user?.id, fetchCredits]);
+useEffect(() => {
+  if (!deviceId || !ready) return;
+
+  let cancelled = false;
+
+  (async () => {
+    setCreditsBootDone(false);
+
+    try {
+      await fetchCredits();
+    } finally {
+      if (!cancelled) {
+        setCreditsBootDone(true); // ✅ credits finished booting
+      }
+    }
+  })();
+
+  return () => {
+    cancelled = true;
+  };
+}, [deviceId, ready, user?.id, fetchCredits]);
+
 
   useEffect(() => {
     if (!deviceId) return;
@@ -224,7 +237,7 @@ const sendMagicLink = async () => {
       const { data: sess } = await supabase.auth.getSession();
       const token = sess.session?.access_token;
 
-      const res = await fetch("https://talktoanatomy.onrender.com/predict-structure", {
+      const res = await fetch(`${API_BASE}/predict-structure`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -275,11 +288,24 @@ window.dispatchEvent(
       setLoading(false);
     }
   };
+const appBootReady =
+  ready &&
+  !!deviceId &&
+  modelReady &&
+  creditsBootDone;
 
   /* ---------------- UI ---------------- */
   return (
-    <div className="h-screen flex flex-col bg-[#1c1c1c]">
-      <Navbar />
+<div className="relative min-h-[100svh] bg-[#1c1c1c]">
+<div className="sticky top-0 z-50">
+  <Navbar />
+</div>
+      {!appBootReady && (
+  <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#1c1c1c]">
+    <Spinner size={34} />
+  </div>
+)}
+
 
       <div className="fixed top-2 right-4 z-50">
         {!user ? (
@@ -411,10 +437,23 @@ window.dispatchEvent(
         </div>
       )}
 
-      <div className="relative flex-1">
-        <ModelViewer />
+<div
+  className="absolute left-0 right-0"
+  style={{
+    top: "calc(3.5rem + env(safe-area-inset-top))",
+    bottom: "calc(env(safe-area-inset-bottom) + 6.5rem)",
+  }}
+>
+  <ModelViewer onReady={() => setModelReady(true)} />
 
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[820px] max-w-[90vw]">
+
+
+<div
+  className="fixed left-1/2 -translate-x-1/2 w-[820px] max-w-[90vw]"
+  style={{ bottom: "calc(env(safe-area-inset-bottom) + 1.5rem)" }}
+>
+
+
           {credits && (
             <div className="mb-2 text-xs text-center text-[#afafaf]">
               Credits: {credits.remaining} / {credits.limit} today

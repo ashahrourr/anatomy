@@ -2,9 +2,11 @@
 "use client";
 
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF, useProgress} from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import Spinner from "./Spinner";
+
 
   const BASE = process.env.NEXT_PUBLIC_ASSETS_BASE_URL;
 
@@ -211,11 +213,6 @@ highlightData.supporting?.forEach((s: any, index: number) => {
   );
 }
 
-useGLTF.preload(`${BASE}/models/skeleton.glb`);
-useGLTF.preload(`${BASE}/models/muscles.glb`);
-useGLTF.preload(`${BASE}/models/joints.glb`);
-useGLTF.preload(`${BASE}/models/nerves.glb`);
-
 
 
 /* ----------------------------------------------------
@@ -387,12 +384,40 @@ function ClickPivot({ controlsRef }: any) {
 
 
 
+function CanvasLoader() {
+  const { active } = useProgress(); // true while anything is loading
+  if (!active) return null;
+
+  return (
+    <div className="absolute inset-0 z-10 flex items-center justify-center bg-[#1c1c1c]">
+      <Spinner size={28} />
+    </div>
+  );
+}
+
+
+function ReportModelReady({ onReady }: { onReady?: () => void }) {
+  if (typeof window === "undefined") return null;
+  const { active, progress } = useProgress();
+
+  const fired = useRef(false);
+
+  useEffect(() => {
+    // fires once when all assets are done loading
+    if (!fired.current && !active && progress === 100) {
+      fired.current = true;
+      onReady?.();
+    }
+  }, [active, progress, onReady]);
+
+  return null;
+}
 
 
 /* ----------------------------------------------------
    Viewer
 ---------------------------------------------------- */
-export default function ModelViewer() {
+export default function ModelViewer({ onReady }: { onReady?: () => void }) {
   const [highlightData, setHighlightData] = useState<any>(null);
   const controlsRef = useRef<any>(null);
 
@@ -403,36 +428,44 @@ export default function ModelViewer() {
       window.removeEventListener("highlight-structures", handler);
   }, []);
 
+    useEffect(() => {
+    // run preloads only on client runtime
+    useGLTF.preload(`${BASE}/models/skeleton.glb`);
+    useGLTF.preload(`${BASE}/models/muscles.glb`);
+    useGLTF.preload(`${BASE}/models/joints.glb`);
+    useGLTF.preload(`${BASE}/models/nerves.glb`);
+  }, []);
+
   return (
-    <div className="w-full h-full">
-<Canvas camera={{ position: [0, 1.4, 4], fov: 45 }}>
-  <ambientLight intensity={0.55} />
-  <directionalLight position={[5, 10, 5]} intensity={1} />
+  <div className="w-full h-full relative">
+    <CanvasLoader />
 
-  <Suspense fallback={null}>
-    <AnatomyModels highlightData={highlightData} />
-  </Suspense>
+    <Canvas camera={{ position: [0, 1.4, 4], fov: 45 }}>
+      <ReportModelReady onReady={onReady} />
+      <ambientLight intensity={0.55} />
+      <directionalLight position={[5, 10, 5]} intensity={1} />
 
-  <CameraAutoFocus
-    highlight={highlightData?.primary?.id || null}
-    controlsRef={controlsRef}
-  />
+      <Suspense fallback={null}>
+        <AnatomyModels highlightData={highlightData} />
+      </Suspense>
 
-  {/* ⭐ CLICK TO SET PIVOT */}
-  <ClickPivot controlsRef={controlsRef} />
+      <CameraAutoFocus
+        highlight={highlightData?.primary?.id || null}
+        controlsRef={controlsRef}
+      />
 
-  <OrbitControls
-  ref={controlsRef}
-  enableDamping
-  enableZoom
-  minDistance={0.1}     // 🚫 Don’t allow zoom inside model
-  maxDistance={10}      // optional
-  zoomSpeed={1}       // smoother zoom
-/>
+      <ClickPivot controlsRef={controlsRef} />
 
+      <OrbitControls
+        ref={controlsRef}
+        enableDamping
+        enableZoom
+        minDistance={0.1}
+        maxDistance={10}
+        zoomSpeed={1}
+      />
+    </Canvas>
+  </div>
+);
 
-</Canvas>
-
-    </div>
-  );
 }
