@@ -404,7 +404,7 @@ function ReportModelReady({ onReady }: { onReady?: () => void }) {
 
   useEffect(() => {
     // fires once when all assets are done loading
-    if (!fired.current && !active && progress === 100) {
+    if (!fired.current && !active) {
       fired.current = true;
       onReady?.();
     }
