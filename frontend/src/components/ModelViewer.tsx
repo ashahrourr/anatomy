@@ -420,6 +420,10 @@ function ReportModelReady({ onReady }: { onReady?: () => void }) {
 export default function ModelViewer({ onReady }: { onReady?: () => void }) {
   const [highlightData, setHighlightData] = useState<any>(null);
   const controlsRef = useRef<any>(null);
+  const isTouch =
+  typeof window !== "undefined" &&
+  (navigator.maxTouchPoints > 0 || "ontouchstart" in window);
+
 
   useEffect(() => {
     const handler = (e: any) => setHighlightData(e.detail);
@@ -449,20 +453,26 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
         <AnatomyModels highlightData={highlightData} />
       </Suspense>
 
+{!isTouch && (
       <CameraAutoFocus
         highlight={highlightData?.primary?.id || null}
         controlsRef={controlsRef}
       />
+      )}
 
-      <ClickPivot controlsRef={controlsRef} />
+<ClickPivot controlsRef={controlsRef} />
 
       <OrbitControls
         ref={controlsRef}
         enableDamping
         enableZoom
+        dampingFactor={0.12}
         minDistance={0.1}
         maxDistance={10}
         zoomSpeed={1}
+        enablePan={!isTouch}
+        rotateSpeed={0.6} 
+
       />
     </Canvas>
   </div>

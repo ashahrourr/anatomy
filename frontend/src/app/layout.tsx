@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata = {
   title: "TalktoAnatomy",
   description: "AI-driven 3D anatomy viewer",
+  icons: {
+    icon: "/icon.png"
+  },
 };
 
 export const viewport = {
