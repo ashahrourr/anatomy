@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "TalktoAnatomy",
-  description: "AI-driven 3D anatomy viewer",
+  description: "3D Anatomy Viewer",
   icons: {
     icon: "/icon.png"
   },
