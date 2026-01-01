@@ -15,10 +15,10 @@ import Spinner from "./Spinner";
 ---------------------------------------------------- */
 function AnatomyModels({ highlightData }: { highlightData: any }) {
 
-  const skeleton = useGLTF(`${BASE}/models/skeleton.glb`).scene;
-  const muscles  = useGLTF(`${BASE}/models/muscles.glb`).scene;
-  const joints   = useGLTF(`${BASE}/models/joints.glb`).scene;
-  const nerves   = useGLTF(`${BASE}/models/nerves.glb`).scene;
+  const skeleton = useGLTF(`${BASE}/models/skeleton.opt.glb`).scene;
+  const muscles  = useGLTF(`${BASE}/models/muscles.opt.glb`).scene;
+  const joints   = useGLTF(`${BASE}/models/joints.opt.glb`).scene;
+  const nerves   = useGLTF(`${BASE}/models/nerves.opt.glb`).scene;
 
 
 
@@ -48,7 +48,7 @@ useEffect(() => {
   const muscleMaterial = new THREE.MeshStandardMaterial({
     color: "#d69a9a",
     transparent: true,
-    opacity: 0.38,
+    opacity: 0.50,
   });
 
   const jointWireMaterial = new THREE.MeshStandardMaterial({
@@ -434,10 +434,10 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
 
     useEffect(() => {
     // run preloads only on client runtime
-    useGLTF.preload(`${BASE}/models/skeleton.glb`);
-    useGLTF.preload(`${BASE}/models/muscles.glb`);
-    useGLTF.preload(`${BASE}/models/joints.glb`);
-    useGLTF.preload(`${BASE}/models/nerves.glb`);
+    useGLTF.preload(`${BASE}/models/skeleton.opt.glb`);
+    useGLTF.preload(`${BASE}/models/muscles.opt.glb`);
+    useGLTF.preload(`${BASE}/models/joints.opt.glb`);
+    useGLTF.preload(`${BASE}/models/nerves.opt.glb`);
   }, []);
 
   return (

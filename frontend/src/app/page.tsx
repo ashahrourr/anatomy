@@ -441,7 +441,7 @@ const appBootReady =
   className="absolute left-0 right-0"
   style={{
     top: "calc(3.5rem + env(safe-area-inset-top))",
-    bottom: "calc(env(safe-area-inset-bottom) + 6.5rem)",
+    bottom: "calc(env(safe-area-inset-bottom))",
   }}
 >
   <ModelViewer onReady={() => setModelReady(true)} />
