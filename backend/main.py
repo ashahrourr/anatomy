@@ -37,13 +37,10 @@ def resolve_keys(device_id: str, user_id: str | None):
 
     if user_id:
         user_key = f"user:{user_id}"
-
-        # keep device + user credits in sync
-        link_device_and_user(device_key, user_key)
-
         return device_key, user_key, True
 
     return device_key, None, False
+
 
 
 @app.get("/")

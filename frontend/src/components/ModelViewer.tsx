@@ -8,6 +8,7 @@ import * as THREE from "three";
 import Spinner from "./Spinner";
 
 
+
   const BASE = process.env.NEXT_PUBLIC_ASSETS_BASE_URL;
 
 /* ----------------------------------------------------
@@ -15,10 +16,11 @@ import Spinner from "./Spinner";
 ---------------------------------------------------- */
 function AnatomyModels({ highlightData }: { highlightData: any }) {
 
-  const skeleton = useGLTF(`${BASE}/models/skeleton.opt.glb`).scene;
-  const muscles  = useGLTF(`${BASE}/models/muscles.opt.glb`).scene;
-  const joints   = useGLTF(`${BASE}/models/joints.opt.glb`).scene;
-  const nerves   = useGLTF(`${BASE}/models/nerves.opt.glb`).scene;
+const skeleton = useGLTF("/models/skeleton.draco.glb", true).scene;
+const muscles  = useGLTF("/models/muscles.draco.glb", true).scene;
+const joints   = useGLTF("/models/joints.draco.glb", true).scene;
+const nerves   = useGLTF("/models/nerves.draco.glb", true).scene;
+
 
 
 
@@ -437,25 +439,11 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
       window.removeEventListener("highlight-structures", handler);
   }, []);
 
-useEffect(() => {
-  (async () => {
-    console.time("GLB skeleton");
-    await useGLTF.preload(`${BASE}/models/skeleton.opt.glb`);
-    console.timeEnd("GLB skeleton");
+useGLTF.preload("/models/skeleton.draco.glb", true);
+useGLTF.preload("/models/muscles.draco.glb", true);
+useGLTF.preload("/models/joints.draco.glb", true);
+useGLTF.preload("/models/nerves.draco.glb", true);
 
-    console.time("GLB muscles");
-    await useGLTF.preload(`${BASE}/models/muscles.opt.glb`);
-    console.timeEnd("GLB muscles");
-
-    console.time("GLB joints");
-    await useGLTF.preload(`${BASE}/models/joints.opt.glb`);
-    console.timeEnd("GLB joints");
-
-    console.time("GLB nerves");
-    await useGLTF.preload(`${BASE}/models/nerves.opt.glb`);
-    console.timeEnd("GLB nerves");
-  })();
-}, []);
 
 
   return (

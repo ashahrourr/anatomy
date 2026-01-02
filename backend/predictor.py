@@ -133,7 +133,10 @@ def redis_mget(raw_texts: list[str]) -> dict[str, dict]:
 
     try:
         # ✅ Upstash expects *args, not a list
+        t_http = time.time()
         values = redis.mget(*keys)
+        print(f"⏱ REDIS HTTP CALL: {(time.time() - t_http)*1000:.2f} ms")
+
     except Exception as e:
         print("❌ redis.mget failed:", repr(e))
         return {}
@@ -362,7 +365,10 @@ def predict_structure(pain_text: str):
     print("🔵 SUPPORTING:", supporting_label_queries)
 
     all_queries = [primary_label_query] + supporting_label_queries
+    t_redis = time.time()
     cache_map = redis_mget(all_queries)
+    print(f"⏱ REDIS MGET TOTAL: {(time.time() - t_redis)*1000:.2f} ms")
+
 
     print(
     f"🧠 CACHE FETCH | "
