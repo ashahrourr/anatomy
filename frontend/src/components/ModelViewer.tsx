@@ -402,13 +402,14 @@ function ReportModelReady({ onReady }: { onReady?: () => void }) {
 
   const fired = useRef(false);
 
-  useEffect(() => {
-    // fires once when all assets are done loading
-    if (!fired.current && !active) {
-      fired.current = true;
-      onReady?.();
-    }
-  }, [active, progress, onReady]);
+useEffect(() => {
+  if (!fired.current && !active) {
+    console.timeEnd("MODEL TOTAL LOAD");
+    fired.current = true;
+    onReady?.();
+  }
+}, [active, onReady]);
+
 
   return null;
 }
@@ -424,6 +425,10 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
   typeof window !== "undefined" &&
   (navigator.maxTouchPoints > 0 || "ontouchstart" in window);
 
+  useEffect(() => {
+  console.time("MODEL TOTAL LOAD");
+}, []);
+
 
   useEffect(() => {
     const handler = (e: any) => setHighlightData(e.detail);
@@ -432,13 +437,26 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
       window.removeEventListener("highlight-structures", handler);
   }, []);
 
-    useEffect(() => {
-    // run preloads only on client runtime
-    useGLTF.preload(`${BASE}/models/skeleton.opt.glb`);
-    useGLTF.preload(`${BASE}/models/muscles.opt.glb`);
-    useGLTF.preload(`${BASE}/models/joints.opt.glb`);
-    useGLTF.preload(`${BASE}/models/nerves.opt.glb`);
-  }, []);
+useEffect(() => {
+  (async () => {
+    console.time("GLB skeleton");
+    await useGLTF.preload(`${BASE}/models/skeleton.opt.glb`);
+    console.timeEnd("GLB skeleton");
+
+    console.time("GLB muscles");
+    await useGLTF.preload(`${BASE}/models/muscles.opt.glb`);
+    console.timeEnd("GLB muscles");
+
+    console.time("GLB joints");
+    await useGLTF.preload(`${BASE}/models/joints.opt.glb`);
+    console.timeEnd("GLB joints");
+
+    console.time("GLB nerves");
+    await useGLTF.preload(`${BASE}/models/nerves.opt.glb`);
+    console.timeEnd("GLB nerves");
+  })();
+}, []);
+
 
   return (
   <div className="w-full h-full relative">

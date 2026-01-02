@@ -47,7 +47,6 @@ const [creditsBootDone, setCreditsBootDone] = useState(false);
 
 
 
-
 useEffect(() => {
   const wireframeColors = [
     "#5af6ff",
@@ -103,12 +102,14 @@ setDeviceId(id);
       const { data } = await supabase.auth.getSession();
       const token = data.session?.access_token;
 
+      console.time("CREDITS FETCH");
       const res = await fetch(`${API_BASE}/credits`, {
         headers: {
           "x-device-id": deviceId,
           ...(token ? { Authorization: `Bearer ${token}` } : {}),
         },
       });
+      console.timeEnd("CREDITS FETCH");
 
       if (!res.ok) throw new Error("credits fetch failed");
       const json = await res.json();
@@ -291,9 +292,7 @@ window.dispatchEvent(
 const appBootReady =
   ready &&
   !!deviceId &&
-  modelReady &&
-  creditsBootDone;
-
+  modelReady;
   /* ---------------- UI ---------------- */
   return (
 <div className="relative min-h-[100svh] bg-[#1c1c1c]">
