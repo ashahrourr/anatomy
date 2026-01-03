@@ -146,8 +146,8 @@ def create_checkout_session(request: Request):
             metadata={
                 "user_id": user_id,  # 🔑 THIS IS THE IMPORTANT PART
             },
-            success_url="https://talktoanatomy.com/success",
-            cancel_url="https://talktoanatomy.com/cancel",
+            success_url="https://talktoanatomy.com",
+            cancel_url="https://talktoanatomy.com",
         )
 
         return {"url": session.url}
