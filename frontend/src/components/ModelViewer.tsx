@@ -1,20 +1,26 @@
 // frontend/src/components/ModelViewer.tsx
 "use client";
 
+
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF, useProgress} from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import Spinner from "./Spinner";
 
-
-
-  const BASE = process.env.NEXT_PUBLIC_ASSETS_BASE_URL;
+const BASE = process.env.NEXT_PUBLIC_ASSETS_BASE_URL;
 
 /* ----------------------------------------------------
    🦴 Models
 ---------------------------------------------------- */
-function AnatomyModels({ highlightData }: { highlightData: any }) {
+function AnatomyModels({
+  highlightData,
+  onReady,
+}: {
+  highlightData: any;
+  onReady?: () => void;
+}) {
+
 
 const skeleton = useGLTF(`${BASE}/models/skeleton.draco.glb`, true).scene;
 const muscles  = useGLTF(`${BASE}/models/muscles.draco.glb`, true).scene;
@@ -23,6 +29,9 @@ const nerves   = useGLTF(`${BASE}/models/nerves.draco.glb`, true).scene;
 
 
 
+useEffect(() => {
+  onReady?.();
+}, []);
 
 
   /* Center models */
@@ -384,36 +393,6 @@ function ClickPivot({ controlsRef }: any) {
 
 
 
-function CanvasLoader() {
-  const { active } = useProgress(); // true while anything is loading
-  if (!active) return null;
-
-  return (
-    <div className="absolute inset-0 z-10 flex items-center justify-center bg-[#1c1c1c]">
-      <Spinner size={28} />
-    </div>
-  );
-}
-
-
-function ReportModelReady({ onReady }: { onReady?: () => void }) {
-  if (typeof window === "undefined") return null;
-  const { active, progress } = useProgress();
-
-  const fired = useRef(false);
-
-useEffect(() => {
-  if (!fired.current && !active) {
-    console.timeEnd("MODEL TOTAL LOAD");
-    fired.current = true;
-    onReady?.();
-  }
-}, [active, onReady]);
-
-
-  return null;
-}
-
 
 /* ----------------------------------------------------
    Viewer
@@ -447,16 +426,18 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
 
   return (
   <div className="w-full h-full relative">
-    <CanvasLoader />
 
     <Canvas camera={{ position: [0, 1.4, 4], fov: 45 }}>
-      <ReportModelReady onReady={onReady} />
       <ambientLight intensity={0.55} />
       <directionalLight position={[5, 10, 5]} intensity={1} />
 
-      <Suspense fallback={null}>
-        <AnatomyModels highlightData={highlightData} />
-      </Suspense>
+<Suspense fallback={null}>
+  <AnatomyModels
+    highlightData={highlightData}
+    onReady={onReady}
+  />
+</Suspense>
+
 
 {!isTouch && (
       <CameraAutoFocus

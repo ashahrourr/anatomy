@@ -101,15 +101,16 @@ def get_credits(key: str):
     }
 
 def consume_credit(key: str, signed_in: bool, mirror_key: str | None = None):
-    """
-    Main entry used by /predict-structure
-    """
     used, ttl = consume_credit_fast(key)
 
+    # ✅ anon: do NOT burn a credit on the blocked attempt
     if not signed_in and used > ANON_LIMIT:
+        redis_post(["SET", key, ANON_LIMIT, "EX", ttl])  # rollback
         raise HTTPException(status_code=429, detail="Sign in to unlock more")
 
+    # ✅ daily: do NOT burn a credit above max
     if used > TOTAL_DAILY:
+        redis_post(["SET", key, TOTAL_DAILY, "EX", ttl])  # rollback
         raise HTTPException(status_code=429, detail="Daily limit reached")
 
     # mirror user/device so UI doesn't reset
@@ -122,6 +123,7 @@ def consume_credit(key: str, signed_in: bool, mirror_key: str | None = None):
         "limit": TOTAL_DAILY,
         "reset_in": ttl,
     }
+
 
 def link_device_and_user(device_key: str, user_key: str):
     """

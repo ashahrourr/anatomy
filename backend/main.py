@@ -65,15 +65,17 @@ def credits(request: Request):
     device_id = request.headers.get("x-device-id")
     user_id = get_user_id_from_auth_header(auth)
 
+    if not device_id:
+        raise HTTPException(status_code=400, detail="Missing device id")
+
     if user_id and is_user_pro(user_id):
-        return {
-            "credits": {
-                "type": "user",
-                "unlimited": True
-            }
-        }
+        return {"credits": {"type": "user", "unlimited": True}}
 
     device_key, user_key, signed_in = resolve_keys(device_id, user_id)
+
+    # ✅ NEW: sync usage so signing in doesn't reset UI
+    if signed_in and user_key:
+        link_device_and_user(device_key, user_key)
 
     active_key = user_key if signed_in else device_key
     c = get_credits(active_key)
@@ -87,6 +89,7 @@ def credits(request: Request):
     }
 
 
+
 @app.post("/predict-structure")
 def predict(req: PainRequest, request: Request):
     auth = request.headers.get("authorization")
@@ -98,14 +101,14 @@ def predict(req: PainRequest, request: Request):
 
     device_key, user_key, signed_in = resolve_keys(device_id, user_id)
 
-    # user takes priority if signed in
+    # ✅ NEW: sync device usage into user bucket on login
+    if signed_in and user_key:
+        link_device_and_user(device_key, user_key)
+
     active_key = user_key if signed_in else device_key
 
     if user_id and is_user_pro(user_id):
-        credits = {
-            "type": "user",
-            "unlimited": True,
-        }
+        credits = {"type": "user", "unlimited": True}
     else:
         credits = consume_credit(
             active_key,
@@ -141,39 +144,38 @@ def predict(req: PainRequest, request: Request):
 @app.post("/create-checkout-session")
 def create_checkout_session(request: Request):
     auth = request.headers.get("authorization")
-    device_id = request.headers.get("x-device-id")
     user_id = get_user_id_from_auth_header(auth)
 
     if not user_id:
-        return {"error": "Must be signed in to buy credits"}
+        return {"error": "Must be signed in"}
 
-    try:
-        session = stripe.checkout.Session.create(
-            payment_method_types=["card"],
-            mode="payment",
-            line_items=[
-                {
-                    "price_data": {
-                        "currency": "usd",
-                        "product_data": {
-                            "name": "AnatomyGPT Credits",
-                        },
-                        "unit_amount": 500,  # $5.00
-                    },
-                    "quantity": 1,
-                }
-            ],
-            metadata={
-                "user_id": user_id,  # 🔑 THIS IS THE IMPORTANT PART
-            },
-            success_url="https://talktoanatomy.com",
-            cancel_url="https://talktoanatomy.com",
-        )
+    # ✅ Create a Stripe customer tied to this user
+    customer = stripe.Customer.create(
+        metadata={"user_id": user_id}
+    )
 
-        return {"url": session.url}
+    session = stripe.checkout.Session.create(
+        mode="subscription",
+        payment_method_types=["card"],
+        customer=customer.id,  # ✅ IMPORTANT
+        line_items=[
+            {
+                "price": os.getenv("STRIPE_PRO_PRICE_ID"),
+                "quantity": 1,
+            }
+        ],
+        metadata={"user_id": user_id},
+        subscription_data={  # ✅ also puts metadata on the subscription
+            "metadata": {"user_id": user_id}
+        },
+        success_url="https://talktoanatomy.com",
+        cancel_url="https://talktoanatomy.com",
+    )
 
-    except Exception as e:
-        return {"error": str(e)}
+    return {"url": session.url}
+
+
+
 
 @app.post("/webhook/stripe")
 async def stripe_webhook(
@@ -191,32 +193,70 @@ async def stripe_webhook(
         )
     except Exception as e:
         print("❌ Stripe webhook error:", e)
-        # IMPORTANT: Stripe retries only if we return non-200
         raise HTTPException(status_code=400, detail=str(e))
 
-    # 2️⃣ We only care about successful checkout
-    if event["type"] == "checkout.session.completed":
-        session = event["data"]["object"]
+    event_type = event["type"]
+    obj = event["data"]["object"]
 
-        # 3️⃣ Identity comes from metadata (THIS is why sign-in is required)
-        user_id = session.get("metadata", {}).get("user_id")
+    # ------------------------------------------------
+    # ✅ SUBSCRIPTION ACTIVE / CREATED / UPDATED
+    # ------------------------------------------------
+    if event_type in [
+        "checkout.session.completed",
+        "customer.subscription.created",
+        "customer.subscription.updated",
+    ]:
+        # checkout.session.completed → metadata on session
+        # subscription events → metadata on subscription
+        user_id = obj.get("metadata", {}).get("user_id")
 
-        if not user_id:
-            print("❌ Missing user_id in Stripe metadata")
-            raise HTTPException(status_code=400, detail="Missing user_id")
+        if user_id:
+            supabase.table("user_plans").upsert(
+                {
+                    "user_id": user_id,
+                    "is_pro": True,
+                    "pro_since": datetime.utcnow().isoformat(),
+                },
+                on_conflict="user_id",
+            ).execute()
 
-        # 4️⃣ Mark user as PRO (UPSERT = create or update)
-        supabase.table("user_plans").upsert(
-            {
-                "user_id": user_id,
-                "is_pro": True,
-                "pro_since": datetime.utcnow().isoformat(),
-            },
-            on_conflict="user_id",
-        ).execute()
+            print(f"✅ User {user_id} marked PRO")
 
-        print(f"✅ User {user_id} marked as PRO")
+    # ------------------------------------------------
+    # ❌ SUBSCRIPTION CANCELLED / EXPIRED
+    # ------------------------------------------------
+    if event_type == "customer.subscription.deleted":
+        user_id = obj.get("metadata", {}).get("user_id")
+
+        if user_id:
+            supabase.table("user_plans").update(
+                {"is_pro": False}
+            ).eq("user_id", user_id).execute()
+
+            print(f"❌ User {user_id} PRO removed")
 
     # 5️⃣ Always return OK so Stripe stops retrying
     return {"status": "ok"}
 
+@app.post("/create-billing-portal")
+def create_billing_portal(request: Request):
+    auth = request.headers.get("authorization")
+    user_id = get_user_id_from_auth_header(auth)
+
+    if not user_id:
+        return {"error": "Must be signed in"}
+
+    # Find Stripe customer for this user
+    customers = stripe.Customer.search(
+        query=f"metadata['user_id']:'{user_id}'"
+    )
+
+    if not customers.data:
+        return {"error": "No Stripe customer found"}
+
+    portal = stripe.billing_portal.Session.create(
+        customer=customers.data[0].id,
+        return_url="https://talktoanatomy.com",
+    )
+
+    return {"url": portal.url}

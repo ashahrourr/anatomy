@@ -3,7 +3,12 @@
 
 import { useEffect, useState, useCallback, useRef } from "react";
 import Navbar from "../components/NavBar";
-import ModelViewer from "../components/ModelViewer";
+import dynamic from "next/dynamic";
+
+const ModelViewer = dynamic(() => import("../components/ModelViewer"), {
+  ssr: false,
+});
+
 import { supabase } from "../lib/supabase";
 import { useAuth } from "../lib/useAuth";
 import Spinner from "../components/Spinner";
@@ -43,6 +48,14 @@ const [legendOpen, setLegendOpen] = useState(false);
 const [noAnswerMessage, setNoAnswerMessage] = useState<string | null>(null);
 const [modelReady, setModelReady] = useState(false);
 const [creditsBootDone, setCreditsBootDone] = useState(false);
+const [showBuyCredits, setShowBuyCredits] = useState(false);
+const [showUpgrade, setShowUpgrade] = useState(false);
+
+type AuthReason = "signin" | "limit";
+
+const [authReason, setAuthReason] = useState<AuthReason>("signin");
+
+
 
 
 
@@ -230,14 +243,24 @@ const sendMagicLink = async () => {
         body: JSON.stringify({ pain_text: text }),
       });
 
-      if (!res.ok) {
-        if (res.status === 429) {
-          setLimitError(true);
-          setNoAnswerMessage(null);
-          return;
-        }
-        throw new Error("API error");
-      }
+if (!res.ok) {
+  if (res.status === 429) {
+    setLimitError(true);
+    setNoAnswerMessage(null);
+
+    // 🔥 OPEN THE RIGHT POPUP
+if (!user) {
+  setAuthReason("limit");
+  setShowAuth(true);
+} else {
+  setShowBuyCredits(true);
+}
+
+    return;
+  }
+  throw new Error("API error");
+}
+
 
 const data = await res.json();
 setCredits(data.credits);
@@ -294,6 +317,8 @@ window.dispatchEvent(
       console.error("Stripe checkout failed", e);
     }
   };
+const isPro =
+  !!credits && "unlimited" in credits && (credits as any).unlimited === true;
 
 const appBootReady =
   ready &&
@@ -313,24 +338,60 @@ const appBootReady =
 
 
       <div className="fixed top-2 right-4 z-50">
-        {!user ? (
-          <button
-            onClick={() => setShowAuth(true)}
-            className="bg-[#181818] border border-[#282825] text-[#afafaf] px-4 py-2 rounded-lg text-sm hover:bg-[#222]"
-          >
-            Sign in
-          </button>
-        ) : (
-          <button
-              onClick={() => {
-                setShowAuth(false);   // 👈 close modal
-                supabase.auth.signOut();
-              }}
-            className="bg-[#181818] border border-[#282825] text-red-400 px-4 py-2 rounded-lg text-sm hover:bg-[#222]"
-          >
-            Sign out
-          </button>
-        )}
+{user ? (
+  <div className="flex gap-2">
+    {!isPro ? (
+      <button
+        onClick={() => setShowUpgrade(true)}
+        className="bg-[#181818] border border-[#282825] text-[#e5e5e5] px-4 py-2 rounded-lg text-sm hover:bg-[#222]"
+      >
+        Upgrade
+      </button>
+    ) : (
+      <button
+        onClick={async () => {
+          const { data } = await supabase.auth.getSession();
+          const token = data.session?.access_token;
+
+          const res = await fetch(`${API_BASE}/create-billing-portal`, {
+            method: "POST",
+            headers: {
+              ...(token ? { Authorization: `Bearer ${token}` } : {}),
+            },
+          });
+
+          const out = await res.json();
+          if (out.url) window.location.href = out.url;
+        }}
+        className="bg-[#181818] border border-[#282825] text-[#afafaf] px-4 py-2 rounded-lg text-sm hover:bg-[#222]"
+      >
+        Manage billing
+      </button>
+    )}
+
+    <button
+      onClick={() => {
+        setShowAuth(false);
+        supabase.auth.signOut();
+      }}
+      className="bg-[#181818] border border-[#282825] text-red-400 px-4 py-2 rounded-lg text-sm hover:bg-[#222]"
+    >
+      Sign out
+    </button>
+  </div>
+) : (
+
+  <button
+    onClick={() => {
+      setAuthReason("signin");
+      setShowAuth(true);
+    }}
+    className="bg-[#181818] border border-[#282825] text-[#afafaf] px-4 py-2 rounded-lg text-sm hover:bg-[#222]"
+  >
+    Sign in
+  </button>
+)}
+
       </div>
 
 {legend.length > 0 && (
@@ -401,8 +462,14 @@ const appBootReady =
       </button>
 
 <h2 className="text-white text-lg mb-2 text-center">
-  Sign in
+  {authReason === "limit" ? "Out of credits" : "Sign in"}
 </h2>
+{authReason === "limit" && (
+  <p className="text-sm text-[#afafaf] text-center mb-4">
+    You’ve hit your daily limit. Sign in to get more credits.
+  </p>
+)}
+
 
 
 <input
@@ -441,6 +508,81 @@ const appBootReady =
           </div>
         </div>
       )}
+    {showBuyCredits && user && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+    onClick={() => setShowBuyCredits(false)}   // click outside closes
+  >
+    <div
+      className="relative bg-[#181818] border border-[#282825] rounded-2xl p-6 w-[360px]"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* ❌ CLOSE */}
+      <button
+        onClick={() => setShowBuyCredits(false)}
+        className="absolute top-3 right-3 text-[#afafaf] hover:text-white text-lg"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <h2 className="text-white text-lg mb-2 text-center">
+        Out of credits
+      </h2>
+
+      <p className="text-sm text-[#afafaf] text-center mb-4">
+        You’ve used all your credits for today.
+      </p>
+
+      <button
+        onClick={handleBuyCredits}
+        className="w-full bg-[#960019] py-2 rounded-lg text-white hover:opacity-90"
+      >
+        Upgrade to Pro
+      </button>
+      <p className="mt-3 text-xs text-[#afafaf] text-center">
+  $4.99 · Unlimited daily credits
+</p>
+
+    </div>
+  </div>
+)}
+{showUpgrade && user && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+    onClick={() => setShowUpgrade(false)}
+  >
+    <div
+      className="relative bg-[#181818] border border-[#282825] rounded-2xl p-6 w-[360px]"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        onClick={() => setShowUpgrade(false)}
+        className="absolute top-3 right-3 text-[#afafaf] hover:text-white text-lg"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      <h2 className="text-white text-lg mb-2 text-center">Upgrade to Pro</h2>
+      <p className="text-sm text-[#afafaf] text-center mb-4">
+        Unlock unlimited daily credits.
+      </p>
+
+      <button
+        onClick={handleBuyCredits}
+        className="w-full bg-[#960019] py-2 rounded-lg text-white hover:opacity-90"
+      >
+        Upgrade to Pro
+      </button>
+
+      <p className="mt-3 text-xs text-[#afafaf] text-center">
+        $4.99 · Unlimited daily credits
+      </p>
+    </div>
+  </div>
+)}
+
 
 <div
   className="absolute left-0 right-0"
@@ -469,31 +611,6 @@ const appBootReady =
 )}
 
 
-{limitError && (
-  <div className="mb-3 text-sm text-center text-[#afafaf] space-y-2">
-    {!user ? (
-      <>
-        <div>You’ve used your free credit. Sign in to unlock more.</div>
-        <button
-          onClick={() => setShowAuth(true)}
-          className="bg-[#181818] border border-[#282825] text-white px-4 py-2 rounded-lg text-sm hover:bg-[#222]"
-        >
-          Sign in
-        </button>
-      </>
-    ) : (
-      <>
-        <div>You’re out of credits.</div>
-        <button
-          onClick={handleBuyCredits}
-          className="bg-[#960019] px-4 py-2 rounded-lg text-white text-sm hover:opacity-90"
-        >
-          Buy more credits
-        </button>
-      </>
-    )}
-  </div>
-)}
 
 {noAnswerMessage && !limitError && (
   <div className="mb-3 text-sm text-center text-[#afafaf]">
