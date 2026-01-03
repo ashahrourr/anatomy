@@ -202,7 +202,7 @@ const sendMagicLink = async () => {
   try {
     const { error } = await supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: window.location.origin },
+      options: { emailRedirectTo: "https://talktoanatomy.com" },
     });
 
     if (error) {
