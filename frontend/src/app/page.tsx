@@ -122,24 +122,13 @@ setDeviceId(id);
 useEffect(() => {
   if (!deviceId || !ready) return;
 
-  let cancelled = false;
+  // ⛔ wait until auth is fully resolved
+  supabase.auth.getSession().then(({ data }) => {
+    if (!data.session && user === undefined) return;
+    fetchCredits();
+  });
+}, [deviceId, ready, user?.id]);
 
-  (async () => {
-    setCreditsBootDone(false);
-
-    try {
-      await fetchCredits();
-    } finally {
-      if (!cancelled) {
-        setCreditsBootDone(true); // ✅ credits finished booting
-      }
-    }
-  })();
-
-  return () => {
-    cancelled = true;
-  };
-}, [deviceId, ready, user?.id, fetchCredits]);
 
 
   useEffect(() => {
@@ -149,13 +138,6 @@ useEffect(() => {
     };
     window.addEventListener("storage", onStorage);
     return () => window.removeEventListener("storage", onStorage);
-  }, [deviceId, fetchCredits]);
-
-  useEffect(() => {
-    if (!deviceId) return;
-    const onFocus = () => fetchCredits();
-    window.addEventListener("focus", onFocus);
-    return () => window.removeEventListener("focus", onFocus);
   }, [deviceId, fetchCredits]);
 
   /* ---------------- textarea auto-grow ---------------- */
