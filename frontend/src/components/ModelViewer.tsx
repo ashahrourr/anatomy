@@ -16,10 +16,11 @@ import Spinner from "./Spinner";
 ---------------------------------------------------- */
 function AnatomyModels({ highlightData }: { highlightData: any }) {
 
-const skeleton = useGLTF("/models/skeleton.draco.glb", true).scene;
-const muscles  = useGLTF("/models/muscles.draco.glb", true).scene;
-const joints   = useGLTF("/models/joints.draco.glb", true).scene;
-const nerves   = useGLTF("/models/nerves.draco.glb", true).scene;
+const skeleton = useGLTF(`${BASE}/models/skeleton.draco.glb`, true).scene;
+const muscles  = useGLTF(`${BASE}/models/muscles.draco.glb`, true).scene;
+const joints   = useGLTF(`${BASE}/models/joints.draco.glb`, true).scene;
+const nerves   = useGLTF(`${BASE}/models/nerves.draco.glb`, true).scene;
+
 
 
 
@@ -439,10 +440,11 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
       window.removeEventListener("highlight-structures", handler);
   }, []);
 
-useGLTF.preload("/models/skeleton.draco.glb", true);
-useGLTF.preload("/models/muscles.draco.glb", true);
-useGLTF.preload("/models/joints.draco.glb", true);
-useGLTF.preload("/models/nerves.draco.glb", true);
+useGLTF.preload(`${BASE}/models/skeleton.draco.glb`, true);
+useGLTF.preload(`${BASE}/models/muscles.draco.glb`, true);
+useGLTF.preload(`${BASE}/models/joints.draco.glb`, true);
+useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
+
 
 
 
