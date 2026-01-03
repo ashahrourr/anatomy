@@ -1,11 +1,17 @@
 # backend/main.py
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import stripe
 import os
 from fastapi import Header
 from backend.rate_limit import add_credits
+from backend.plans import is_user_pro
+from datetime import datetime
+from backend.db import supabase
+
+
+
 
 
 
@@ -62,8 +68,13 @@ def credits(request: Request):
     device_id = request.headers.get("x-device-id")
     user_id = get_user_id_from_auth_header(auth)
 
-    if not device_id:
-        return {"credits": None}
+    if user_id and is_user_pro(user_id):
+        return {
+            "credits": {
+                "type": "user",
+                "unlimited": True
+            }
+        }
 
     device_key, user_key, signed_in = resolve_keys(device_id, user_id)
 
@@ -93,11 +104,18 @@ def predict(req: PainRequest, request: Request):
     # user takes priority if signed in
     active_key = user_key if signed_in else device_key
 
-    credits = consume_credit(
-        active_key,
-        signed_in,
-        mirror_key=(device_key if signed_in else None),
-    )
+    if user_id and is_user_pro(user_id):
+        credits = {
+            "type": "user",
+            "unlimited": True,
+        }
+    else:
+        credits = consume_credit(
+            active_key,
+            signed_in,
+            mirror_key=(device_key if signed_in else None),
+        )
+
 
     # ---------- MODEL ----------
     result = predict_structure(req.pain_text)
@@ -158,10 +176,11 @@ def create_checkout_session(request: Request):
 @app.post("/webhook/stripe")
 async def stripe_webhook(
     request: Request,
-    stripe_signature: str = Header(None),
+    stripe_signature: str = Header(None, alias="Stripe-Signature"),
 ):
     payload = await request.body()
 
+    # 1️⃣ Verify webhook signature (CRITICAL)
     try:
         event = stripe.Webhook.construct_event(
             payload=payload,
@@ -170,21 +189,32 @@ async def stripe_webhook(
         )
     except Exception as e:
         print("❌ Stripe webhook error:", e)
-        return {"error": str(e)}
+        # IMPORTANT: Stripe retries only if we return non-200
+        raise HTTPException(status_code=400, detail=str(e))
 
+    # 2️⃣ We only care about successful checkout
     if event["type"] == "checkout.session.completed":
         session = event["data"]["object"]
-        user_id = session["metadata"].get("user_id")
+
+        # 3️⃣ Identity comes from metadata (THIS is why sign-in is required)
+        user_id = session.get("metadata", {}).get("user_id")
 
         if not user_id:
             print("❌ Missing user_id in Stripe metadata")
-            return {"error": "missing user_id"}
+            raise HTTPException(status_code=400, detail="Missing user_id")
 
-        user_key = f"user:{user_id}"
+        # 4️⃣ Mark user as PRO (UPSERT = create or update)
+        supabase.table("user_plans").upsert(
+            {
+                "user_id": user_id,
+                "is_pro": True,
+                "pro_since": datetime.utcnow().isoformat(),
+            },
+            on_conflict="user_id",
+        ).execute()
 
-        # 🎁 grant credits
-        add_credits(user_key, amount=10)
+        print(f"✅ User {user_id} marked as PRO")
 
-        print(f"✅ Granted 10 credits to {user_key}")
-
+    # 5️⃣ Always return OK so Stripe stops retrying
     return {"status": "ok"}
+

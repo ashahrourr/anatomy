@@ -476,12 +476,16 @@ const appBootReady =
   style={{ bottom: "calc(env(safe-area-inset-bottom) + 1.5rem)" }}
 >
 
+{credits && (
+  <div className="mb-2 text-xs text-center text-[#afafaf]">
+    {"unlimited" in credits && credits.unlimited ? (
+      <>Credits: ∞</>
+    ) : (
+      <>Credits: {credits.remaining} / {credits.limit} today</>
+    )}
+  </div>
+)}
 
-          {credits && (
-            <div className="mb-2 text-xs text-center text-[#afafaf]">
-              Credits: {credits.remaining} / {credits.limit} today
-            </div>
-          )}
 
 {limitError && (
   <div className="mb-3 text-sm text-center text-[#afafaf] space-y-2">
