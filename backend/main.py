@@ -11,10 +11,6 @@ from datetime import datetime
 from backend.db import supabase
 
 
-
-
-
-
 from backend.predictor import predict_structure
 from backend.auth import get_user_id_from_auth_header
 from backend.rate_limit import (
@@ -35,6 +31,7 @@ app.add_middleware(
         "http://localhost:3000",
         "https://talktoanatomy.com",
         "https://www.talktoanatomy.com",
+        "https://talktoanatomy.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -133,9 +130,14 @@ def predict(req: PainRequest, request: Request):
         "credits": {
             **credits,
             "type": "user" if signed_in else "device",
-            "locked": (not signed_in and credits["used"] >= 1),
+            "locked": (
+                False
+                if credits.get("unlimited")
+                else (not signed_in and credits["used"] >= 1)
+            ),
         },
     }
+
 @app.post("/create-checkout-session")
 def create_checkout_session(request: Request):
     auth = request.headers.get("authorization")
