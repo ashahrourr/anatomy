@@ -223,78 +223,59 @@ highlightData.supporting?.forEach((s: any, index: number) => {
 ---------------------------------------------------- */
 function CameraAutoFocus({ highlight, controlsRef }: any) {
   const { camera, scene } = useThree();
-  const targetCamPos = useRef<THREE.Vector3 | null>(null);
-  const targetCenter = useRef<THREE.Vector3 | null>(null);
+  const pending = useRef<string | null>(null);
+  const targetCamPos = useRef(new THREE.Vector3());
+  const targetCenter = useRef(new THREE.Vector3());
 
+  // mark highlight as pending (may not exist yet)
   useEffect(() => {
-    if (!highlight || !controlsRef.current) return;
+    pending.current = highlight;
+  }, [highlight]);
 
-    const targetObj = scene.getObjectByName(highlight);
-    if (!targetObj) return;
+  useFrame(() => {
+    if (!pending.current || !controlsRef.current) return;
 
-    // 1) Get center of the highlighted object
+    const targetObj = scene.getObjectByName(pending.current);
+    if (!targetObj) return; // ⏳ retry next frame
+
+    targetObj.updateWorldMatrix(true, true);
+
     const box = new THREE.Box3().setFromObject(targetObj);
+    if (box.isEmpty()) return;
+
     const center = new THREE.Vector3();
     box.getCenter(center);
 
-    // 2) Compute a "close" distance based on size
     const size = new THREE.Vector3();
     box.getSize(size);
     const maxDim = Math.max(size.x, size.y, size.z);
 
     const cam = camera as THREE.PerspectiveCamera;
-    const fov = (cam.fov * Math.PI) / 180;
-
-    // distance that fits the object, then make it closer
+    const fov = THREE.MathUtils.degToRad(cam.fov);
     let distance = (maxDim / 2) / Math.tan(fov / 2);
+    distance = THREE.MathUtils.clamp(distance * 0.8, 0.6, 8);
 
-    // ✅ tweak this to taste (smaller = closer)
-    distance *= 0.8;
-
-    // ✅ keep it from going insane
-    distance = THREE.MathUtils.clamp(distance, 0.6, 8);
-
-    // 3) Keep current viewing direction, but relative to the *new center*
     const dir = new THREE.Vector3()
-      .subVectors(cam.position, center)
+      .subVectors(cam.position, controlsRef.current.target)
       .normalize();
 
-    const newPos = new THREE.Vector3().addVectors(
-      center,
-      dir.multiplyScalar(distance)
-    );
+    targetCamPos.current.copy(center.clone().add(dir.multiplyScalar(distance)));
+    targetCenter.current.copy(center);
 
-    targetCamPos.current = newPos;
-    targetCenter.current = center;
-  }, [highlight, scene, camera]);
+    pending.current = null; // ✅ done
+  });
 
   useFrame(() => {
-    const ctrl = controlsRef.current;
-    if (!ctrl) return;
+    if (!controlsRef.current) return;
 
-    const cam = camera as THREE.PerspectiveCamera;
-
-    // move camera to new position
-    if (targetCamPos.current) {
-      cam.position.lerp(targetCamPos.current, 0.12);
-      if (cam.position.distanceTo(targetCamPos.current) < 0.01) {
-        targetCamPos.current = null;
-      }
-    }
-
-    // ✅ THIS is what makes rotation happen around the highlighted structure
-    if (targetCenter.current) {
-      ctrl.target.lerp(targetCenter.current, 0.12);
-      if (ctrl.target.distanceTo(targetCenter.current) < 0.01) {
-        targetCenter.current = null;
-      }
-    }
-
-    ctrl.update();
+    camera.position.lerp(targetCamPos.current, 0.12);
+    controlsRef.current.target.lerp(targetCenter.current, 0.12);
+    controlsRef.current.update();
   });
 
   return null;
 }
+
 
 
 function ClickPivot({ controlsRef }: any) {
