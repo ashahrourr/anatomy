@@ -2,6 +2,9 @@
 import os
 import requests
 from fastapi import HTTPException
+from dotenv import load_dotenv
+load_dotenv()
+
 
 # -------------------------
 # CONFIG
@@ -145,4 +148,32 @@ def link_device_and_user(device_key: str, user_key: str):
         2,
         device_key,
         user_key,
+    ])
+def add_credits(key: str, amount: int):
+    """
+    Grant credits by DECREASING `used`.
+    Preserves TTL and never goes below 0.
+    """
+
+    lua = """
+    local used = redis.call("GET", KEYS[1])
+    if not used then
+        return 0
+    end
+
+    used = tonumber(used)
+    local ttl = redis.call("TTL", KEYS[1])
+
+    local new_used = math.max(used - tonumber(ARGV[1]), 0)
+
+    redis.call("SET", KEYS[1], new_used, "EX", ttl)
+    return new_used
+    """
+
+    redis_post([
+        "EVAL",
+        lua,
+        1,
+        key,
+        amount,
     ])

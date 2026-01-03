@@ -289,6 +289,30 @@ window.dispatchEvent(
       setLoading(false);
     }
   };
+
+    /* ---------------- buy credits ---------------- */
+  const handleBuyCredits = async () => {
+    try {
+      const { data } = await supabase.auth.getSession();
+      const token = data.session?.access_token;
+
+      const res = await fetch(`${API_BASE}/create-checkout-session`, {
+        method: "POST",
+        headers: {
+          "x-device-id": deviceId ?? "",
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+      });
+
+      const out = await res.json();
+      if (out.url) {
+        window.location.href = out.url;
+      }
+    } catch (e) {
+      console.error("Stripe checkout failed", e);
+    }
+  };
+
 const appBootReady =
   ready &&
   !!deviceId &&
@@ -408,7 +432,7 @@ const appBootReady =
       sendMagicLink();
     }
   }}
-  placeholder="yourname@example.com"
+  placeholder="email@example.com"
   className="w-full bg-[#1c1c1c] border border-[#282825] px-3 py-2 rounded-lg text-white mb-3"
 />
 
@@ -459,13 +483,32 @@ const appBootReady =
             </div>
           )}
 
-          {limitError && (
-            <div className="mb-3 text-sm text-center text-[#afafaf]">
-              {user
-                ? "Daily limit reached. Try again tomorrow."
-                : "You’ve used your credit for today. Sign in to unlock the remaining credits."}
-            </div>
-          )}
+{limitError && (
+  <div className="mb-3 text-sm text-center text-[#afafaf] space-y-2">
+    {!user ? (
+      <>
+        <div>You’ve used your free credit. Sign in to unlock more.</div>
+        <button
+          onClick={() => setShowAuth(true)}
+          className="bg-[#181818] border border-[#282825] text-white px-4 py-2 rounded-lg text-sm hover:bg-[#222]"
+        >
+          Sign in
+        </button>
+      </>
+    ) : (
+      <>
+        <div>You’re out of credits.</div>
+        <button
+          onClick={handleBuyCredits}
+          className="bg-[#960019] px-4 py-2 rounded-lg text-white text-sm hover:opacity-90"
+        >
+          Buy more credits
+        </button>
+      </>
+    )}
+  </div>
+)}
+
 {noAnswerMessage && !limitError && (
   <div className="mb-3 text-sm text-center text-[#afafaf]">
     {noAnswerMessage}

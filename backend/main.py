@@ -2,6 +2,12 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+import stripe
+import os
+from fastapi import Header
+from backend.rate_limit import add_credits
+
+
 
 from backend.predictor import predict_structure
 from backend.auth import get_user_id_from_auth_header
@@ -14,6 +20,8 @@ from backend.rate_limit import (
 from backend.db import supabase  # ✅ Supabase server client
 
 app = FastAPI()
+stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -110,3 +118,73 @@ def predict(req: PainRequest, request: Request):
             "locked": (not signed_in and credits["used"] >= 1),
         },
     }
+@app.post("/create-checkout-session")
+def create_checkout_session(request: Request):
+    auth = request.headers.get("authorization")
+    device_id = request.headers.get("x-device-id")
+    user_id = get_user_id_from_auth_header(auth)
+
+    if not user_id:
+        return {"error": "Must be signed in to buy credits"}
+
+    try:
+        session = stripe.checkout.Session.create(
+            payment_method_types=["card"],
+            mode="payment",
+            line_items=[
+                {
+                    "price_data": {
+                        "currency": "usd",
+                        "product_data": {
+                            "name": "AnatomyGPT Credits",
+                        },
+                        "unit_amount": 500,  # $5.00
+                    },
+                    "quantity": 1,
+                }
+            ],
+            metadata={
+                "user_id": user_id,  # 🔑 THIS IS THE IMPORTANT PART
+            },
+            success_url="https://talktoanatomy.com/success",
+            cancel_url="https://talktoanatomy.com/cancel",
+        )
+
+        return {"url": session.url}
+
+    except Exception as e:
+        return {"error": str(e)}
+
+@app.post("/webhook/stripe")
+async def stripe_webhook(
+    request: Request,
+    stripe_signature: str = Header(None),
+):
+    payload = await request.body()
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload=payload,
+            sig_header=stripe_signature,
+            secret=os.getenv("STRIPE_WEBHOOK_SECRET"),
+        )
+    except Exception as e:
+        print("❌ Stripe webhook error:", e)
+        return {"error": str(e)}
+
+    if event["type"] == "checkout.session.completed":
+        session = event["data"]["object"]
+        user_id = session["metadata"].get("user_id")
+
+        if not user_id:
+            print("❌ Missing user_id in Stripe metadata")
+            return {"error": "missing user_id"}
+
+        user_key = f"user:{user_id}"
+
+        # 🎁 grant credits
+        add_credits(user_key, amount=10)
+
+        print(f"✅ Granted 10 credits to {user_key}")
+
+    return {"status": "ok"}
