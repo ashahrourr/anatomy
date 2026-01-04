@@ -28,6 +28,39 @@ const joints   = useGLTF(`${BASE}/models/joints.draco.glb`, true).scene;
 const nerves   = useGLTF(`${BASE}/models/nerves.draco.glb`, true).scene;
 
 
+const materials = useRef({
+  bone: new THREE.MeshStandardMaterial({ color: "#e8e4d8" }),
+
+  muscle: new THREE.MeshStandardMaterial({
+    color: "#d69a9a",
+    transparent: true,
+    opacity: 0.5,
+    wireframe: true,
+  }),
+
+  jointWire: new THREE.MeshStandardMaterial({
+    color: "#4da6ff",
+    wireframe: true,
+  }),
+
+  nerve: new THREE.MeshStandardMaterial({
+    color: "#f7f16d",
+    transparent: true,
+    opacity: 0.8,
+  }),
+
+  primary: new THREE.MeshStandardMaterial({
+    color: "#ff3b3b",
+  }),
+
+  supporting: [
+    new THREE.MeshStandardMaterial({ color: "#5af6ff", wireframe: true }),
+    new THREE.MeshStandardMaterial({ color: "#ff2fb3", wireframe: true }),
+    new THREE.MeshStandardMaterial({ color: "#00ff6a", wireframe: true }),
+    new THREE.MeshStandardMaterial({ color: "#c300ff", wireframe: true }),
+    new THREE.MeshStandardMaterial({ color: "#ff7b00", wireframe: true }),
+  ],
+});
 
 useEffect(() => {
   onReady?.();
@@ -52,43 +85,17 @@ useEffect(() => {
 
 }, []);
 
-  /* Base materials */
-  const boneMaterial = new THREE.MeshStandardMaterial({
-    color: "#e8e4d8",
-  });
-
-  const muscleMaterial = new THREE.MeshStandardMaterial({
-    color: "#d69a9a",
-    transparent: true,
-    opacity: 0.50,
-  });
-
-  const jointWireMaterial = new THREE.MeshStandardMaterial({
-  color: "#4da6ff",   // soft bright blue
-  wireframe: true,
-  transparent: false, // wireframes don't need transparency
-});
-
-const nerveMaterial = new THREE.MeshStandardMaterial({
-  color: "#f7f16d",      // soft nerve yellow
-  transparent: true,
-  opacity: 0.8,
-});
 
 
 
-useEffect(() => {
-  joints.traverse((obj: any) => {
-    if (obj.isMesh) {
-      obj.material = jointWireMaterial.clone(); 
-      obj.material.wireframe = true;
-    }
-  });
-}, [joints]);
+
 
 
   /* Rim + AO on muscles */
-  muscleMaterial.onBeforeCompile = (shader) => {
+useEffect(() => {
+  const mat = materials.current.muscle;
+
+  mat.onBeforeCompile = (shader) => {
     shader.fragmentShader = shader.fragmentShader.replace(
       "#include <output_fragment>",
       `
@@ -103,40 +110,30 @@ useEffect(() => {
     `
     );
   };
+}, []);
 
-  /* Primary highlight material */
-  const primaryMaterial = new THREE.MeshStandardMaterial({
-    color: "#ff3b3b",
-  });
+
+
 
   /* MAIN HIGHLIGHT LOGIC */
   useEffect(() => {
     // Reset bones
-    skeleton.traverse((child: any) => {
-      if (child.isMesh) child.material = boneMaterial;
-    });
-
-    // Reset muscles (transparent wireframes)
-    muscles.traverse((child: any) => {
-      if (child.isMesh) {
-        child.material = muscleMaterial.clone();
-        child.material.wireframe = true;
-        child.material.color = new THREE.Color("#d69a9a");
-      }
-    });
-
-    // Reset joints
-joints.traverse((child: any) => {
-  if (child.isMesh) child.material = jointWireMaterial.clone();
+skeleton.traverse((c: any) => {
+  if (c.isMesh) c.material = materials.current.bone;
 });
-// Reset nerves
-nerves.traverse((child: any) => {
-  if (child.isMesh) {
-    child.material = nerveMaterial.clone();
-    child.material.wireframe = false;
-    child.material.opacity = 0.8;
-  }
+
+muscles.traverse((c: any) => {
+  if (c.isMesh) c.material = materials.current.muscle;
 });
+
+joints.traverse((c: any) => {
+  if (c.isMesh) c.material = materials.current.jointWire;
+});
+
+nerves.traverse((c: any) => {
+  if (c.isMesh) c.material = materials.current.nerve;
+});
+
 
 
 
@@ -150,31 +147,17 @@ nerves.traverse((child: any) => {
         joints.getObjectByName(highlightData.primary.id) ||
         nerves.getObjectByName(highlightData.primary.id);
 
-      if (obj) {
-        obj.traverse((child: any) => {
-          if (child.isMesh) {
-            child.material = primaryMaterial.clone();
-            child.material.wireframe = false;
-            child.material.opacity = 1;
-          }
-        });
-      }
+if (obj) {
+  obj.traverse((c: any) => {
+    if (c.isMesh) c.material = materials.current.primary;
+  });
+}
+
     }
 
     /* SUPPORTING = wireframe-only color */
 // SUPPORTING STRUCTURES — each with a soft anatomical wireframe color
-  const wireframeColors = [
-    "#5af6ff",
-    "#ff2fb3",
-    "#00ff6a",
-    "#c300ff",
-    "#ff7b00",
-  ];
-
-
-
-
-highlightData.supporting?.forEach((s: any, index: number) => {
+highlightData.supporting?.forEach((s: any, i: number) => {
   const obj =
     skeleton.getObjectByName(s.id) ||
     muscles.getObjectByName(s.id) ||
@@ -183,34 +166,24 @@ highlightData.supporting?.forEach((s: any, index: number) => {
 
   if (!obj) return;
 
-  const color = wireframeColors[index % wireframeColors.length];
+  const baseMat =
+    materials.current.supporting[i % materials.current.supporting.length];
 
-    obj.traverse((child: any) => {
-    if (!child.isMesh) return;
+  const isBone = !!skeleton.getObjectByName(s.id);
+  const isNerve = !!nerves.getObjectByName(s.id);
 
-    const mat = child.material.clone();
-    mat.color = new THREE.Color(color);
-    mat.opacity = 1;
+  // bones & nerves = solid, muscles & joints = wireframe
+  const matToUse =
+    isBone || isNerve
+      ? new THREE.MeshStandardMaterial({ color: baseMat.color })
+      : baseMat;
 
-    // 🦴 Bone → solid
-    if (skeleton.getObjectByName(s.id)) {
-        mat.wireframe = false;
-    }
-    // 🧠 Nerve → solid yellow (no wireframe)
-    else if (nerves.getObjectByName(s.id)) {
-        mat.wireframe = false;
-        mat.transparent = false; 
-        mat.opacity = 1;
-    }
-    // 💪 Muscle or Joint → wireframe
-    else {
-        mat.wireframe = true;
-    }
-
-    child.material = mat;
-    });
-
+  obj.traverse((c: any) => {
+    if (!c.isMesh) return;
+    c.material = matToUse;
+  });
 });
+
 
 
   }, [highlightData]);
@@ -230,13 +203,14 @@ highlightData.supporting?.forEach((s: any, index: number) => {
 /* ----------------------------------------------------
    Camera Autofocus (unchanged)
 ---------------------------------------------------- */
-function CameraAutoFocus({ highlight, controlsRef }: any) {
+function CameraAutoFocus({ highlight, controlsRef, isInteractingRef }: any) {
   const { camera, scene } = useThree();
   const targetCamPos = useRef<THREE.Vector3 | null>(null);
   const targetCenter = useRef<THREE.Vector3 | null>(null);
 
+
   useEffect(() => {
-  if (!highlight || !controlsRef.current) return;
+if (!highlight) return;
 
   let tries = 0;
   const interval = setInterval(() => {
@@ -277,6 +251,8 @@ function CameraAutoFocus({ highlight, controlsRef }: any) {
   useFrame(() => {
     const ctrl = controlsRef.current;
     if (!ctrl) return;
+    if (isInteractingRef?.current) return;
+
 
     const cam = camera as THREE.PerspectiveCamera;
 
@@ -400,6 +376,8 @@ function ClickPivot({ controlsRef }: any) {
 export default function ModelViewer({ onReady }: { onReady?: () => void }) {
   const [highlightData, setHighlightData] = useState<any>(null);
   const controlsRef = useRef<any>(null);
+  const isInteractingRef = useRef(false);
+
   const isTouch =
   typeof window !== "undefined" &&
   (navigator.maxTouchPoints > 0 || "ontouchstart" in window);
@@ -415,6 +393,39 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
     return () =>
       window.removeEventListener("highlight-structures", handler);
   }, []);
+useEffect(() => {
+  let ctrl: any = null;
+  let onStart: any = null;
+  let onEnd: any = null;
+
+  let tries = 0;
+  const t = setInterval(() => {
+    ctrl = controlsRef.current;
+    if (!ctrl) {
+      if (++tries > 60) clearInterval(t);
+      return;
+    }
+
+    onStart = () => (isInteractingRef.current = true);
+    onEnd = () => (isInteractingRef.current = false);
+
+    ctrl.addEventListener("start", onStart);
+    ctrl.addEventListener("end", onEnd);
+
+    clearInterval(t);
+  }, 16);
+
+  return () => {
+    clearInterval(t);
+    if (ctrl && onStart && onEnd) {
+      ctrl.removeEventListener("start", onStart);
+      ctrl.removeEventListener("end", onEnd);
+    }
+  };
+}, []);
+
+
+
 
 useGLTF.preload(`${BASE}/models/skeleton.draco.glb`, true);
 useGLTF.preload(`${BASE}/models/muscles.draco.glb`, true);
@@ -427,7 +438,11 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   return (
   <div className="w-full h-full relative">
 
-    <Canvas camera={{ position: [0, 1.4, 4], fov: 45 }}>
+    <Canvas
+  dpr={isTouch ? [1, 1.5] : [1, 2]}
+  camera={{ position: [0, 1.4, 4], fov: 45 }}
+>
+
       <ambientLight intensity={0.55} />
       <directionalLight position={[5, 10, 5]} intensity={1} />
 
@@ -439,27 +454,32 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
 </Suspense>
 
 
-{!isTouch && (
-      <CameraAutoFocus
-        highlight={highlightData?.primary?.id || null}
-        controlsRef={controlsRef}
-      />
-      )}
+ <CameraAutoFocus
+    highlight={highlightData?.primary?.id || null}
+    controlsRef={controlsRef}
+    isInteractingRef={isInteractingRef}
+  />
+
 
 <ClickPivot controlsRef={controlsRef} />
 
-      <OrbitControls
-        ref={controlsRef}
-        enableDamping
-        enableZoom
-        dampingFactor={0.12}
-        minDistance={0.1}
-        maxDistance={10}
-        zoomSpeed={1}
-        enablePan={!isTouch}
-        rotateSpeed={0.6} 
+<OrbitControls
+  ref={controlsRef}
+  enableDamping
+  enableZoom
+  dampingFactor={0.12}
+  minDistance={0.1}
+  maxDistance={10}
+  zoomSpeed={1}
+  enablePan={false}
+  panSpeed={0}
+  touches={{
+    ONE: THREE.TOUCH.ROTATE,
+    TWO: THREE.TOUCH.DOLLY_PAN,
+  }}
+  rotateSpeed={0.6}
+/>
 
-      />
     </Canvas>
   </div>
 );
