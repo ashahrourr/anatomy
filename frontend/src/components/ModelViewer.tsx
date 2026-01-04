@@ -288,6 +288,7 @@ useFrame(() => {
     }
   }
 
+  if (!targetCamPos.current && !targetCenter.current) return;
   ctrl.update();
 
   invalidate(); // 👈 ADD THIS LINE
