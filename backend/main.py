@@ -150,27 +150,43 @@ def create_checkout_session(request: Request):
         return {"error": "Must be signed in"}
 
     # ✅ Create a Stripe customer tied to this user
-    customer = stripe.Customer.create(
-        metadata={"user_id": user_id}
+    row = (
+    supabase.table("user_plans")
+    .select("stripe_customer_id")
+    .eq("user_id", user_id)
+    .single()
+    .execute()
     )
+
+    customer_id = row.data.get("stripe_customer_id") if row.data else None
+
+    if not customer_id:
+        customer = stripe.Customer.create(
+            email=request.headers.get("x-email"),
+            metadata={"user_id": user_id},
+        )
+        customer_id = customer.id
+
+        supabase.table("user_plans").upsert({
+            "user_id": user_id,
+            "stripe_customer_id": customer_id,
+        }).execute()
+
 
     session = stripe.checkout.Session.create(
         mode="subscription",
         payment_method_types=["card"],
-        customer=customer.id,  # ✅ IMPORTANT
-        line_items=[
-            {
-                "price": os.getenv("STRIPE_PRO_PRICE_ID"),
-                "quantity": 1,
-            }
-        ],
+        customer=customer_id,   # ✅ USE THIS
+        line_items=[{
+            "price": os.getenv("STRIPE_PRO_PRICE_ID"),
+            "quantity": 1,
+        }],
         metadata={"user_id": user_id},
-        subscription_data={  # ✅ also puts metadata on the subscription
-            "metadata": {"user_id": user_id}
-        },
+        subscription_data={"metadata": {"user_id": user_id}},
         success_url="https://talktoanatomy.com",
         cancel_url="https://talktoanatomy.com",
     )
+
 
     return {"url": session.url}
 
@@ -242,21 +258,23 @@ async def stripe_webhook(
 def create_billing_portal(request: Request):
     auth = request.headers.get("authorization")
     user_id = get_user_id_from_auth_header(auth)
-
     if not user_id:
         return {"error": "Must be signed in"}
 
-    # Find Stripe customer for this user
-    customers = stripe.Customer.search(
-        query=f"metadata['user_id']:'{user_id}'"
+    row = (
+        supabase.table("user_plans")
+        .select("stripe_customer_id")
+        .eq("user_id", user_id)
+        .single()
+        .execute()
     )
 
-    if not customers.data:
-        return {"error": "No Stripe customer found"}
+    customer_id = row.data["stripe_customer_id"]
 
     portal = stripe.billing_portal.Session.create(
-        customer=customers.data[0].id,
+        customer=customer_id,
         return_url="https://talktoanatomy.com",
     )
 
     return {"url": portal.url}
+
