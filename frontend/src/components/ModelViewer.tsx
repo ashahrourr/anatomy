@@ -444,7 +444,7 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   <div className="w-full h-full relative">
 
 <Canvas
-  dpr={isTouch ? 1 : [1, 2]}
+  dpr={isTouch ? [1, 1.35] : [1, 2]}
   gl={{ antialias: !isTouch, powerPreference: "high-performance" }}
   camera={{ position: [0, 1.4, 4], fov: 45 }}
 >
