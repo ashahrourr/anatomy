@@ -223,45 +223,41 @@ function CameraAutoFocus({ highlight, controlsRef, isInteractingRef }: any) {
   const { camera, scene } = useThree();
   const targetCamPos = useRef<THREE.Vector3 | null>(null);
   const targetCenter = useRef<THREE.Vector3 | null>(null);
+const activeFocusId = useRef(0);
 
 
-  useEffect(() => {
-if (!highlight) return;
+useEffect(() => {
+  if (!highlight) return;
 
-  let tries = 0;
-  const interval = setInterval(() => {
-    const targetObj = scene.getObjectByName(highlight);
-    if (!targetObj) {
-      if (++tries > 20) clearInterval(interval); // safety
-      return;
-    }
+  // 🔥 cancel any previous focus instantly
+  activeFocusId.current += 1;
+  const focusId = activeFocusId.current;
 
-    // 👇 KEEP YOUR EXISTING LOGIC EXACTLY AS IS BELOW
-    const box = new THREE.Box3().setFromObject(targetObj);
-    const center = new THREE.Vector3();
-    box.getCenter(center);
+  const targetObj = scene.getObjectByName(highlight);
+  if (!targetObj) return;
 
-    const size = new THREE.Vector3();
-    box.getSize(size);
-    const maxDim = Math.max(size.x, size.y, size.z);
+  const box = new THREE.Box3().setFromObject(targetObj);
+  const center = new THREE.Vector3();
+  box.getCenter(center);
 
-    const cam = camera as THREE.PerspectiveCamera;
-    const fov = (cam.fov * Math.PI) / 180;
-    let distance = (maxDim / 2) / Math.tan(fov / 2);
-    distance = THREE.MathUtils.clamp(distance * 0.8, 0.6, 8);
+  const size = new THREE.Vector3();
+  box.getSize(size);
+  const maxDim = Math.max(size.x, size.y, size.z);
 
-    const dir = new THREE.Vector3()
-      .subVectors(cam.position, center)
-      .normalize();
+  const cam = camera as THREE.PerspectiveCamera;
+  const fov = (cam.fov * Math.PI) / 180;
+  let distance = (maxDim / 2) / Math.tan(fov / 2);
+  distance = THREE.MathUtils.clamp(distance * 0.8, 0.6, 8);
 
-    targetCamPos.current = center.clone().add(dir.multiplyScalar(distance));
-    targetCenter.current = center;
+  const dir = new THREE.Vector3()
+    .subVectors(cam.position, center)
+    .normalize();
 
-    clearInterval(interval);
-  }, 16); // ~1 frame
-
-  return () => clearInterval(interval);
+  // 🔥 hard reset previous motion
+  targetCamPos.current = center.clone().add(dir.multiplyScalar(distance));
+  targetCenter.current = center;
 }, [highlight]);
+
 
 
   useFrame(() => {
