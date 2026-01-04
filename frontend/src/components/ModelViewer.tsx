@@ -53,14 +53,25 @@ const materials = useRef({
     color: "#ff3b3b",
   }),
 
-  supporting: [
+  // 🔵 wireframe supporting (muscles / joints)
+  supportingWire: [
     new THREE.MeshStandardMaterial({ color: "#5af6ff", wireframe: true }),
     new THREE.MeshStandardMaterial({ color: "#ff2fb3", wireframe: true }),
     new THREE.MeshStandardMaterial({ color: "#00ff6a", wireframe: true }),
     new THREE.MeshStandardMaterial({ color: "#c300ff", wireframe: true }),
     new THREE.MeshStandardMaterial({ color: "#ff7b00", wireframe: true }),
   ],
+
+  // 🟢 solid supporting (bones / nerves)
+  supportingSolid: [
+    new THREE.MeshStandardMaterial({ color: "#5af6ff" }),
+    new THREE.MeshStandardMaterial({ color: "#ff2fb3" }),
+    new THREE.MeshStandardMaterial({ color: "#00ff6a" }),
+    new THREE.MeshStandardMaterial({ color: "#c300ff" }),
+    new THREE.MeshStandardMaterial({ color: "#ff7b00" }),
+  ],
 });
+
 
 useEffect(() => {
   onReady?.();
@@ -166,17 +177,22 @@ highlightData.supporting?.forEach((s: any, i: number) => {
 
   if (!obj) return;
 
-  const baseMat =
-    materials.current.supporting[i % materials.current.supporting.length];
+  const wireMat =
+    materials.current.supportingWire[
+      i % materials.current.supportingWire.length
+    ];
+
+  const solidMat =
+    materials.current.supportingSolid[
+      i % materials.current.supportingSolid.length
+    ];
 
   const isBone = !!skeleton.getObjectByName(s.id);
   const isNerve = !!nerves.getObjectByName(s.id);
 
   // bones & nerves = solid, muscles & joints = wireframe
-  const matToUse =
-    isBone || isNerve
-      ? new THREE.MeshStandardMaterial({ color: baseMat.color })
-      : baseMat;
+  const matToUse = isBone || isNerve ? solidMat : wireMat;
+
 
   obj.traverse((c: any) => {
     if (!c.isMesh) return;
@@ -382,6 +398,8 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
   const [highlightData, setHighlightData] = useState<any>(null);
   const controlsRef = useRef<any>(null);
   const isInteractingRef = useRef(false);
+  const [dpr, setDpr] = useState(2);
+
 
   const isTouch =
   typeof window !== "undefined" &&
@@ -411,8 +429,16 @@ useEffect(() => {
       return;
     }
 
-    onStart = () => (isInteractingRef.current = true);
-    onEnd = () => (isInteractingRef.current = false);
+onStart = () => {
+  isInteractingRef.current = true;
+  setDpr(1); // 🔻 fast while moving
+};
+
+onEnd = () => {
+  isInteractingRef.current = false;
+  setDpr(2); // 🔺 crisp when released
+};
+
 
     ctrl.addEventListener("start", onStart);
     ctrl.addEventListener("end", onEnd);
@@ -444,8 +470,8 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   <div className="w-full h-full relative">
 
 <Canvas
-  dpr={isTouch ? 1 : [1, 2]}
-  gl={{ antialias: !isTouch, powerPreference: "high-performance" }}
+  dpr={dpr}
+  gl={{ antialias: true, powerPreference: "high-performance" }}
   camera={{ position: [0, 1.4, 4], fov: 45 }}
 >
 
