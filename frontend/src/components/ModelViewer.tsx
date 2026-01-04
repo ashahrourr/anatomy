@@ -251,7 +251,12 @@ if (!highlight) return;
   useFrame(() => {
     const ctrl = controlsRef.current;
     if (!ctrl) return;
-    if (isInteractingRef?.current) return;
+if (isInteractingRef?.current) {
+  // user took control → stop forcing camera/target
+  targetCamPos.current = null;
+  targetCenter.current = null;
+  return;
+}
 
 
     const cam = camera as THREE.PerspectiveCamera;
@@ -438,10 +443,12 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   return (
   <div className="w-full h-full relative">
 
-    <Canvas
-  dpr={isTouch ? [1, 1.5] : [1, 2]}
+<Canvas
+  dpr={isTouch ? 1 : [1, 2]}
+  gl={{ antialias: !isTouch, powerPreference: "high-performance" }}
   camera={{ position: [0, 1.4, 4], fov: 45 }}
 >
+
 
       <ambientLight intensity={0.55} />
       <directionalLight position={[5, 10, 5]} intensity={1} />
