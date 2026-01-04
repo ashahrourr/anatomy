@@ -2,7 +2,7 @@
 "use client";
 
 
-import { Canvas, useThree, useFrame } from "@react-three/fiber";
+import { Canvas, useThree, useFrame, invalidate } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { Suspense, useEffect, useRef, useState } from "react";
 import * as THREE from "three";
@@ -260,39 +260,39 @@ useEffect(() => {
 
 
 
-  useFrame(() => {
-    const ctrl = controlsRef.current;
-    if (!ctrl) return;
-if (isInteractingRef?.current) {
-  // user took control → stop forcing camera/target
-  targetCamPos.current = null;
-  targetCenter.current = null;
-  return;
-}
+useFrame(() => {
+  const ctrl = controlsRef.current;
+  if (!ctrl) return;
 
-
-    const cam = camera as THREE.PerspectiveCamera;
-
-if (targetCamPos.current) {
-  cam.position.lerp(targetCamPos.current, 0.15);
-  if (cam.position.distanceToSquared(targetCamPos.current) < 0.0001) {
-    cam.position.copy(targetCamPos.current);
+  if (isInteractingRef?.current) {
     targetCamPos.current = null;
-  }
-}
-
-if (targetCenter.current) {
-  ctrl.target.lerp(targetCenter.current, 0.15);
-  if (ctrl.target.distanceToSquared(targetCenter.current) < 0.0001) {
-    ctrl.target.copy(targetCenter.current);
     targetCenter.current = null;
+    return;
   }
-}
-if (!targetCamPos.current && !targetCenter.current) return;
 
+  const cam = camera as THREE.PerspectiveCamera;
 
-    ctrl.update();
-  });
+  if (targetCamPos.current) {
+    cam.position.lerp(targetCamPos.current, 0.15);
+    if (cam.position.distanceToSquared(targetCamPos.current) < 0.0001) {
+      cam.position.copy(targetCamPos.current);
+      targetCamPos.current = null;
+    }
+  }
+
+  if (targetCenter.current) {
+    ctrl.target.lerp(targetCenter.current, 0.15);
+    if (ctrl.target.distanceToSquared(targetCenter.current) < 0.0001) {
+      ctrl.target.copy(targetCenter.current);
+      targetCenter.current = null;
+    }
+  }
+
+  ctrl.update();
+
+  invalidate(); // 👈 ADD THIS LINE
+});
+
 
   return null;
 }
@@ -372,6 +372,7 @@ function ClickPivot({ controlsRef }: any) {
 
     // ✅ Only update OrbitControls target while we're animating to a new click pivot
     if (!animating.current) return;
+    invalidate();
 
     smoothTarget.current.lerp(targetPoint.current, 0.15);
     ctrl.target.copy(smoothTarget.current);
@@ -433,7 +434,10 @@ useEffect(() => {
 }, []);
 
   useEffect(() => {
-    const handler = (e: any) => setHighlightData(e.detail);
+const handler = (e: any) => {
+  setHighlightData(e.detail);
+  invalidate();
+};
     window.addEventListener("highlight-structures", handler);
     return () =>
       window.removeEventListener("highlight-structures", handler);
@@ -484,10 +488,14 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   <div className="w-full h-full relative">
 
 <Canvas
-  dpr={[1, 2]}
-  gl={{ antialias: !isTouch, powerPreference: "high-performance" }}
+  dpr={2}
+  frameloop={keyboardOpen ? "never" : "demand"}
+  gl={{ antialias: true, powerPreference: "high-performance" }}
   camera={{ position: [0, 1.4, 4], fov: 45 }}
+  style={{ pointerEvents: keyboardOpen ? "none" : "auto" }}
 >
+
+
 
 
       <ambientLight intensity={0.55} />
@@ -525,7 +533,12 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
     TWO: THREE.TOUCH.DOLLY_PAN,
   }}
   rotateSpeed={0.6}
+
+  onStart={() => invalidate()}
+  onChange={() => invalidate()}
+  onEnd={() => invalidate()}
 />
+
 
     </Canvas>
   </div>
