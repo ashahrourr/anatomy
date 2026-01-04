@@ -115,14 +115,14 @@ setDeviceId(id);
       const { data } = await supabase.auth.getSession();
       const token = data.session?.access_token;
 
-      console.time("CREDITS FETCH");
+      // console.time("CREDITS FETCH");
       const res = await fetch(`${API_BASE}/credits`, {
         headers: {
           "x-device-id": deviceId,
           ...(token ? { Authorization: `Bearer ${token}` } : {}),
         },
       });
-      console.timeEnd("CREDITS FETCH");
+      // console.timeEnd("CREDITS FETCH");
 
       if (!res.ok) throw new Error("credits fetch failed");
       const json = await res.json();

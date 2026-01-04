@@ -162,7 +162,6 @@ def create_checkout_session(request: Request):
 
     if not customer_id:
         customer = stripe.Customer.create(
-            email=request.headers.get("x-email"),
             metadata={"user_id": user_id},
         )
         customer_id = customer.id

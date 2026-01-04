@@ -387,9 +387,9 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
   typeof window !== "undefined" &&
   (navigator.maxTouchPoints > 0 || "ontouchstart" in window);
 
-  useEffect(() => {
-  console.time("MODEL TOTAL LOAD");
-}, []);
+//   useEffect(() => {
+//   console.time("MODEL TOTAL LOAD");
+// }, []);
 
 
   useEffect(() => {

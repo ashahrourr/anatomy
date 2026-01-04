@@ -26,7 +26,13 @@ def get_user_id_from_auth_header(auth_header: str | None):
             audience="authenticated",
             options={"verify_exp": True},
         )
+
+        # ✅ BLOCK unverified emails
+        if not payload.get("email_confirmed_at") and not payload.get("confirmed_at"):
+            return None
+
         return payload.get("sub")
 
     except (StopIteration, JWTError):
         raise HTTPException(status_code=401, detail="Invalid or expired token")
+
