@@ -103,69 +103,25 @@ useEffect(() => {
 
 
   /* Rim + AO on muscles */
-/* Rim + AO on muscles (toggle via uniforms — no recompile, no hitch) */
 useEffect(() => {
-  const mat = materials.current.muscle as any;
+  const mat = materials.current.muscle;
 
-  mat.onBeforeCompile = (shader: any) => {
-    // uniforms we can change instantly while interacting
-    shader.uniforms.uRimStrength = { value: 1.0 };
-    shader.uniforms.uAoStrength = { value: 1.0 };
-
-    // store shader reference so we can update uniforms later
-    mat.userData.shader = shader;
-
-    // if we already requested a state before compile happened, apply it now
-    if (typeof mat.userData._rimStrength === "number") {
-      shader.uniforms.uRimStrength.value = mat.userData._rimStrength;
-      shader.uniforms.uAoStrength.value = mat.userData._aoStrength ?? mat.userData._rimStrength;
-    }
-
+  mat.onBeforeCompile = (shader) => {
     shader.fragmentShader = shader.fragmentShader.replace(
       "#include <output_fragment>",
       `
-        // Rim (scaled by uRimStrength)
-        float rim = 1.0 - max(dot(normalize(vNormal), normalize(vViewPosition)), 0.0);
-        rim = smoothstep(0.25, 1.0, rim);
-        gl_FragColor.rgb += rim * 0.18 * uRimStrength;
+      float rim = 1.0 - max(dot(normalize(vNormal), normalize(vViewPosition)), 0.0);
+      rim = smoothstep(0.25, 1.0, rim);
+      gl_FragColor.rgb += rim * 0.18;
 
-        // AO-ish darkening (scaled by uAoStrength)
-        float ao = pow(max(dot(normalize(vNormal), vec3(0,0,1)), 0.0), 1.2);
-        gl_FragColor.rgb *= mix(0.55, 1.0, ao * uAoStrength);
+      float ao = pow(max(dot(normalize(vNormal), vec3(0,0,1)), 0.0), 1.2);
+      gl_FragColor.rgb *= mix(0.55, 1.0, ao);
 
-        #include <output_fragment>
-      `
+      #include <output_fragment>
+    `
     );
   };
 }, []);
-
-/* Toggle rim/AO while user is interacting (fast on mobile) */
-useEffect(() => {
-  const mat = materials.current.muscle as any;
-
-  const handler = (e: any) => {
-    const interacting = !!e.detail;
-
-    // during interaction -> 0 (off), otherwise -> 1 (on)
-    const rim = interacting ? 0.0 : 1.0;
-    const ao = interacting ? 0.0 : 1.0;
-
-    const shader = mat.userData?.shader;
-    if (shader?.uniforms?.uRimStrength) {
-      shader.uniforms.uRimStrength.value = rim;
-      shader.uniforms.uAoStrength.value = ao;
-    } else {
-      // shader not compiled yet; store desired state for when it compiles
-      mat.userData._rimStrength = rim;
-      mat.userData._aoStrength = ao;
-    }
-  };
-
-  window.addEventListener("r3f-interacting", handler as any);
-  return () => window.removeEventListener("r3f-interacting", handler as any);
-}, []);
-
-
 
 
 
@@ -221,21 +177,21 @@ highlightData.supporting?.forEach((s: any, i: number) => {
 
   if (!obj) return;
 
-  const wireMat =
-    materials.current.supportingWire[
-      i % materials.current.supportingWire.length
-    ];
+const wireMat =
+  materials.current.supportingWire[
+    i % materials.current.supportingWire.length
+  ];
 
-  const solidMat =
-    materials.current.supportingSolid[
-      i % materials.current.supportingSolid.length
-    ];
+const solidMat =
+  materials.current.supportingSolid[
+    i % materials.current.supportingSolid.length
+  ];
 
-  const isBone = !!skeleton.getObjectByName(s.id);
-  const isNerve = !!nerves.getObjectByName(s.id);
+const isBone = !!skeleton.getObjectByName(s.id);
+const isNerve = !!nerves.getObjectByName(s.id);
 
-  // bones & nerves = solid, muscles & joints = wireframe
-  const matToUse = isBone || isNerve ? solidMat : wireMat;
+// bones & nerves = solid, muscles & joints = wireframe
+const matToUse = isBone || isNerve ? solidMat : wireMat;
 
 
   obj.traverse((c: any) => {
@@ -442,6 +398,8 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
   const [highlightData, setHighlightData] = useState<any>(null);
   const controlsRef = useRef<any>(null);
   const isInteractingRef = useRef(false);
+  const [keyboardOpen, setKeyboardOpen] = useState(false);
+  const vvMaxH = useRef(0);
 
 
   const isTouch =
@@ -452,6 +410,29 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
 //   console.time("MODEL TOTAL LOAD");
 // }, []);
 
+useEffect(() => {
+  if (typeof window === "undefined") return;
+
+  const vv = window.visualViewport;
+  if (!vv) return;
+
+  // track max height (keyboard closed baseline)
+  vvMaxH.current = Math.max(vvMaxH.current, vv.height);
+
+  const onVVChange = () => {
+    vvMaxH.current = Math.max(vvMaxH.current, vv.height);
+    const open = vv.height < vvMaxH.current - 120; // threshold
+    setKeyboardOpen(open);
+  };
+
+  vv.addEventListener("resize", onVVChange);
+  vv.addEventListener("scroll", onVVChange);
+
+  return () => {
+    vv.removeEventListener("resize", onVVChange);
+    vv.removeEventListener("scroll", onVVChange);
+  };
+}, []);
 
   useEffect(() => {
     const handler = (e: any) => setHighlightData(e.detail);
@@ -472,17 +453,8 @@ useEffect(() => {
       return;
     }
 
-onStart = () => {
-  isInteractingRef.current = true;
-  window.dispatchEvent(new CustomEvent("r3f-interacting", { detail: true }));
-};
-
-onEnd = () => {
-  isInteractingRef.current = false;
-  window.dispatchEvent(new CustomEvent("r3f-interacting", { detail: false }));
-};
-
-
+    onStart = () => (isInteractingRef.current = true);
+    onEnd = () => (isInteractingRef.current = false);
 
     ctrl.addEventListener("start", onStart);
     ctrl.addEventListener("end", onEnd);
@@ -514,11 +486,10 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   <div className="w-full h-full relative">
 
 <Canvas
-  dpr={2}
-  gl={{ antialias: true, powerPreference: "high-performance" }}
+  dpr={[1, 2]}
+  gl={{ antialias: !isTouch, powerPreference: "high-performance" }}
   camera={{ position: [0, 1.4, 4], fov: 45 }}
 >
-
 
 
       <ambientLight intensity={0.55} />
