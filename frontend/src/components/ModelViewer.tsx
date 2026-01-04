@@ -277,21 +277,23 @@ if (isInteractingRef?.current) {
 
     const cam = camera as THREE.PerspectiveCamera;
 
-    // move camera to new position
-    if (targetCamPos.current) {
-      cam.position.lerp(targetCamPos.current, 0.12);
-      if (cam.position.distanceTo(targetCamPos.current) < 0.01) {
-        targetCamPos.current = null;
-      }
-    }
+if (targetCamPos.current) {
+  cam.position.lerp(targetCamPos.current, 0.15);
+  if (cam.position.distanceToSquared(targetCamPos.current) < 0.0001) {
+    cam.position.copy(targetCamPos.current);
+    targetCamPos.current = null;
+  }
+}
 
-    // ✅ THIS is what makes rotation happen around the highlighted structure
-    if (targetCenter.current) {
-      ctrl.target.lerp(targetCenter.current, 0.12);
-      if (ctrl.target.distanceTo(targetCenter.current) < 0.01) {
-        targetCenter.current = null;
-      }
-    }
+if (targetCenter.current) {
+  ctrl.target.lerp(targetCenter.current, 0.15);
+  if (ctrl.target.distanceToSquared(targetCenter.current) < 0.0001) {
+    ctrl.target.copy(targetCenter.current);
+    targetCenter.current = null;
+  }
+}
+if (!targetCamPos.current && !targetCenter.current) return;
+
 
     ctrl.update();
   });
