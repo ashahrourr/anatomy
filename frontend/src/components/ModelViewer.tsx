@@ -103,25 +103,69 @@ useEffect(() => {
 
 
   /* Rim + AO on muscles */
+/* Rim + AO on muscles (toggle via uniforms — no recompile, no hitch) */
 useEffect(() => {
-  const mat = materials.current.muscle;
+  const mat = materials.current.muscle as any;
 
-  mat.onBeforeCompile = (shader) => {
+  mat.onBeforeCompile = (shader: any) => {
+    // uniforms we can change instantly while interacting
+    shader.uniforms.uRimStrength = { value: 1.0 };
+    shader.uniforms.uAoStrength = { value: 1.0 };
+
+    // store shader reference so we can update uniforms later
+    mat.userData.shader = shader;
+
+    // if we already requested a state before compile happened, apply it now
+    if (typeof mat.userData._rimStrength === "number") {
+      shader.uniforms.uRimStrength.value = mat.userData._rimStrength;
+      shader.uniforms.uAoStrength.value = mat.userData._aoStrength ?? mat.userData._rimStrength;
+    }
+
     shader.fragmentShader = shader.fragmentShader.replace(
       "#include <output_fragment>",
       `
-      float rim = 1.0 - max(dot(normalize(vNormal), normalize(vViewPosition)), 0.0);
-      rim = smoothstep(0.25, 1.0, rim);
-      gl_FragColor.rgb += rim * 0.18;
+        // Rim (scaled by uRimStrength)
+        float rim = 1.0 - max(dot(normalize(vNormal), normalize(vViewPosition)), 0.0);
+        rim = smoothstep(0.25, 1.0, rim);
+        gl_FragColor.rgb += rim * 0.18 * uRimStrength;
 
-      float ao = pow(max(dot(normalize(vNormal), vec3(0,0,1)), 0.0), 1.2);
-      gl_FragColor.rgb *= mix(0.55, 1.0, ao);
+        // AO-ish darkening (scaled by uAoStrength)
+        float ao = pow(max(dot(normalize(vNormal), vec3(0,0,1)), 0.0), 1.2);
+        gl_FragColor.rgb *= mix(0.55, 1.0, ao * uAoStrength);
 
-      #include <output_fragment>
-    `
+        #include <output_fragment>
+      `
     );
   };
 }, []);
+
+/* Toggle rim/AO while user is interacting (fast on mobile) */
+useEffect(() => {
+  const mat = materials.current.muscle as any;
+
+  const handler = (e: any) => {
+    const interacting = !!e.detail;
+
+    // during interaction -> 0 (off), otherwise -> 1 (on)
+    const rim = interacting ? 0.0 : 1.0;
+    const ao = interacting ? 0.0 : 1.0;
+
+    const shader = mat.userData?.shader;
+    if (shader?.uniforms?.uRimStrength) {
+      shader.uniforms.uRimStrength.value = rim;
+      shader.uniforms.uAoStrength.value = ao;
+    } else {
+      // shader not compiled yet; store desired state for when it compiles
+      mat.userData._rimStrength = rim;
+      mat.userData._aoStrength = ao;
+    }
+  };
+
+  window.addEventListener("r3f-interacting", handler as any);
+  return () => window.removeEventListener("r3f-interacting", handler as any);
+}, []);
+
+
 
 
 
@@ -398,7 +442,6 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
   const [highlightData, setHighlightData] = useState<any>(null);
   const controlsRef = useRef<any>(null);
   const isInteractingRef = useRef(false);
-  const [dpr, setDpr] = useState(2);
 
 
   const isTouch =
@@ -431,13 +474,14 @@ useEffect(() => {
 
 onStart = () => {
   isInteractingRef.current = true;
-  setDpr(1); // 🔻 fast while moving
+  window.dispatchEvent(new CustomEvent("r3f-interacting", { detail: true }));
 };
 
 onEnd = () => {
   isInteractingRef.current = false;
-  setDpr(2); // 🔺 crisp when released
+  window.dispatchEvent(new CustomEvent("r3f-interacting", { detail: false }));
 };
+
 
 
     ctrl.addEventListener("start", onStart);
@@ -470,10 +514,11 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   <div className="w-full h-full relative">
 
 <Canvas
-  dpr={dpr}
+  dpr={2}
   gl={{ antialias: true, powerPreference: "high-performance" }}
   camera={{ position: [0, 1.4, 4], fov: 45 }}
 >
+
 
 
       <ambientLight intensity={0.55} />
