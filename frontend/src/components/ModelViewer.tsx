@@ -400,6 +400,8 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
   const isInteractingRef = useRef(false);
   const [keyboardOpen, setKeyboardOpen] = useState(false);
   const vvMaxH = useRef(0);
+  const [dpr, setDpr] = useState(2);
+
 
 
   const isTouch =
@@ -489,7 +491,7 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   <div className="w-full h-full relative">
 
 <Canvas
-  dpr={2}
+  dpr={dpr}
   frameloop={keyboardOpen ? "never" : "demand"}
   gl={{ antialias: true, powerPreference: "high-performance" }}
   camera={{ position: [0, 1.4, 4], fov: 45 }}
@@ -518,7 +520,6 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
 
 
 <ClickPivot controlsRef={controlsRef} />
-
 <OrbitControls
   ref={controlsRef}
   enableDamping
@@ -535,10 +536,17 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   }}
   rotateSpeed={0.6}
 
-  onStart={() => invalidate()}
-  onChange={() => invalidate()}
-  onEnd={() => invalidate()}
+onStart={() => {
+  if (isTouch) setDpr(1);
+  invalidate();
+}}
+onEnd={() => {
+  if (isTouch) setTimeout(() => setDpr(2), 120);
+  invalidate();
+}}
+
 />
+
 
 
     </Canvas>
