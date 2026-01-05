@@ -299,8 +299,6 @@ window.dispatchEvent(
 const handleBuyCredits = async () => {
   try {
     const { data } = await supabase.auth.getSession();
-    console.log("session:", data.session);
-console.log("token exists?", !!data.session?.access_token);
 
     const token = data.session?.access_token;
 
