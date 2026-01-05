@@ -203,14 +203,15 @@ useEffect(() => {
 }, [highlightData]);
 
 
-  return (
-    <>
-      <primitive object={skeleton} />
-      <primitive object={muscles} />
-      <primitive object={joints} />
-      <primitive object={nerves} />
-    </>
-  );
+return (
+  <group name="ANATOMY_ROOT">
+    <primitive object={skeleton} />
+    <primitive object={muscles} />
+    <primitive object={joints} />
+    <primitive object={nerves} />
+  </group>
+);
+
 }
 
 
@@ -315,14 +316,25 @@ function ClickPivot({ controlsRef, isInteractingRef }: any) {
   const raycastTargets = useRef<THREE.Mesh[]>([]);
   const camTargetPos = useRef<THREE.Vector3 | null>(null);
 
+  const lastClick = useRef(0);
+const CLICK_COOLDOWN = 120; // ms
 
 const ensureRaycastTargets = () => {
-  if (raycastTargets.current.length) return;
+  if (raycastTargets.current.length) return true;
+
+  const root = scene.getObjectByName("ANATOMY_ROOT");
+  if (!root) return false; // models not ready yet
+
   raycastTargets.current = [];
-  scene.traverse((o: any) => {
+  root.traverse((o: any) => {
     if (o.isMesh) raycastTargets.current.push(o);
   });
+
+  return raycastTargets.current.length > 0;
 };
+
+
+
 
   useEffect(() => {
     const dom = gl.domElement;
@@ -344,35 +356,42 @@ const ensureRaycastTargets = () => {
       }
     }
 
-    function onPointerUp(e: PointerEvent) {
-      if (!isClick.current || !controlsRef.current) return;
+function onPointerUp(e: PointerEvent) {
+  if (!isClick.current || !controlsRef.current) return;
+
+  const now = performance.now();
+  if (animating.current) return;
+  if (now - lastClick.current < CLICK_COOLDOWN) return;
+  lastClick.current = now;
+
+
 
       const rect = dom.getBoundingClientRect();
       mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
       mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
 
-      raycaster.setFromCamera(mouse, camera);
-      ensureRaycastTargets();
+raycaster.setFromCamera(mouse, camera);
+
+// ✅ build targets lazily (models might not be in scene yet on first clicks)
+if (!ensureRaycastTargets()) return;
 
 const hits = raycaster.intersectObjects(raycastTargets.current, true);
+if (!hits.length) return;
 
-      if (hits.length === 0) return;
+// Set clicked point as new pivot
+targetPoint.current.copy(hits[0].point);
 
-      // Set clicked point as new pivot
-      targetPoint.current.copy(hits[0].point);
-      
+// animate toward pivot
+smoothTarget.current.copy(controlsRef.current.target);
 
-      // ✅ Start a short animation toward this new pivot
-      smoothTarget.current.copy(controlsRef.current.target);
-      // keep current camera offset
 const cam = camera as THREE.PerspectiveCamera;
 const offset = cam.position.clone().sub(controlsRef.current.target);
-
-// new camera destination = new target + same offset
 camTargetPos.current = targetPoint.current.clone().add(offset);
+
 isInteractingRef.current = false;
-      animating.current = true;
-      invalidate();
+animating.current = true;
+invalidate();
+
     }
 
     dom.addEventListener("pointerdown", onPointerDown);
@@ -380,7 +399,6 @@ isInteractingRef.current = false;
     dom.addEventListener("pointerup", onPointerUp);
 
     return () => {
-      raycastTargets.current = [];
       dom.removeEventListener("pointerdown", onPointerDown);
       dom.removeEventListener("pointermove", onPointerMove);
       dom.removeEventListener("pointerup", onPointerUp);
