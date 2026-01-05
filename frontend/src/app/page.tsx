@@ -476,7 +476,7 @@ const appBootReady =
 </h2>
 {authReason === "limit" && (
   <p className="text-sm text-[#afafaf] text-center mb-4">
-    You’ve hit your daily limit. Sign in to get more credits.
+    You’ve hit your weekly limit. Sign in to get more credits.
   </p>
 )}
 
@@ -551,7 +551,7 @@ const appBootReady =
         Upgrade to Pro
       </button>
       <p className="mt-3 text-xs text-[#afafaf] text-center">
-  $4.99 · Unlimited daily credits
+  $4.99 · Unlimited credits
 </p>
 
     </div>
@@ -576,7 +576,7 @@ const appBootReady =
 
       <h2 className="text-white text-lg mb-2 text-center">Upgrade to Pro</h2>
       <p className="text-sm text-[#afafaf] text-center mb-4">
-        Unlock unlimited daily credits.
+        Unlock unlimited credits.
       </p>
 
       <button
@@ -587,7 +587,7 @@ const appBootReady =
       </button>
 
       <p className="mt-3 text-xs text-[#afafaf] text-center">
-        $4.99 · Unlimited daily credits
+        $4.99 · Unlimited credits
       </p>
     </div>
   </div>

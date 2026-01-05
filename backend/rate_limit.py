@@ -9,9 +9,9 @@ load_dotenv()
 # -------------------------
 # CONFIG
 # -------------------------
-WINDOW = 60 * 60 * 24  # 24 hours
-TOTAL_DAILY = 3
-ANON_LIMIT = 1
+WINDOW = 60 * 60 * 24 * 7  # 24 hours
+TOTAL_WEEKLY = 5
+ANON_LIMIT = 2
 
 REDIS_URL = os.getenv("UPSTASH_REDIS_REST_URL")
 REDIS_TOKEN = os.getenv("UPSTASH_REDIS_REST_TOKEN")
@@ -95,8 +95,8 @@ def get_credits(key: str):
 
     return {
         "used": used,
-        "remaining": max(TOTAL_DAILY - used, 0),
-        "limit": TOTAL_DAILY,
+        "remaining": max(TOTAL_WEEKLY - used, 0),
+        "limit": TOTAL_WEEKLY,
         "reset_in": ttl,
     }
 
@@ -109,9 +109,9 @@ def consume_credit(key: str, signed_in: bool, mirror_key: str | None = None):
         raise HTTPException(status_code=429, detail="Sign in to unlock more")
 
     # ✅ daily: do NOT burn a credit above max
-    if used > TOTAL_DAILY:
-        redis_post(["SET", key, TOTAL_DAILY, "EX", ttl])  # rollback
-        raise HTTPException(status_code=429, detail="Daily limit reached")
+    if used > TOTAL_WEEKLY:
+        redis_post(["SET", key, TOTAL_WEEKLY, "EX", ttl])  # rollback
+        raise HTTPException(status_code=429, detail="Weekly limit reached")
 
     # mirror user/device so UI doesn't reset
     if mirror_key:
@@ -119,8 +119,8 @@ def consume_credit(key: str, signed_in: bool, mirror_key: str | None = None):
 
     return {
         "used": used,
-        "remaining": max(TOTAL_DAILY - used, 0),
-        "limit": TOTAL_DAILY,
+        "remaining": max(TOTAL_WEEKLY - used, 0),
+        "limit": TOTAL_WEEKLY,
         "reset_in": ttl,
     }
 
