@@ -541,7 +541,7 @@ const appBootReady =
       </h2>
 
       <p className="text-sm text-[#afafaf] text-center mb-4">
-        You’ve used all your credits for today.
+        You’ve used all your credits for this week.
       </p>
 
       <button
@@ -615,7 +615,7 @@ const appBootReady =
     {"unlimited" in credits && credits.unlimited ? (
       <>Credits: ∞</>
     ) : (
-      <>Credits: {credits.remaining} / {credits.limit} today</>
+      <>Credits: {credits.remaining} / {credits.limit} this week</>
     )}
   </div>
 )}
