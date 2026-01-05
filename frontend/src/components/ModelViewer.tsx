@@ -564,7 +564,7 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
 <Canvas
   dpr={[1,2]}
   frameloop={keyboardOpen ? "never" : "demand"}
-  gl={{ antialias: true, powerPreference: "high-performance" }}
+  gl={{ antialias: !isTouch, powerPreference: "high-performance" }}
   camera={{ position: [0, 1.4, 4], fov: 45 }}
   style={{ pointerEvents: keyboardOpen ? "none" : "auto" }}
 >

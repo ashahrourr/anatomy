@@ -147,23 +147,20 @@ def create_checkout_session(request: Request):
     user_id = get_user_id_from_auth_header(auth)
 
     if not user_id:
-        return {"error": "Must be signed in"}
+        raise HTTPException(status_code=401, detail="Must be signed in")
 
-    # ✅ Create a Stripe customer tied to this user
+    # ✅ get existing customer id safely (0 rows is OK)
     row = (
-    supabase.table("user_plans")
-    .select("stripe_customer_id")
-    .eq("user_id", user_id)
-    .single()
-    .execute()
+        supabase.table("user_plans")
+        .select("stripe_customer_id")
+        .eq("user_id", user_id)
+        .execute()
     )
 
-    customer_id = row.data.get("stripe_customer_id") if row.data else None
+    customer_id = row.data[0]["stripe_customer_id"] if row.data else None
 
     if not customer_id:
-        customer = stripe.Customer.create(
-            metadata={"user_id": user_id},
-        )
+        customer = stripe.Customer.create(metadata={"user_id": user_id})
         customer_id = customer.id
 
         supabase.table("user_plans").upsert({
@@ -171,23 +168,23 @@ def create_checkout_session(request: Request):
             "stripe_customer_id": customer_id,
         }).execute()
 
+    price_id = os.getenv("STRIPE_PRO_PRICE_ID")
+    if not price_id:
+        raise HTTPException(status_code=500, detail="STRIPE_PRO_PRICE_ID missing")
 
     session = stripe.checkout.Session.create(
         mode="subscription",
         payment_method_types=["card"],
-        customer=customer_id,   # ✅ USE THIS
-        line_items=[{
-            "price": os.getenv("STRIPE_PRO_PRICE_ID"),
-            "quantity": 1,
-        }],
+        customer=customer_id,
+        line_items=[{"price": price_id, "quantity": 1}],
         metadata={"user_id": user_id},
         subscription_data={"metadata": {"user_id": user_id}},
         success_url="https://talktoanatomy.com",
         cancel_url="https://talktoanatomy.com",
     )
 
-
     return {"url": session.url}
+
 
 
 

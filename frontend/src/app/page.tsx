@@ -296,27 +296,36 @@ window.dispatchEvent(
   };
 
     /* ---------------- buy credits ---------------- */
-  const handleBuyCredits = async () => {
-    try {
-      const { data } = await supabase.auth.getSession();
-      const token = data.session?.access_token;
+const handleBuyCredits = async () => {
+  try {
+    const { data } = await supabase.auth.getSession();
+    const token = data.session?.access_token;
 
-      const res = await fetch(`${API_BASE}/create-checkout-session`, {
-        method: "POST",
-        headers: {
-          "x-device-id": deviceId ?? "",
-          ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        },
-      });
+    const res = await fetch(`${API_BASE}/create-checkout-session`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-device-id": deviceId ?? "",
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+    });
 
-      const out = await res.json();
-      if (out.url) {
-        window.location.href = out.url;
-      }
-    } catch (e) {
-      console.error("Stripe checkout failed", e);
+    // ✅ ADD THIS BLOCK HERE
+    if (!res.ok) {
+      const text = await res.text();
+      console.error("Checkout error:", res.status, text);
+      alert("Checkout failed. Check console/network logs.");
+      return;
     }
-  };
+
+    const out = await res.json();
+    if (out.url) window.location.href = out.url;
+    else console.error("No checkout url:", out);
+  } catch (e) {
+    console.error("Stripe checkout failed", e);
+  }
+};
+
 const isPro =
   !!credits && "unlimited" in credits && (credits as any).unlimited === true;
 
