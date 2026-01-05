@@ -27,6 +27,8 @@ const muscles  = useGLTF(`${BASE}/models/muscles.draco.glb`, true).scene;
 const joints   = useGLTF(`${BASE}/models/joints.draco.glb`, true).scene;
 const nerves   = useGLTF(`${BASE}/models/nerves.draco.glb`, true).scene;
 
+const lastHighlighted = useRef<THREE.Mesh[]>([]);
+
 
 const materials = useRef({
   bone: new THREE.MeshStandardMaterial({ color: "#e8e4d8" }),
@@ -99,6 +101,20 @@ useEffect(() => {
 
 
 
+useEffect(() => {
+  const setBase = (root: THREE.Object3D, mat: THREE.Material) => {
+    root.traverse((c: any) => {
+      if (!c.isMesh) return;
+      c.material = mat;
+      c.userData.baseMaterial = mat; // important: restore goes back to YOUR base look
+    });
+  };
+
+  setBase(skeleton, materials.current.bone);
+  setBase(muscles, materials.current.muscle);
+  setBase(joints, materials.current.jointWire);
+  setBase(nerves, materials.current.nerve);
+}, []);
 
 
 
@@ -121,88 +137,71 @@ useEffect(() => {
     `
     );
   };
+  mat.needsUpdate = true;
 }, []);
 
-
-
-
-  /* MAIN HIGHLIGHT LOGIC */
-  useEffect(() => {
-    // Reset bones
-skeleton.traverse((c: any) => {
-  if (c.isMesh) c.material = materials.current.bone;
-});
-
-muscles.traverse((c: any) => {
-  if (c.isMesh) c.material = materials.current.muscle;
-});
-
-joints.traverse((c: any) => {
-  if (c.isMesh) c.material = materials.current.jointWire;
-});
-
-nerves.traverse((c: any) => {
-  if (c.isMesh) c.material = materials.current.nerve;
-});
-
-
-
-
-    if (!highlightData) return;
-
-    /* PRIMARY = fully filled red */
-    if (highlightData.primary?.id) {
-      const obj =
-        skeleton.getObjectByName(highlightData.primary.id) ||
-        muscles.getObjectByName(highlightData.primary.id) ||
-        joints.getObjectByName(highlightData.primary.id) ||
-        nerves.getObjectByName(highlightData.primary.id);
-
-if (obj) {
-  obj.traverse((c: any) => {
-    if (c.isMesh) c.material = materials.current.primary;
-  });
-}
-
+useEffect(() => {
+  // 🔁 restore only previously highlighted meshes
+  lastHighlighted.current.forEach((mesh) => {
+    if (mesh.userData.baseMaterial) {
+      mesh.material = mesh.userData.baseMaterial;
     }
-
-    /* SUPPORTING = wireframe-only color */
-// SUPPORTING STRUCTURES — each with a soft anatomical wireframe color
-highlightData.supporting?.forEach((s: any, i: number) => {
-  const obj =
-    skeleton.getObjectByName(s.id) ||
-    muscles.getObjectByName(s.id) ||
-    joints.getObjectByName(s.id) ||
-    nerves.getObjectByName(s.id);
-
-  if (!obj) return;
-
-const wireMat =
-  materials.current.supportingWire[
-    i % materials.current.supportingWire.length
-  ];
-
-const solidMat =
-  materials.current.supportingSolid[
-    i % materials.current.supportingSolid.length
-  ];
-
-const isBone = !!skeleton.getObjectByName(s.id);
-const isNerve = !!nerves.getObjectByName(s.id);
-
-// bones & nerves = solid, muscles & joints = wireframe
-const matToUse = isBone || isNerve ? solidMat : wireMat;
-
-
-  obj.traverse((c: any) => {
-    if (!c.isMesh) return;
-    c.material = matToUse;
   });
-});
+  lastHighlighted.current = [];
 
+  if (!highlightData) return;
 
+  // PRIMARY
+  if (highlightData.primary?.id) {
+    const obj =
+      skeleton.getObjectByName(highlightData.primary.id) ||
+      muscles.getObjectByName(highlightData.primary.id) ||
+      joints.getObjectByName(highlightData.primary.id) ||
+      nerves.getObjectByName(highlightData.primary.id);
 
-  }, [highlightData]);
+    if (obj) {
+      obj.traverse((c: any) => {
+        if (!c.isMesh) return;
+
+        // baseMaterial already set in init effect, but safe to keep:
+        if (!c.userData.baseMaterial) c.userData.baseMaterial = c.material;
+
+        c.material = materials.current.primary;
+        lastHighlighted.current.push(c);
+      });
+    }
+  }
+
+  // SUPPORTING
+  highlightData.supporting?.forEach((s: any, i: number) => {
+    const obj =
+      skeleton.getObjectByName(s.id) ||
+      muscles.getObjectByName(s.id) ||
+      joints.getObjectByName(s.id) ||
+      nerves.getObjectByName(s.id);
+
+    if (!obj) return;
+
+    const wireMat =
+      materials.current.supportingWire[i % materials.current.supportingWire.length];
+    const solidMat =
+      materials.current.supportingSolid[i % materials.current.supportingSolid.length];
+
+    const isBone = !!skeleton.getObjectByName(s.id);
+    const isNerve = !!nerves.getObjectByName(s.id);
+
+    const matToUse = isBone || isNerve ? solidMat : wireMat;
+
+    obj.traverse((c: any) => {
+      if (!c.isMesh) return;
+      if (!c.userData.baseMaterial) c.userData.baseMaterial = c.material;
+
+      c.material = matToUse;
+      lastHighlighted.current.push(c);
+    });
+  });
+}, [highlightData]);
+
 
   return (
     <>
@@ -299,7 +298,7 @@ useFrame(() => {
 }
 
 
-function ClickPivot({ controlsRef }: any) {
+function ClickPivot({ controlsRef, isInteractingRef }: any) {
   const { camera, gl, scene } = useThree();
   const raycaster = new THREE.Raycaster();
   const mouse = new THREE.Vector2();
@@ -313,9 +312,23 @@ function ClickPivot({ controlsRef }: any) {
 
   // ✅ NEW: only drive controls.target when we actually need to animate to a new pivot
   const animating = useRef(false);
+  const raycastTargets = useRef<THREE.Mesh[]>([]);
+  const camTargetPos = useRef<THREE.Vector3 | null>(null);
+
+
+const ensureRaycastTargets = () => {
+  if (raycastTargets.current.length) return;
+  raycastTargets.current = [];
+  scene.traverse((o: any) => {
+    if (o.isMesh) raycastTargets.current.push(o);
+  });
+};
 
   useEffect(() => {
     const dom = gl.domElement;
+    // build raycast targets once
+
+
 
     function onPointerDown(e: PointerEvent) {
       downPos.current = { x: e.clientX, y: e.clientY };
@@ -339,21 +352,27 @@ function ClickPivot({ controlsRef }: any) {
       mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
 
       raycaster.setFromCamera(mouse, camera);
+      ensureRaycastTargets();
 
-      const objects: THREE.Mesh[] = [];
-      scene.traverse((o) => {
-        if (o instanceof THREE.Mesh) objects.push(o);
-      });
+const hits = raycaster.intersectObjects(raycastTargets.current, true);
 
-      const hits = raycaster.intersectObjects(objects, true);
       if (hits.length === 0) return;
 
       // Set clicked point as new pivot
       targetPoint.current.copy(hits[0].point);
+      
 
       // ✅ Start a short animation toward this new pivot
       smoothTarget.current.copy(controlsRef.current.target);
+      // keep current camera offset
+const cam = camera as THREE.PerspectiveCamera;
+const offset = cam.position.clone().sub(controlsRef.current.target);
+
+// new camera destination = new target + same offset
+camTargetPos.current = targetPoint.current.clone().add(offset);
+isInteractingRef.current = false;
       animating.current = true;
+      invalidate();
     }
 
     dom.addEventListener("pointerdown", onPointerDown);
@@ -361,34 +380,82 @@ function ClickPivot({ controlsRef }: any) {
     dom.addEventListener("pointerup", onPointerUp);
 
     return () => {
+      raycastTargets.current = [];
       dom.removeEventListener("pointerdown", onPointerDown);
       dom.removeEventListener("pointermove", onPointerMove);
       dom.removeEventListener("pointerup", onPointerUp);
     };
   }, [camera, gl, scene]);
 
-  useFrame(() => {
-    const ctrl = controlsRef.current;
-    if (!ctrl) return;
+useFrame(() => {
+  // ✅ if user is interacting (wheel/drag/pinch), cancel pivot animation
+  if (isInteractingRef?.current) {
+    animating.current = false;
+    camTargetPos.current = null;
+    return;
+  }
 
-    // ✅ Only update OrbitControls target while we're animating to a new click pivot
-    if (!animating.current) return;
-    invalidate();
+  if (!animating.current || !controlsRef.current) return;
+  invalidate();
 
-    smoothTarget.current.lerp(targetPoint.current, 0.15);
-    ctrl.target.copy(smoothTarget.current);
+  const cam = camera as THREE.PerspectiveCamera;
+  const ctrl = controlsRef.current;
 
-    // stop once we’re close enough (no more fighting during zoom)
-    if (smoothTarget.current.distanceTo(targetPoint.current) < 0.001) {
-      ctrl.target.copy(targetPoint.current);
-      animating.current = false;
-    }
-  });
+  smoothTarget.current.lerp(targetPoint.current, 0.15);
+  ctrl.target.copy(smoothTarget.current);
+
+  if (camTargetPos.current) {
+    cam.position.lerp(camTargetPos.current, 0.15);
+  }
+
+  ctrl.update();
+
+  const doneTarget =
+    smoothTarget.current.distanceTo(targetPoint.current) < 0.001;
+  const doneCam =
+    !camTargetPos.current ||
+    cam.position.distanceTo(camTargetPos.current) < 0.001;
+
+  if (doneTarget && doneCam) {
+    ctrl.target.copy(targetPoint.current);
+    if (camTargetPos.current) cam.position.copy(camTargetPos.current);
+    camTargetPos.current = null;
+    animating.current = false;
+  }
+});
+
+
 
   return null;
 }
 
 
+function InteractionTracker({ markInteracting }: { markInteracting: () => void }) {
+  const { gl } = useThree();
+
+  useEffect(() => {
+    const dom = gl.domElement;
+
+    const onWheel = () => markInteracting();
+    const onPointerMove = (e: PointerEvent) => {
+      // only when dragging (buttons pressed) — NOT a simple click
+      if (e.buttons) markInteracting();
+    };
+    const onTouchMove = () => markInteracting();
+
+    dom.addEventListener("wheel", onWheel, { passive: true });
+    dom.addEventListener("pointermove", onPointerMove);
+    dom.addEventListener("touchmove", onTouchMove, { passive: true });
+
+    return () => {
+      dom.removeEventListener("wheel", onWheel);
+      dom.removeEventListener("pointermove", onPointerMove);
+      dom.removeEventListener("touchmove", onTouchMove);
+    };
+  }, [gl, markInteracting]);
+
+  return null;
+}
 
 
 /* ----------------------------------------------------
@@ -400,7 +467,6 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
   const isInteractingRef = useRef(false);
   const [keyboardOpen, setKeyboardOpen] = useState(false);
   const vvMaxH = useRef(0);
-  const [dpr, setDpr] = useState(2);
 
 
 
@@ -411,6 +477,22 @@ export default function ModelViewer({ onReady }: { onReady?: () => void }) {
 //   useEffect(() => {
 //   console.time("MODEL TOTAL LOAD");
 // }, []);
+const interactTimer = useRef<number | null>(null);
+
+const markInteracting = () => {
+  isInteractingRef.current = true;
+
+  if (interactTimer.current) window.clearTimeout(interactTimer.current);
+  interactTimer.current = window.setTimeout(() => {
+    isInteractingRef.current = false;
+  }, 140);
+};
+
+useEffect(() => {
+  return () => {
+    if (interactTimer.current) window.clearTimeout(interactTimer.current);
+  };
+}, []);
 
 useEffect(() => {
   if (typeof window === "undefined") return;
@@ -445,36 +527,7 @@ const handler = (e: any) => {
     return () =>
       window.removeEventListener("highlight-structures", handler);
   }, []);
-useEffect(() => {
-  let ctrl: any = null;
-  let onStart: any = null;
-  let onEnd: any = null;
 
-  let tries = 0;
-  const t = setInterval(() => {
-    ctrl = controlsRef.current;
-    if (!ctrl) {
-      if (++tries > 60) clearInterval(t);
-      return;
-    }
-
-    onStart = () => (isInteractingRef.current = true);
-    onEnd = () => (isInteractingRef.current = false);
-
-    ctrl.addEventListener("start", onStart);
-    ctrl.addEventListener("end", onEnd);
-
-    clearInterval(t);
-  }, 16);
-
-  return () => {
-    clearInterval(t);
-    if (ctrl && onStart && onEnd) {
-      ctrl.removeEventListener("start", onStart);
-      ctrl.removeEventListener("end", onEnd);
-    }
-  };
-}, []);
 
 
 
@@ -491,7 +544,7 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   <div className="w-full h-full relative">
 
 <Canvas
-  dpr={dpr}
+  dpr={[1,2]}
   frameloop={keyboardOpen ? "never" : "demand"}
   gl={{ antialias: true, powerPreference: "high-performance" }}
   camera={{ position: [0, 1.4, 4], fov: 45 }}
@@ -518,8 +571,9 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
     isInteractingRef={isInteractingRef}
   />
 
+<InteractionTracker markInteracting={markInteracting} />
 
-<ClickPivot controlsRef={controlsRef} />
+<ClickPivot controlsRef={controlsRef} isInteractingRef={isInteractingRef} />
 <OrbitControls
   ref={controlsRef}
   enableDamping
@@ -532,20 +586,13 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
   panSpeed={0}
   touches={{
     ONE: THREE.TOUCH.ROTATE,
-    TWO: THREE.TOUCH.DOLLY_PAN,
+    TWO: THREE.TOUCH.DOLLY_ROTATE,
   }}
   rotateSpeed={0.6}
-
-onStart={() => {
-  if (isTouch) setDpr(1);
-  invalidate();
-}}
-onEnd={() => {
-  if (isTouch) setTimeout(() => setDpr(2), 120);
-  invalidate();
-}}
-
+  onChange={() => invalidate()} // ✅ only this
 />
+
+
 
 
 
