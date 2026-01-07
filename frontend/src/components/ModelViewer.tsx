@@ -61,7 +61,7 @@ const materials = useRef({
     new THREE.MeshStandardMaterial({ color: "#ff2fb3", wireframe: true }),
     new THREE.MeshStandardMaterial({ color: "#00ff6a", wireframe: true }),
     new THREE.MeshStandardMaterial({ color: "#c300ff", wireframe: true }),
-    new THREE.MeshStandardMaterial({ color: "#ff7b00", wireframe: true }),
+    new THREE.MeshStandardMaterial({ color: "#000000", wireframe: true }),
   ],
 
   // 🟢 solid supporting (bones / nerves)
@@ -70,7 +70,7 @@ const materials = useRef({
     new THREE.MeshStandardMaterial({ color: "#ff2fb3" }),
     new THREE.MeshStandardMaterial({ color: "#00ff6a" }),
     new THREE.MeshStandardMaterial({ color: "#c300ff" }),
-    new THREE.MeshStandardMaterial({ color: "#ff7b00" }),
+    new THREE.MeshStandardMaterial({ color: "#000000" }),
   ],
 });
 
@@ -584,7 +584,12 @@ useGLTF.preload(`${BASE}/models/nerves.draco.glb`, true);
 
 
  <CameraAutoFocus
-    highlight={highlightData?.primary?.id || null}
+    highlight={
+  highlightData?.primary?.id ??
+  highlightData?.supporting?.[0]?.id ??
+  null
+}
+
     controlsRef={controlsRef}
     isInteractingRef={isInteractingRef}
   />

@@ -66,17 +66,16 @@ useEffect(() => {
     "#ff2fb3",
     "#00ff6a",
     "#c300ff",
-    "#ff7b00",
+    "#000000",
   ];
 
   const handler = (e: any) => {
     const { primary, supporting } = e.detail;
 
     const items = [
-      {
-        label: primary.label,
-        color: "#ff3b3b", // PRIMARY
-      },
+      ...(primary?.label
+        ? [{ label: primary.label, color: "#ff3b3b" }] // PRIMARY (only if exists)
+        : []),
       ...(supporting || []).map((s: any, i: number) => ({
         label: s.label,
         color: wireframeColors[i % wireframeColors.length],
@@ -87,9 +86,9 @@ useEffect(() => {
   };
 
   window.addEventListener("highlight-structures", handler);
-  return () =>
-    window.removeEventListener("highlight-structures", handler);
+  return () => window.removeEventListener("highlight-structures", handler);
 }, []);
+
 
 
   /* ---------------- device id ---------------- */
@@ -273,8 +272,11 @@ if (data.error) {
   return;
 }
 
-// 🚫 NO-ANSWER (MODEL COULDN’T IDENTIFY)
-if (!data.primary) {
+const hasPrimary = !!data.primary;
+const hasSupporting = Array.isArray(data.supporting) && data.supporting.length > 0;
+
+// 🚫 TRUE NO-ANSWER (nothing to highlight at all)
+if (!hasPrimary && !hasSupporting) {
   setNoAnswerMessage(
     "I need a bit more detail. Try describing where it hurts, which side, and what movement causes pain."
   );
@@ -283,12 +285,8 @@ if (!data.primary) {
   return;
 }
 
+window.dispatchEvent(new CustomEvent("highlight-structures", { detail: data }));
 
-// ✅ NORMAL CASE
-setNoAnswerMessage(null);
-window.dispatchEvent(
-  new CustomEvent("highlight-structures", { detail: data })
-);
 
     } finally {
       setLoading(false);

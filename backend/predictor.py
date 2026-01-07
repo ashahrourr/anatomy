@@ -15,6 +15,7 @@ import requests
 # CONFIG
 # --------------------------------------------------------------------
 CACHE_TRUST_THRESHOLD = 0.75
+CACHE_TRUST_SUPPORTING_THRESHOLD = 0.60
 
 load_dotenv()
 redis = Redis(
@@ -418,31 +419,25 @@ def predict_structure(pain_text: str):
 
         top_k = find_top_k_with_side(np.array(emb), resolved_side, k=5)
         best, score, source = pick_best_from_candidates(primary_label_query, top_k)
-
         print(
-            f"🧠 PRIMARY PICK | "
-            f"id={best['id']} "
-            f"source={source} "
-            f"score={score:.4f}"
+            f"🧠 PRIMARY PICK | id={best['id']} source={source} score={score:.4f}"
         )
 
-        if cached is None or score > cached["similarity"]:
-            redis_set(primary_label_query, best["id"], score)
-            print(f"♻️ PRIMARY CACHE UPDATED")
-            primary_struct = best
+        if score < CACHE_TRUST_THRESHOLD:
+            print("🚫 PRIMARY BELOW THRESHOLD — will return supporting only")
+            primary_struct = None   # <- no early return
         else:
-            primary_struct = STRUCTURE_BY_ID[cached["mapped_id"]]
-            print(f"🔒 PRIMARY CACHE KEPT")
+            if score >= CACHE_TRUST_THRESHOLD and (cached is None or score > cached["similarity"]):
+                redis_set(primary_label_query, best["id"], score)
+                print("♻️ PRIMARY CACHE UPDATED")
+            primary_struct = best
 
-
-
-    # 🚫 STOP IF PRIMARY FAILED
-    if not primary_struct:
-        return {"primary": None, "supporting": []}
 
     # ✅ track used structure IDs to prevent duplicates
     used_ids = set()
-    used_ids.add(primary_struct["id"])
+    if primary_struct:
+        used_ids.add(primary_struct["id"])
+
 
 
 
@@ -483,10 +478,18 @@ def predict_structure(pain_text: str):
                 f"source={source} "
                 f"score={score:.4f}"
             )
+            if score < CACHE_TRUST_SUPPORTING_THRESHOLD:
+                print("🚫 SUPPORTING SKIPPED — below threshold")
+                continue
 
-            if cached is None or score > cached["similarity"]:
+
+            if score >= CACHE_TRUST_THRESHOLD and \
+            (cached is None or score > cached["similarity"]):
                 redis_set(label_query, best["id"], score)
-                print("♻️ SUPPORTING CACHE UPDATED")
+            else:
+                print("🚫 SUPPORTING NOT CACHED — low confidence")
+
+
 
         # -----------------------
         # ✅ APPEND (COMMON PATH)
@@ -511,18 +514,23 @@ def predict_structure(pain_text: str):
 
 
 
+    primary_id = primary_struct["id"] if primary_struct else None
+
     print(
-    f"\n✅ REQUEST DONE | "
-    f"primary={primary_struct['id']} "
-    f"supporting={len(supporting_structs)} "
-    f"time={(time.time() - t0)*1000:.2f} ms\n"
-)
+        f"\n✅ REQUEST DONE | "
+        f"primary={primary_id} "
+        f"supporting={len(supporting_structs)} "
+        f"time={(time.time() - t0)*1000:.2f} ms\n"
+    )
+
 
 
     return {
         "primary": {
             "id": primary_struct["id"],
             "label": primary_struct["label"]
-        },
+        } if primary_struct else None,
         "supporting": supporting_structs
     }
+
+
