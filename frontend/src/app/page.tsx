@@ -670,7 +670,9 @@ const appBootReady =
                 }
               }}
               rows={1}
-              placeholder="Describe what hurts"
+              placeholder={
+                DEMO ? "Try an example below" : "Describe what hurts"
+              }
               className="
                 flex-1
                 bg-transparent

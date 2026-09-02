@@ -74,12 +74,42 @@ highlighting are the real thing — only the prediction is canned.
 `src/demo/structures.index.json` is the full list of all 1,924 structures with embeddings stripped —
 160 KB instead of 168 MB, which is enough to explore the anatomy set without the model file.
 
+⚠️ **What demo mode cannot do:** answer a question that is not one of the six. Free text is matched
+to the closest example, so *"my shoulder hurts"* still resolves — but a genuinely new complaint
+returns a note pointing you at the suggestions. There is no model in the loop to reason about it.
+The input placeholder changes to *"Try an example below"* so this is clear before you type.
+
+---
+
+## Making it live again
+
+Demo mode is the default because the hosted backend is gone. To get real answers to arbitrary
+questions, the backend has to come back — five steps:
+
+**1. Supabase.** Create a project. It holds auth and the `pain_queries` table. Take the project URL,
+the anon key and the service-role key.
+
+**2. Upstash Redis.** Create a database. Take the REST URL and token. Without it nothing breaks —
+every Redis call fails soft — but every query then costs a full model call.
+
+**3. `structures.json` on a public bucket.** The 168 MB file of structures and their embeddings.
+Point `STRUCTURES_URL` at it. *(If you are rebuilding it: the shape is
+`[{ id, label, embedding }]`, and `src/demo/structures.index.json` has every id and label already.)*
+
+**4. Fill the environment.** Copy `.env.example` into `backend/.env` and `frontend/.env.local`. An
+OpenAI key is required; Stripe keys only if you want the paid tier.
+
+**5. Deploy and unset the flag.** Any Python host runs the backend. Remove `NEXT_PUBLIC_DEMO` from
+the frontend and point `NEXT_PUBLIC_API_BASE_URL` at it.
+
+⚠️ On a free tier, cold starts take ~50 seconds and the instance sleeps. That is the reason this
+repo defaults to the demo rather than a live endpoint.
+
 ---
 
 ## Running it properly
 
-Needs an OpenAI key, a Supabase project, an Upstash Redis database, and `structures.json` on a
-public bucket. Copy `.env.example` into `backend/.env` and `frontend/.env.local`.
+Copy `.env.example` into `backend/.env` and `frontend/.env.local`.
 
 ```bash
 cd backend  && pip install -r requirements.txt && uvicorn backend.main:app --reload
