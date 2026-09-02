@@ -50,3 +50,6 @@ graveyard/
 # LOGS
 # =========================
 *.log
+
+# demo / local
+.env.local

@@ -12,6 +12,11 @@ const ModelViewer = dynamic(() => import("../components/ModelViewer"), {
 import { supabase } from "../lib/supabase";
 import { useAuth } from "../lib/useAuth";
 import Spinner from "../components/Spinner";
+import { installDemoMode, DEMO } from "../demo";
+import { DEMO_CASES } from "../demo/demoData";
+
+// no-op unless NEXT_PUBLIC_DEMO=1
+installDemoMode();
 
 
 type Credits = {
@@ -214,8 +219,8 @@ const sendMagicLink = async () => {
 };
 
   /* ---------------- send ---------------- */
-  const handleSend = async () => {
-    const text = input.trim();
+  const handleSend = async (override?: string) => {
+    const text = (override ?? input).trim();
     if (!text || !deviceId || loading) return;
 
     setLoading(true);
@@ -613,7 +618,11 @@ const appBootReady =
     {"unlimited" in credits && credits.unlimited ? (
       <>Credits: ∞</>
     ) : (
-      <>Credits: {credits.remaining} / {credits.limit} this week</>
+      DEMO ? (
+        <>Demo — canned examples, no model calls</>
+      ) : (
+        <>Credits: {credits.remaining} / {credits.limit} this week</>
+      )
     )}
   </div>
 )}
@@ -627,6 +636,27 @@ const appBootReady =
 )}
 
 
+
+          {DEMO && (
+            <div className="mb-3 flex flex-wrap gap-2 justify-center">
+              {DEMO_CASES.map((c) => (
+                <button
+                  key={c.prompt}
+                  onClick={() => handleSend(c.prompt)}
+                  disabled={loading}
+                  className="
+                    text-[13px] text-[#b8b8b4]
+                    bg-[#181818] hover:bg-[#222220]
+                    border border-[#282825] rounded-full
+                    px-3 py-1.5 transition-colors
+                    disabled:opacity-40
+                  "
+                >
+                  {c.prompt}
+                </button>
+              ))}
+            </div>
+          )}
 
           <div className="bg-[#181818] border border-[#282825] rounded-4xl px-4 py-3 flex gap-2 items-center">
             <textarea
@@ -655,7 +685,7 @@ const appBootReady =
             />
 
             <button
-              onClick={handleSend}
+              onClick={() => handleSend()}
               disabled={limitError || loading}
               className="h-9 w-9 bg-[#960019] rounded-full flex items-center justify-center disabled:opacity-50"
             >

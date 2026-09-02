@@ -17,6 +17,20 @@ import requests
 CACHE_TRUST_THRESHOLD = 0.75
 CACHE_TRUST_SUPPORTING_THRESHOLD = 0.60
 
+# The reasoning step is constrained extraction, not open reasoning: a long
+# system prompt does the work and the model returns strict JSON. That does not
+# need a frontier model, and it is the only call in the request path that costs
+# real money.
+#
+#   gpt-5.1        $1.25 / $10.00 per 1M in/out   — what this used to run on
+#   gpt-5.6-luna   $0.20 /  $1.20                 — default, ~8x cheaper
+#   gpt-5-nano     $0.05 /  $0.40                 — cheapest, worth testing
+#
+# Set REASONING_MODEL to move between them. If output quality drops, check the
+# JSON parse failure rate first — that is where a weaker model shows up.
+REASONING_MODEL = os.getenv("REASONING_MODEL", "gpt-5.6-luna")
+GPT_CACHE_TTL = 60 * 60 * 24 * 365
+
 load_dotenv()
 redis = Redis(
     url=os.getenv("UPSTASH_REDIS_REST_URL"),
@@ -126,6 +140,30 @@ def redis_set(raw_text: str, mapped_id: str, similarity: float):
         print("❌ redis.set failed:", repr(e))
 
 
+def normalize_pain_text(text: str) -> str:
+    """Cache key for a pain description. Case and spacing should not cost a
+    second GPT call."""
+    return " ".join(text.lower().split())
+
+
+def gpt_cache_key(pain_text: str) -> str:
+    return f"gpt:{normalize_pain_text(pain_text)}"
+
+
+def gpt_cache_get(pain_text: str) -> str | None:
+    try:
+        return redis.get(gpt_cache_key(pain_text))
+    except Exception:
+        return None
+
+
+def gpt_cache_set(pain_text: str, raw: str) -> None:
+    try:
+        redis.set(gpt_cache_key(pain_text), raw, ex=GPT_CACHE_TTL)
+    except Exception as e:
+        print("❌ gpt cache set failed:", repr(e))
+
+
 def redis_mget(raw_texts: list[str]) -> dict[str, dict]:
     if not raw_texts:
         return {}
@@ -228,14 +266,23 @@ def gpt_reason(pain_text: str):
 
 
 
+    # The whole reason this cache exists: the same complaint, phrased the same
+    # way, used to cost a full model call every time. Redis failing is not
+    # fatal here — it degrades to the uncached path.
+    cached = gpt_cache_get(pain_text)
+    if cached:
+        print("♻️  GPT CACHE HIT")
+        return cached
+
     res = client.responses.create(
-        model="gpt-5.1",
+        model=REASONING_MODEL,
         input=system_prompt + "\n\nUser pain description:\n" + pain_text,
         timeout=30
     )
 
     raw = res.output_text.strip()
     print("\n🔵 RAW GPT OUTPUT:\n", raw)
+    gpt_cache_set(pain_text, raw)
     return raw
 
 # --------------------------------------------------------------------

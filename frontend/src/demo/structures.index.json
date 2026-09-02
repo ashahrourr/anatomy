@@ -1,0 +1,7698 @@
+[
+{
+"id": "Anterior_cells_of_ethmoid_bonel",
+"label": "anterior cells of ethmoid bone left"
+},
+{
+"id": "Anterior_cells_of_ethmoid_boner",
+"label": "anterior cells of ethmoid bone right"
+},
+{
+"id": "Middle_cells_of_ethmoid_bonel",
+"label": "middle cells of ethmoid bone left"
+},
+{
+"id": "Middle_cells_of_ethmoid_boner",
+"label": "middle cells of ethmoid bone right"
+},
+{
+"id": "Posterior_cells_of_ethmoid_bonel",
+"label": "posterior cells of ethmoid bone left"
+},
+{
+"id": "Posterior_cells_of_ethmoid_boner",
+"label": "posterior cells of ethmoid bone right"
+},
+{
+"id": "Sinus_of_frontal_bone",
+"label": "sinus of frontal bone"
+},
+{
+"id": "Inferior_nasal_concha_bonel",
+"label": "inferior nasal concha bone left"
+},
+{
+"id": "Inferior_nasal_concha_boner",
+"label": "inferior nasal concha bone right"
+},
+{
+"id": "Lacrimal_bonel",
+"label": "lacrimal bone left"
+},
+{
+"id": "Lacrimal_boner",
+"label": "lacrimal bone right"
+},
+{
+"id": "Maxillal",
+"label": "maxilla left"
+},
+{
+"id": "Maxillar",
+"label": "maxilla right"
+},
+{
+"id": "Nasal_bonel",
+"label": "nasal bone left"
+},
+{
+"id": "Nasal_boner",
+"label": "nasal bone right"
+},
+{
+"id": "Occipital_bone",
+"label": "occipital bone"
+},
+{
+"id": "Palatine_bonel",
+"label": "palatine bone left"
+},
+{
+"id": "Palatine_boner",
+"label": "palatine bone right"
+},
+{
+"id": "Parietal_bonel",
+"label": "parietal bone left"
+},
+{
+"id": "Parietal_boner",
+"label": "parietal bone right"
+},
+{
+"id": "Sinus_of_sphenoid_bone",
+"label": "sinus of sphenoid bone"
+},
+{
+"id": "Temporal_bonel",
+"label": "temporal bone left"
+},
+{
+"id": "Temporal_boner",
+"label": "temporal bone right"
+},
+{
+"id": "Vomer",
+"label": "vomer"
+},
+{
+"id": "Zygomatic_bonel",
+"label": "zygomatic bone left"
+},
+{
+"id": "Zygomatic_boner",
+"label": "zygomatic bone right"
+},
+{
+"id": "Hyoid_bone",
+"label": "hyoid bone"
+},
+{
+"id": "Mandible",
+"label": "mandible"
+},
+{
+"id": "Incusl",
+"label": "incus left"
+},
+{
+"id": "Incusr",
+"label": "incus right"
+},
+{
+"id": "Malleusl",
+"label": "malleus left"
+},
+{
+"id": "Malleusr",
+"label": "malleus right"
+},
+{
+"id": "Stapesl",
+"label": "stapes left"
+},
+{
+"id": "Stapesr",
+"label": "stapes right"
+},
+{
+"id": "Lower_caninel",
+"label": "lower canine left"
+},
+{
+"id": "Lower_caniner",
+"label": "lower canine right"
+},
+{
+"id": "Lower_lateral_incisorl",
+"label": "lower lateral incisor left"
+},
+{
+"id": "Lower_lateral_incisorr",
+"label": "lower lateral incisor right"
+},
+{
+"id": "Lower_medial_incisorl",
+"label": "lower medial incisor left"
+},
+{
+"id": "Lower_medial_incisorr",
+"label": "lower medial incisor right"
+},
+{
+"id": "Upper_caninel",
+"label": "upper canine left"
+},
+{
+"id": "Upper_caniner",
+"label": "upper canine right"
+},
+{
+"id": "Upper_lateral_incisorl",
+"label": "upper lateral incisor left"
+},
+{
+"id": "Upper_lateral_incisorr",
+"label": "upper lateral incisor right"
+},
+{
+"id": "Upper_medial_incisorl",
+"label": "upper medial incisor left"
+},
+{
+"id": "Upper_medial_incisorr",
+"label": "upper medial incisor right"
+},
+{
+"id": "Lower_first_molar_toothl",
+"label": "lower first molar tooth left"
+},
+{
+"id": "Lower_first_molar_toothr",
+"label": "lower first molar tooth right"
+},
+{
+"id": "Lower_first_premolarl",
+"label": "lower first premolar left"
+},
+{
+"id": "Lower_first_premolarr",
+"label": "lower first premolar right"
+},
+{
+"id": "Lower_second_molar_toothl",
+"label": "lower second molar tooth left"
+},
+{
+"id": "Lower_second_molar_toothr",
+"label": "lower second molar tooth right"
+},
+{
+"id": "Lower_second_premolarl",
+"label": "lower second premolar left"
+},
+{
+"id": "Lower_second_premolarr",
+"label": "lower second premolar right"
+},
+{
+"id": "Upper_first_molar_toothl",
+"label": "upper first molar tooth left"
+},
+{
+"id": "Upper_first_molar_toothr",
+"label": "upper first molar tooth right"
+},
+{
+"id": "Upper_first_premolarl",
+"label": "upper first premolar left"
+},
+{
+"id": "Upper_first_premolarr",
+"label": "upper first premolar right"
+},
+{
+"id": "Upper_second_molar_toothl",
+"label": "upper second molar tooth left"
+},
+{
+"id": "Upper_second_molar_toothr",
+"label": "upper second molar tooth right"
+},
+{
+"id": "Upper_second_premolarl",
+"label": "upper second premolar left"
+},
+{
+"id": "Upper_second_premolarr",
+"label": "upper second premolar right"
+},
+{
+"id": "Lateral_process_of_nasal_septal_cartilagel",
+"label": "lateral process of nasal septal cartilage left"
+},
+{
+"id": "Lateral_process_of_nasal_septal_cartilager",
+"label": "lateral process of nasal septal cartilage right"
+},
+{
+"id": "Major_alar_cartilagel",
+"label": "major alar cartilage left"
+},
+{
+"id": "Major_alar_cartilager",
+"label": "major alar cartilage right"
+},
+{
+"id": "Nasal_septal_cartilage",
+"label": "nasal septal cartilage"
+},
+{
+"id": "Arytenoid_cartilagel",
+"label": "arytenoid cartilage left"
+},
+{
+"id": "Arytenoid_cartilager",
+"label": "arytenoid cartilage right"
+},
+{
+"id": "Corniculate_cartilagel",
+"label": "corniculate cartilage left"
+},
+{
+"id": "Corniculate_cartilager",
+"label": "corniculate cartilage right"
+},
+{
+"id": "Cricoid_cartilage",
+"label": "cricoid cartilage"
+},
+{
+"id": "Thyroid_cartilage",
+"label": "thyroid cartilage"
+},
+{
+"id": "Atlas_(C1)",
+"label": "atlas (c1)"
+},
+{
+"id": "Axis_(C2)",
+"label": "axis (c2)"
+},
+{
+"id": "Vertebra_C3",
+"label": "vertebra c3"
+},
+{
+"id": "Vertebra_C4",
+"label": "vertebra c4"
+},
+{
+"id": "Vertebra_C5",
+"label": "vertebra c5"
+},
+{
+"id": "Vertebra_C6",
+"label": "vertebra c6"
+},
+{
+"id": "Vertebra_C7",
+"label": "vertebra c7"
+},
+{
+"id": "Coccyx",
+"label": "coccyx"
+},
+{
+"id": "Vertebra_L1",
+"label": "vertebra l1"
+},
+{
+"id": "Vertebra_L2",
+"label": "vertebra l2"
+},
+{
+"id": "Vertebra_L3",
+"label": "vertebra l3"
+},
+{
+"id": "Vertebra_L4",
+"label": "vertebra l4"
+},
+{
+"id": "Vertebra_L5",
+"label": "vertebra l5"
+},
+{
+"id": "Sacrum",
+"label": "sacrum"
+},
+{
+"id": "Vertebra_T1",
+"label": "vertebra t1"
+},
+{
+"id": "Vertebra_T2",
+"label": "vertebra t2"
+},
+{
+"id": "Vertebra_T3",
+"label": "vertebra t3"
+},
+{
+"id": "Vertebra_T4",
+"label": "vertebra t4"
+},
+{
+"id": "Vertebra_T5",
+"label": "vertebra t5"
+},
+{
+"id": "Vertebra_T6",
+"label": "vertebra t6"
+},
+{
+"id": "Vertebra_T7",
+"label": "vertebra t7"
+},
+{
+"id": "Vertebra_T8",
+"label": "vertebra t8"
+},
+{
+"id": "Vertebra_T9",
+"label": "vertebra t9"
+},
+{
+"id": "Vertebra_T10",
+"label": "vertebra t10"
+},
+{
+"id": "Vertebra_T11",
+"label": "vertebra t11"
+},
+{
+"id": "Vertebra_T12",
+"label": "vertebra t12"
+},
+{
+"id": "Eighth_ribl",
+"label": "eighth rib left"
+},
+{
+"id": "Eighth_ribr",
+"label": "eighth rib right"
+},
+{
+"id": "Eleventh_ribl",
+"label": "eleventh rib left"
+},
+{
+"id": "Eleventh_ribr",
+"label": "eleventh rib right"
+},
+{
+"id": "Twelfth_ribl",
+"label": "twelfth rib left"
+},
+{
+"id": "Twelfth_ribr",
+"label": "twelfth rib right"
+},
+{
+"id": "Ninth_ribl",
+"label": "ninth rib left"
+},
+{
+"id": "Ninth_ribr",
+"label": "ninth rib right"
+},
+{
+"id": "Tenth_ribl",
+"label": "tenth rib left"
+},
+{
+"id": "Tenth_ribr",
+"label": "tenth rib right"
+},
+{
+"id": "Fifth_ribl",
+"label": "fifth rib left"
+},
+{
+"id": "Fifth_ribr",
+"label": "fifth rib right"
+},
+{
+"id": "First_ribl",
+"label": "first rib left"
+},
+{
+"id": "First_ribr",
+"label": "first rib right"
+},
+{
+"id": "Fourth_ribl",
+"label": "fourth rib left"
+},
+{
+"id": "Fourth_ribr",
+"label": "fourth rib right"
+},
+{
+"id": "Second_ribl",
+"label": "second rib left"
+},
+{
+"id": "Second_ribr",
+"label": "second rib right"
+},
+{
+"id": "Seventh_ribl",
+"label": "seventh rib left"
+},
+{
+"id": "Seventh_ribr",
+"label": "seventh rib right"
+},
+{
+"id": "Sixth_ribl",
+"label": "sixth rib left"
+},
+{
+"id": "Sixth_ribr",
+"label": "sixth rib right"
+},
+{
+"id": "Third_ribl",
+"label": "third rib left"
+},
+{
+"id": "Third_ribr",
+"label": "third rib right"
+},
+{
+"id": "Body_of_sternum",
+"label": "body of sternum"
+},
+{
+"id": "Manubrium_of_sternum",
+"label": "manubrium of sternum"
+},
+{
+"id": "Xiphoid_process",
+"label": "xiphoid process"
+},
+{
+"id": "Costal_cartilage_of_eighth_ribl",
+"label": "costal cartilage of eighth rib left"
+},
+{
+"id": "Costal_cartilage_of_eighth_ribr",
+"label": "costal cartilage of eighth rib right"
+},
+{
+"id": "Costal_cartilage_of_fifth_ribl",
+"label": "costal cartilage of fifth rib left"
+},
+{
+"id": "Costal_cartilage_of_fifth_ribr",
+"label": "costal cartilage of fifth rib right"
+},
+{
+"id": "Costal_cartilage_of_first_ribl",
+"label": "costal cartilage of first rib left"
+},
+{
+"id": "Costal_cartilage_of_first_ribr",
+"label": "costal cartilage of first rib right"
+},
+{
+"id": "Costal_cartilage_of_fourth_ribl",
+"label": "costal cartilage of fourth rib left"
+},
+{
+"id": "Costal_cartilage_of_fourth_ribr",
+"label": "costal cartilage of fourth rib right"
+},
+{
+"id": "Costal_cartilage_of_ninth_ribl",
+"label": "costal cartilage of ninth rib left"
+},
+{
+"id": "Costal_cartilage_of_ninth_ribr",
+"label": "costal cartilage of ninth rib right"
+},
+{
+"id": "Costal_cartilage_of_second_ribl",
+"label": "costal cartilage of second rib left"
+},
+{
+"id": "Costal_cartilage_of_second_ribr",
+"label": "costal cartilage of second rib right"
+},
+{
+"id": "Costal_cartilage_of_seventh_ribl",
+"label": "costal cartilage of seventh rib left"
+},
+{
+"id": "Costal_cartilage_of_seventh_ribr",
+"label": "costal cartilage of seventh rib right"
+},
+{
+"id": "Costal_cartilage_of_sixth_ribl",
+"label": "costal cartilage of sixth rib left"
+},
+{
+"id": "Costal_cartilage_of_sixth_ribr",
+"label": "costal cartilage of sixth rib right"
+},
+{
+"id": "Costal_cartilage_of_tenth_ribl",
+"label": "costal cartilage of tenth rib left"
+},
+{
+"id": "Costal_cartilage_of_tenth_ribr",
+"label": "costal cartilage of tenth rib right"
+},
+{
+"id": "Costal_cartilage_of_third_ribl",
+"label": "costal cartilage of third rib left"
+},
+{
+"id": "Costal_cartilage_of_third_ribr",
+"label": "costal cartilage of third rib right"
+},
+{
+"id": "Capitate_bonel",
+"label": "capitate bone left"
+},
+{
+"id": "Capitate_boner",
+"label": "capitate bone right"
+},
+{
+"id": "Distal_phalanx_of_fifth_finger_of_handl",
+"label": "distal phalanx of fifth finger of hand left"
+},
+{
+"id": "Distal_phalanx_of_fifth_finger_of_handr",
+"label": "distal phalanx of fifth finger of hand right"
+},
+{
+"id": "Distal_phalanx_of_first_finger_of_handl",
+"label": "distal phalanx of first finger of hand left"
+},
+{
+"id": "Distal_phalanx_of_first_finger_of_handr",
+"label": "distal phalanx of first finger of hand right"
+},
+{
+"id": "Distal_phalanx_of_fourth_finger_of_handl",
+"label": "distal phalanx of fourth finger of hand left"
+},
+{
+"id": "Distal_phalanx_of_fourth_finger_of_handr",
+"label": "distal phalanx of fourth finger of hand right"
+},
+{
+"id": "Distal_phalanx_of_second_finger_of_handl",
+"label": "distal phalanx of second finger of hand left"
+},
+{
+"id": "Distal_phalanx_of_second_finger_of_handr",
+"label": "distal phalanx of second finger of hand right"
+},
+{
+"id": "Distal_phalanx_of_third_finger_of_handl",
+"label": "distal phalanx of third finger of hand left"
+},
+{
+"id": "Distal_phalanx_of_third_finger_of_handr",
+"label": "distal phalanx of third finger of hand right"
+},
+{
+"id": "Fifth_metacarpal_bonel",
+"label": "fifth metacarpal bone left"
+},
+{
+"id": "Fifth_metacarpal_boner",
+"label": "fifth metacarpal bone right"
+},
+{
+"id": "First_metacarpal_bonel",
+"label": "first metacarpal bone left"
+},
+{
+"id": "First_metacarpal_boner",
+"label": "first metacarpal bone right"
+},
+{
+"id": "Fourth_metacarpal_bonel",
+"label": "fourth metacarpal bone left"
+},
+{
+"id": "Fourth_metacarpal_boner",
+"label": "fourth metacarpal bone right"
+},
+{
+"id": "Hamate_bonel",
+"label": "hamate bone left"
+},
+{
+"id": "Hamate_boner",
+"label": "hamate bone right"
+},
+{
+"id": "Humerusl",
+"label": "humerus left"
+},
+{
+"id": "Humerusr",
+"label": "humerus right"
+},
+{
+"id": "Lunate_bonel",
+"label": "lunate bone left"
+},
+{
+"id": "Lunate_boner",
+"label": "lunate bone right"
+},
+{
+"id": "Middle_phalanx_of_fifth_finger_of_handl",
+"label": "middle phalanx of fifth finger of hand left"
+},
+{
+"id": "Middle_phalanx_of_fifth_finger_of_handr",
+"label": "middle phalanx of fifth finger of hand right"
+},
+{
+"id": "Middle_phalanx_of_fourth_finger_of_handl",
+"label": "middle phalanx of fourth finger of hand left"
+},
+{
+"id": "Middle_phalanx_of_fourth_finger_of_handr",
+"label": "middle phalanx of fourth finger of hand right"
+},
+{
+"id": "Middle_phalanx_of_second_finger_of_handl",
+"label": "middle phalanx of second finger of hand left"
+},
+{
+"id": "Middle_phalanx_of_second_finger_of_handr",
+"label": "middle phalanx of second finger of hand right"
+},
+{
+"id": "Middle_phalanx_of_third_finger_of_handl",
+"label": "middle phalanx of third finger of hand left"
+},
+{
+"id": "Middle_phalanx_of_third_finger_of_handr",
+"label": "middle phalanx of third finger of hand right"
+},
+{
+"id": "Pisiform_bonel",
+"label": "pisiform bone left"
+},
+{
+"id": "Pisiform_boner",
+"label": "pisiform bone right"
+},
+{
+"id": "Proximal_phalanx_of_fifth_finger_of_handl",
+"label": "proximal phalanx of fifth finger of hand left"
+},
+{
+"id": "Proximal_phalanx_of_fifth_finger_of_handr",
+"label": "proximal phalanx of fifth finger of hand right"
+},
+{
+"id": "Proximal_phalanx_of_first_finger_of_handl",
+"label": "proximal phalanx of first finger of hand left"
+},
+{
+"id": "Proximal_phalanx_of_first_finger_of_handr",
+"label": "proximal phalanx of first finger of hand right"
+},
+{
+"id": "Proximal_phalanx_of_fourth_finger_of_handl",
+"label": "proximal phalanx of fourth finger of hand left"
+},
+{
+"id": "Proximal_phalanx_of_fourth_finger_of_handr",
+"label": "proximal phalanx of fourth finger of hand right"
+},
+{
+"id": "Proximal_phalanx_of_second_finger_of_handl",
+"label": "proximal phalanx of second finger of hand left"
+},
+{
+"id": "Proximal_phalanx_of_second_finger_of_handr",
+"label": "proximal phalanx of second finger of hand right"
+},
+{
+"id": "Proximal_phalanx_of_third_finger_of_handl",
+"label": "proximal phalanx of third finger of hand left"
+},
+{
+"id": "Proximal_phalanx_of_third_finger_of_handr",
+"label": "proximal phalanx of third finger of hand right"
+},
+{
+"id": "Radiusl",
+"label": "radius left"
+},
+{
+"id": "Radiusr",
+"label": "radius right"
+},
+{
+"id": "Scaphoid_bonel",
+"label": "scaphoid bone left"
+},
+{
+"id": "Scaphoid_boner",
+"label": "scaphoid bone right"
+},
+{
+"id": "Second_metacarpal_bonel",
+"label": "second metacarpal bone left"
+},
+{
+"id": "Second_metacarpal_boner",
+"label": "second metacarpal bone right"
+},
+{
+"id": "Third_metacarpal_bonel",
+"label": "third metacarpal bone left"
+},
+{
+"id": "Third_metacarpal_boner",
+"label": "third metacarpal bone right"
+},
+{
+"id": "Trapezium_bonel",
+"label": "trapezium bone left"
+},
+{
+"id": "Trapezium_boner",
+"label": "trapezium bone right"
+},
+{
+"id": "Trapezoid_bonel",
+"label": "trapezoid bone left"
+},
+{
+"id": "Trapezoid_boner",
+"label": "trapezoid bone right"
+},
+{
+"id": "Triquetrum_bonel",
+"label": "triquetrum bone left"
+},
+{
+"id": "Triquetrum_boner",
+"label": "triquetrum bone right"
+},
+{
+"id": "Ulnal",
+"label": "ulna left"
+},
+{
+"id": "Ulnar",
+"label": "ulna right"
+},
+{
+"id": "Claviclel",
+"label": "clavicle left"
+},
+{
+"id": "Clavicler",
+"label": "clavicle right"
+},
+{
+"id": "Scapulal",
+"label": "scapula left"
+},
+{
+"id": "Scapular",
+"label": "scapula right"
+},
+{
+"id": "Fifth_metatarsal_bonel",
+"label": "fifth metatarsal bone left"
+},
+{
+"id": "Fifth_metatarsal_boner",
+"label": "fifth metatarsal bone right"
+},
+{
+"id": "First_metatarsal_bonel",
+"label": "first metatarsal bone left"
+},
+{
+"id": "First_metatarsal_boner",
+"label": "first metatarsal bone right"
+},
+{
+"id": "Fourth_metatarsal_bonel",
+"label": "fourth metatarsal bone left"
+},
+{
+"id": "Fourth_metatarsal_boner",
+"label": "fourth metatarsal bone right"
+},
+{
+"id": "Second_metatarsal_bonel",
+"label": "second metatarsal bone left"
+},
+{
+"id": "Second_metatarsal_boner",
+"label": "second metatarsal bone right"
+},
+{
+"id": "Third_metatarsal_bonel",
+"label": "third metatarsal bone left"
+},
+{
+"id": "Third_metatarsal_boner",
+"label": "third metatarsal bone right"
+},
+{
+"id": "Distal_phalanx_of_fifth_finger_of_footl",
+"label": "distal phalanx of fifth finger of foot left"
+},
+{
+"id": "Distal_phalanx_of_fifth_finger_of_footr",
+"label": "distal phalanx of fifth finger of foot right"
+},
+{
+"id": "Distal_phalanx_of_first_finger_of_footl",
+"label": "distal phalanx of first finger of foot left"
+},
+{
+"id": "Distal_phalanx_of_first_finger_of_footr",
+"label": "distal phalanx of first finger of foot right"
+},
+{
+"id": "Distal_phalanx_of_fourth_finger_of_footl",
+"label": "distal phalanx of fourth finger of foot left"
+},
+{
+"id": "Distal_phalanx_of_fourth_finger_of_footr",
+"label": "distal phalanx of fourth finger of foot right"
+},
+{
+"id": "Distal_phalanx_of_second_finger_of_footl",
+"label": "distal phalanx of second finger of foot left"
+},
+{
+"id": "Distal_phalanx_of_second_finger_of_footr",
+"label": "distal phalanx of second finger of foot right"
+},
+{
+"id": "Distal_phalanx_of_third_finger_of_footl",
+"label": "distal phalanx of third finger of foot left"
+},
+{
+"id": "Distal_phalanx_of_third_finger_of_footr",
+"label": "distal phalanx of third finger of foot right"
+},
+{
+"id": "Middle_phalanx_of_fifth_finger_of_footl",
+"label": "middle phalanx of fifth finger of foot left"
+},
+{
+"id": "Middle_phalanx_of_fifth_finger_of_footr",
+"label": "middle phalanx of fifth finger of foot right"
+},
+{
+"id": "Middle_phalanx_of_fourth_finger_of_footl",
+"label": "middle phalanx of fourth finger of foot left"
+},
+{
+"id": "Middle_phalanx_of_fourth_finger_of_footr",
+"label": "middle phalanx of fourth finger of foot right"
+},
+{
+"id": "Middle_phalanx_of_second_finger_of_footl",
+"label": "middle phalanx of second finger of foot left"
+},
+{
+"id": "Middle_phalanx_of_second_finger_of_footr",
+"label": "middle phalanx of second finger of foot right"
+},
+{
+"id": "Middle_phalanx_of_third_finger_of_footl",
+"label": "middle phalanx of third finger of foot left"
+},
+{
+"id": "Middle_phalanx_of_third_finger_of_footr",
+"label": "middle phalanx of third finger of foot right"
+},
+{
+"id": "Proximal_phalanx_of_fifth_finger_of_footl",
+"label": "proximal phalanx of fifth finger of foot left"
+},
+{
+"id": "Proximal_phalanx_of_fifth_finger_of_footr",
+"label": "proximal phalanx of fifth finger of foot right"
+},
+{
+"id": "Proximal_phalanx_of_first_finger_of_footl",
+"label": "proximal phalanx of first finger of foot left"
+},
+{
+"id": "Proximal_phalanx_of_first_finger_of_footr",
+"label": "proximal phalanx of first finger of foot right"
+},
+{
+"id": "Proximal_phalanx_of_fourth_finger_of_footl",
+"label": "proximal phalanx of fourth finger of foot left"
+},
+{
+"id": "Proximal_phalanx_of_fourth_finger_of_footr",
+"label": "proximal phalanx of fourth finger of foot right"
+},
+{
+"id": "Proximal_phalanx_of_second_finger_of_footl",
+"label": "proximal phalanx of second finger of foot left"
+},
+{
+"id": "Proximal_phalanx_of_second_finger_of_footr",
+"label": "proximal phalanx of second finger of foot right"
+},
+{
+"id": "Proximal_phalanx_of_third_finger_of_footl",
+"label": "proximal phalanx of third finger of foot left"
+},
+{
+"id": "Proximal_phalanx_of_third_finger_of_footr",
+"label": "proximal phalanx of third finger of foot right"
+},
+{
+"id": "Sesamoid_bones_of_footl",
+"label": "sesamoid bones of foot left"
+},
+{
+"id": "Sesamoid_bones_of_footr",
+"label": "sesamoid bones of foot right"
+},
+{
+"id": "Calcaneusl",
+"label": "calcaneus left"
+},
+{
+"id": "Calcaneusr",
+"label": "calcaneus right"
+},
+{
+"id": "Cuboid_bonel",
+"label": "cuboid bone left"
+},
+{
+"id": "Cuboid_boner",
+"label": "cuboid bone right"
+},
+{
+"id": "Intermediate_cuneiform_bonel",
+"label": "intermediate cuneiform bone left"
+},
+{
+"id": "Intermediate_cuneiform_boner",
+"label": "intermediate cuneiform bone right"
+},
+{
+"id": "Lateral_cuneiform_bonel",
+"label": "lateral cuneiform bone left"
+},
+{
+"id": "Lateral_cuneiform_boner",
+"label": "lateral cuneiform bone right"
+},
+{
+"id": "Medial_cuneiform_bonel",
+"label": "medial cuneiform bone left"
+},
+{
+"id": "Medial_cuneiform_boner",
+"label": "medial cuneiform bone right"
+},
+{
+"id": "Navicular_bonel",
+"label": "navicular bone left"
+},
+{
+"id": "Navicular_boner",
+"label": "navicular bone right"
+},
+{
+"id": "Talusl",
+"label": "talus left"
+},
+{
+"id": "Talusr",
+"label": "talus right"
+},
+{
+"id": "Femurl",
+"label": "femur left"
+},
+{
+"id": "Femurr",
+"label": "femur right"
+},
+{
+"id": "Fibulal",
+"label": "fibula left"
+},
+{
+"id": "Fibular",
+"label": "fibula right"
+},
+{
+"id": "Patellal",
+"label": "patella left"
+},
+{
+"id": "Patellar",
+"label": "patella right"
+},
+{
+"id": "Tibial",
+"label": "tibia left"
+},
+{
+"id": "Tibiar",
+"label": "tibia right"
+},
+{
+"id": "Hip_bonel",
+"label": "hip bone left"
+},
+{
+"id": "Hip_boner",
+"label": "hip bone right"
+},
+{
+"id": "Common_tendinous_ringl",
+"label": "Common tendinous ring left"
+},
+{
+"id": "Common_tendinous_ringr",
+"label": "Common tendinous ring right"
+},
+{
+"id": "Inferior_oblique_musclel",
+"label": "Inferior oblique muscle left"
+},
+{
+"id": "Inferior_oblique_muscler",
+"label": "Inferior oblique muscle right"
+},
+{
+"id": "Inferior_rectus_musclel",
+"label": "Inferior rectus muscle left"
+},
+{
+"id": "Inferior_rectus_muscler",
+"label": "Inferior rectus muscle right"
+},
+{
+"id": "Inferior_tarsusl",
+"label": "Inferior tarsus left"
+},
+{
+"id": "Inferior_tarsusr",
+"label": "Inferior tarsus right"
+},
+{
+"id": "Lateral_rectus_musclel",
+"label": "Lateral rectus muscle left"
+},
+{
+"id": "Lateral_rectus_muscler",
+"label": "Lateral rectus muscle right"
+},
+{
+"id": "Levator_palpebrae_superiorisl",
+"label": "Levator palpebrae superioris left"
+},
+{
+"id": "Levator_palpebrae_superiorisr",
+"label": "Levator palpebrae superioris right"
+},
+{
+"id": "Medial_rectus_musclel",
+"label": "Medial rectus muscle left"
+},
+{
+"id": "Medial_rectus_muscler",
+"label": "Medial rectus muscle right"
+},
+{
+"id": "Superior_oblique_musclel",
+"label": "Superior oblique muscle left"
+},
+{
+"id": "Superior_oblique_muscler",
+"label": "Superior oblique muscle right"
+},
+{
+"id": "Superior_rectus_musclel",
+"label": "Superior rectus muscle left"
+},
+{
+"id": "Superior_rectus_muscler",
+"label": "Superior rectus muscle right"
+},
+{
+"id": "Superior_tarsusl",
+"label": "Superior tarsus left"
+},
+{
+"id": "Superior_tarsusr",
+"label": "Superior tarsus right"
+},
+{
+"id": "Trochlea_of_superior_oblique_musclel",
+"label": "Trochlea of superior oblique muscle left"
+},
+{
+"id": "Trochlea_of_superior_oblique_muscler",
+"label": "Trochlea of superior oblique muscle right"
+},
+{
+"id": "Deep_part_of_masseterl",
+"label": "Deep part of masseter left"
+},
+{
+"id": "Deep_part_of_masseterr",
+"label": "Deep part of masseter right"
+},
+{
+"id": "Inferior_head_of_lateral_pterygoid_musclel",
+"label": "Inferior head of lateral pterygoid muscle left"
+},
+{
+"id": "Inferior_head_of_lateral_pterygoid_muscler",
+"label": "Inferior head of lateral pterygoid muscle right"
+},
+{
+"id": "Medial_pterygoid_musclel",
+"label": "Medial pterygoid muscle left"
+},
+{
+"id": "Medial_pterygoid_muscler",
+"label": "Medial pterygoid muscle right"
+},
+{
+"id": "Superficial_part_of_masseterl",
+"label": "Superficial part of masseter left"
+},
+{
+"id": "Superficial_part_of_masseterr",
+"label": "Superficial part of masseter right"
+},
+{
+"id": "Superior_head_of_lateral_pterygoid_musclel",
+"label": "Superior head of lateral pterygoid muscle left"
+},
+{
+"id": "Superior_head_of_lateral_pterygoid_muscler",
+"label": "Superior head of lateral pterygoid muscle right"
+},
+{
+"id": "Temporalis_musclel",
+"label": "Temporalis muscle left"
+},
+{
+"id": "Temporalis_muscler",
+"label": "Temporalis muscle right"
+},
+{
+"id": "Palatopharyngeus_musclel",
+"label": "Palatopharyngeus muscle left"
+},
+{
+"id": "Palatopharyngeus_muscler",
+"label": "Palatopharyngeus muscle right"
+},
+{
+"id": "Genioglossus_musclel",
+"label": "Genioglossus muscle left"
+},
+{
+"id": "Genioglossus_muscler",
+"label": "Genioglossus muscle right"
+},
+{
+"id": "Hyoglossus_musclel",
+"label": "Hyoglossus muscle left"
+},
+{
+"id": "Hyoglossus_muscler",
+"label": "Hyoglossus muscle right"
+},
+{
+"id": "Epicranial_aponeurosisl",
+"label": "Epicranial aponeurosis left"
+},
+{
+"id": "Epicranial_aponeurosisr",
+"label": "Epicranial aponeurosis right"
+},
+{
+"id": "Frontalis_musclel",
+"label": "Frontalis muscle left"
+},
+{
+"id": "Frontalis_muscler",
+"label": "Frontalis muscle right"
+},
+{
+"id": "Occipitalis_musclel",
+"label": "Occipitalis muscle left"
+},
+{
+"id": "Occipitalis_muscler",
+"label": "Occipitalis muscle right"
+},
+{
+"id": "Temporoparietalis_musclel",
+"label": "Temporoparietalis muscle left"
+},
+{
+"id": "Temporoparietalis_muscler",
+"label": "Temporoparietalis muscle right"
+},
+{
+"id": "Bucinatorl",
+"label": "Bucinator left"
+},
+{
+"id": "Bucinatorr",
+"label": "Bucinator right"
+},
+{
+"id": "Corrugator_superciliil",
+"label": "Corrugator supercilii left"
+},
+{
+"id": "Corrugator_superciliir",
+"label": "Corrugator supercilii right"
+},
+{
+"id": "Depressor_anguli_orisl",
+"label": "Depressor anguli oris left"
+},
+{
+"id": "Depressor_anguli_orisr",
+"label": "Depressor anguli oris right"
+},
+{
+"id": "Depressor_labii_inferiorisl",
+"label": "Depressor labii inferioris left"
+},
+{
+"id": "Depressor_labii_inferiorisr",
+"label": "Depressor labii inferioris right"
+},
+{
+"id": "Depressor_septi_nasil",
+"label": "Depressor septi nasi left"
+},
+{
+"id": "Depressor_septi_nasir",
+"label": "Depressor septi nasi right"
+},
+{
+"id": "Levator_anguli_orisl",
+"label": "Levator anguli oris left"
+},
+{
+"id": "Levator_anguli_orisr",
+"label": "Levator anguli oris right"
+},
+{
+"id": "Levator_labii_superiorisl",
+"label": "Levator labii superioris left"
+},
+{
+"id": "Levator_labii_superiorisr",
+"label": "Levator labii superioris right"
+},
+{
+"id": "Levator_nasolabialisl",
+"label": "Levator nasolabialis left"
+},
+{
+"id": "Levator_nasolabialisr",
+"label": "Levator nasolabialis right"
+},
+{
+"id": "Mentalis_musclel",
+"label": "Mentalis muscle left"
+},
+{
+"id": "Mentalis_muscler",
+"label": "Mentalis muscle right"
+},
+{
+"id": "Nasalis_musclel",
+"label": "Nasalis muscle left"
+},
+{
+"id": "Nasalis_muscler",
+"label": "Nasalis muscle right"
+},
+{
+"id": "Orbicularis_oris_musclel",
+"label": "Orbicularis oris muscle left"
+},
+{
+"id": "Orbicularis_oris_muscler",
+"label": "Orbicularis oris muscle right"
+},
+{
+"id": "Orbital_part_of_orbicularis_oculil",
+"label": "Orbital part of orbicularis oculi left"
+},
+{
+"id": "Orbital_part_of_orbicularis_oculir",
+"label": "Orbital part of orbicularis oculi right"
+},
+{
+"id": "Palpebral_part_of_orbicularis_oculil",
+"label": "Palpebral part of orbicularis oculi left"
+},
+{
+"id": "Palpebral_part_of_orbicularis_oculir",
+"label": "Palpebral part of orbicularis oculi right"
+},
+{
+"id": "Procerus_musclel",
+"label": "Procerus muscle left"
+},
+{
+"id": "Procerus_muscler",
+"label": "Procerus muscle right"
+},
+{
+"id": "Risorius_musclel",
+"label": "Risorius muscle left"
+},
+{
+"id": "Risorius_muscler",
+"label": "Risorius muscle right"
+},
+{
+"id": "Zygomaticus_major_musclel",
+"label": "Zygomaticus major muscle left"
+},
+{
+"id": "Zygomaticus_major_muscler",
+"label": "Zygomaticus major muscle right"
+},
+{
+"id": "Zygomaticus_minor_musclel",
+"label": "Zygomaticus minor muscle left"
+},
+{
+"id": "Zygomaticus_minor_muscler",
+"label": "Zygomaticus minor muscle right"
+},
+{
+"id": "Omohyoid_musclel",
+"label": "Omohyoid muscle left"
+},
+{
+"id": "Omohyoid_muscler",
+"label": "Omohyoid muscle right"
+},
+{
+"id": "Sternohyoid_musclel",
+"label": "Sternohyoid muscle left"
+},
+{
+"id": "Sternohyoid_muscler",
+"label": "Sternohyoid muscle right"
+},
+{
+"id": "Sternothyroid_musclel",
+"label": "Sternothyroid muscle left"
+},
+{
+"id": "Sternothyroid_muscler",
+"label": "Sternothyroid muscle right"
+},
+{
+"id": "Thyrohyoid_musclel",
+"label": "Thyrohyoid muscle left"
+},
+{
+"id": "Thyrohyoid_muscler",
+"label": "Thyrohyoid muscle right"
+},
+{
+"id": "Ary-epiglottic_part_of_oblique_arytenoid_musclel",
+"label": "Ary-epiglottic part of oblique arytenoid muscle left"
+},
+{
+"id": "Ary-epiglottic_part_of_oblique_arytenoid_muscler",
+"label": "Ary-epiglottic part of oblique arytenoid muscle right"
+},
+{
+"id": "External_part_of_thyro-arytenoid_musclel",
+"label": "External part of thyro-arytenoid muscle left"
+},
+{
+"id": "External_part_of_thyro-arytenoid_muscler",
+"label": "External part of thyro-arytenoid muscle right"
+},
+{
+"id": "Lateral_crico-arytenoid_musclel",
+"label": "Lateral crico-arytenoid muscle left"
+},
+{
+"id": "Lateral_crico-arytenoid_muscler",
+"label": "Lateral crico-arytenoid muscle right"
+},
+{
+"id": "Oblique_part_of_cricothyroid_musclel",
+"label": "Oblique part of cricothyroid muscle left"
+},
+{
+"id": "Oblique_part_of_cricothyroid_muscler",
+"label": "Oblique part of cricothyroid muscle right"
+},
+{
+"id": "Posterior_crico-arytenoid_musclel",
+"label": "Posterior crico-arytenoid muscle left"
+},
+{
+"id": "Posterior_crico-arytenoid_muscler",
+"label": "Posterior crico-arytenoid muscle right"
+},
+{
+"id": "Straight_part_of_cricothyroid_musclel",
+"label": "Straight part of cricothyroid muscle left"
+},
+{
+"id": "Straight_part_of_cricothyroid_muscler",
+"label": "Straight part of cricothyroid muscle right"
+},
+{
+"id": "Thyro-epiglottic_part_of_thyro-arytenoid_musclel",
+"label": "Thyro-epiglottic part of thyro-arytenoid muscle left"
+},
+{
+"id": "Thyro-epiglottic_part_of_thyro-arytenoid_muscler",
+"label": "Thyro-epiglottic part of thyro-arytenoid muscle right"
+},
+{
+"id": "Transverse_arytenoid_muscle",
+"label": "Transverse arytenoid muscle"
+},
+{
+"id": "Longus_capitis_musclel",
+"label": "Longus capitis muscle left"
+},
+{
+"id": "Longus_capitis_muscler",
+"label": "Longus capitis muscle right"
+},
+{
+"id": "Longus_colli_musclel",
+"label": "Longus colli muscle left"
+},
+{
+"id": "Longus_colli_muscler",
+"label": "Longus colli muscle right"
+},
+{
+"id": "Inferior_pharyngeal_constrictorl",
+"label": "Inferior pharyngeal constrictor left"
+},
+{
+"id": "Inferior_pharyngeal_constrictorr",
+"label": "Inferior pharyngeal constrictor right"
+},
+{
+"id": "Middle_pharyngeal_constrictorl",
+"label": "Middle pharyngeal constrictor left"
+},
+{
+"id": "Middle_pharyngeal_constrictorr",
+"label": "Middle pharyngeal constrictor right"
+},
+{
+"id": "Stylopharyngeus_musclel",
+"label": "Stylopharyngeus muscle left"
+},
+{
+"id": "Stylopharyngeus_muscler",
+"label": "Stylopharyngeus muscle right"
+},
+{
+"id": "Superior_pharyngeal_constrictorl",
+"label": "Superior pharyngeal constrictor left"
+},
+{
+"id": "Superior_pharyngeal_constrictorr",
+"label": "Superior pharyngeal constrictor right"
+},
+{
+"id": "Platysmal",
+"label": "Platysma left"
+},
+{
+"id": "Platysmar",
+"label": "Platysma right"
+},
+{
+"id": "Rectus_anterior_capitis_musclel",
+"label": "Rectus anterior capitis muscle left"
+},
+{
+"id": "Rectus_anterior_capitis_muscler",
+"label": "Rectus anterior capitis muscle right"
+},
+{
+"id": "Rectus_lateralis_capitis_musclel",
+"label": "Rectus lateralis capitis muscle left"
+},
+{
+"id": "Rectus_lateralis_capitis_muscler",
+"label": "Rectus lateralis capitis muscle right"
+},
+{
+"id": "Scalenus_anterior_musclel",
+"label": "Scalenus anterior muscle left"
+},
+{
+"id": "Scalenus_anterior_muscler",
+"label": "Scalenus anterior muscle right"
+},
+{
+"id": "Scalenus_medius_musclel",
+"label": "Scalenus medius muscle left"
+},
+{
+"id": "Scalenus_medius_muscler",
+"label": "Scalenus medius muscle right"
+},
+{
+"id": "Scalenus_posterior_musclel",
+"label": "Scalenus posterior muscle left"
+},
+{
+"id": "Scalenus_posterior_muscler",
+"label": "Scalenus posterior muscle right"
+},
+{
+"id": "Sternocleidomastoid_musclel",
+"label": "Sternocleidomastoid muscle left"
+},
+{
+"id": "Sternocleidomastoid_muscler",
+"label": "Sternocleidomastoid muscle right"
+},
+{
+"id": "Anterior_belly_of_digastric_musclel",
+"label": "Anterior belly of digastric muscle left"
+},
+{
+"id": "Anterior_belly_of_digastric_muscler",
+"label": "Anterior belly of digastric muscle right"
+},
+{
+"id": "Intermediate_tendon_of_digastric_musclel",
+"label": "Intermediate tendon of digastric muscle left"
+},
+{
+"id": "Intermediate_tendon_of_digastric_muscler",
+"label": "Intermediate tendon of digastric muscle right"
+},
+{
+"id": "Posterior_belly_of_digastric_musclel",
+"label": "Posterior belly of digastric muscle left"
+},
+{
+"id": "Posterior_belly_of_digastric_muscler",
+"label": "Posterior belly of digastric muscle right"
+},
+{
+"id": "Geniohyoid_musclel",
+"label": "Geniohyoid muscle left"
+},
+{
+"id": "Geniohyoid_muscler",
+"label": "Geniohyoid muscle right"
+},
+{
+"id": "Mylohyoid_musclel",
+"label": "Mylohyoid muscle left"
+},
+{
+"id": "Mylohyoid_muscler",
+"label": "Mylohyoid muscle right"
+},
+{
+"id": "Stylohyoid_musclel",
+"label": "Stylohyoid muscle left"
+},
+{
+"id": "Stylohyoid_muscler",
+"label": "Stylohyoid muscle right"
+},
+{
+"id": "Iliocostalis_colli_muscle",
+"label": "Iliocostalis colli muscle"
+},
+{
+"id": "Iliocostalis_colli_muscler",
+"label": "Iliocostalis colli muscle right"
+},
+{
+"id": "Iliocostalis_lumborum_musclel",
+"label": "Iliocostalis lumborum muscle left"
+},
+{
+"id": "Iliocostalis_lumborum_muscler",
+"label": "Iliocostalis lumborum muscle right"
+},
+{
+"id": "Iliocostalis_thoracis_musclel",
+"label": "Iliocostalis thoracis muscle left"
+},
+{
+"id": "Iliocostalis_thoracis_muscler",
+"label": "Iliocostalis thoracis muscle right"
+},
+{
+"id": "Longissimus_capitis_musclel",
+"label": "Longissimus capitis muscle left"
+},
+{
+"id": "Longissimus_capitis_muscler",
+"label": "Longissimus capitis muscle right"
+},
+{
+"id": "Longissimus_colli_musclel",
+"label": "Longissimus colli muscle left"
+},
+{
+"id": "Longissimus_colli_muscler",
+"label": "Longissimus colli muscle right"
+},
+{
+"id": "Longissimus_thoracis_musclel",
+"label": "Longissimus thoracis muscle left"
+},
+{
+"id": "Longissimus_thoracis_muscler",
+"label": "Longissimus thoracis muscle right"
+},
+{
+"id": "Spinalis_capitis_musclel",
+"label": "Spinalis capitis muscle left"
+},
+{
+"id": "Spinalis_capitis_muscler",
+"label": "Spinalis capitis muscle right"
+},
+{
+"id": "Spinalis_colli_musclel",
+"label": "Spinalis colli muscle left"
+},
+{
+"id": "Spinalis_colli_muscler",
+"label": "Spinalis colli muscle right"
+},
+{
+"id": "Spinalis_thoracis_musclel",
+"label": "Spinalis thoracis muscle left"
+},
+{
+"id": "Spinalis_thoracis_muscler",
+"label": "Spinalis thoracis muscle right"
+},
+{
+"id": "Interspinales_colli_musclesl",
+"label": "Interspinales colli muscles left"
+},
+{
+"id": "Interspinales_colli_musclesr",
+"label": "Interspinales colli muscles right"
+},
+{
+"id": "Interspinales_lumborum_musclesl",
+"label": "Interspinales lumborum muscles left"
+},
+{
+"id": "Interspinales_lumborum_musclesr",
+"label": "Interspinales lumborum muscles right"
+},
+{
+"id": "Interspinales_thoracis_musclesl",
+"label": "Interspinales thoracis muscles left"
+},
+{
+"id": "Interspinales_thoracis_musclesr",
+"label": "Interspinales thoracis muscles right"
+},
+{
+"id": "Splenius_capitis_musclel",
+"label": "Splenius capitis muscle left"
+},
+{
+"id": "Splenius_capitis_muscler",
+"label": "Splenius capitis muscle right"
+},
+{
+"id": "Splenius_colli_musclel",
+"label": "Splenius colli muscle left"
+},
+{
+"id": "Splenius_colli_muscler",
+"label": "Splenius colli muscle right"
+},
+{
+"id": "Obliquus_inferior_capitis_musclel",
+"label": "Obliquus inferior capitis muscle left"
+},
+{
+"id": "Obliquus_inferior_capitis_muscler",
+"label": "Obliquus inferior capitis muscle right"
+},
+{
+"id": "Obliquus_superior_capitis_musclel",
+"label": "Obliquus superior capitis muscle left"
+},
+{
+"id": "Obliquus_superior_capitis_muscler",
+"label": "Obliquus superior capitis muscle right"
+},
+{
+"id": "Rectus_posterior_major_capitis_musclel",
+"label": "Rectus posterior major capitis muscle left"
+},
+{
+"id": "Rectus_posterior_major_capitis_muscler",
+"label": "Rectus posterior major capitis muscle right"
+},
+{
+"id": "Rectus_posterior_minor_capitis_musclel",
+"label": "Rectus posterior minor capitis muscle left"
+},
+{
+"id": "Rectus_posterior_minor_capitis_muscler",
+"label": "Rectus posterior minor capitis muscle right"
+},
+{
+"id": "Multifidus_colli_musclel",
+"label": "Multifidus colli muscle left"
+},
+{
+"id": "Multifidus_colli_muscler",
+"label": "Multifidus colli muscle right"
+},
+{
+"id": "Multifidus_lumborum_musclel",
+"label": "Multifidus lumborum muscle left"
+},
+{
+"id": "Multifidus_lumborum_muscler",
+"label": "Multifidus lumborum muscle right"
+},
+{
+"id": "Multifidus_thoracis_musclel",
+"label": "Multifidus thoracis muscle left"
+},
+{
+"id": "Multifidus_thoracis_muscler",
+"label": "Multifidus thoracis muscle right"
+},
+{
+"id": "Rotatoresl",
+"label": "Rotatores left"
+},
+{
+"id": "Rotatoresr",
+"label": "Rotatores right"
+},
+{
+"id": "Semispinalis_colli_musclel",
+"label": "Semispinalis colli muscle left"
+},
+{
+"id": "Semispinalis_colli_muscler",
+"label": "Semispinalis colli muscle right"
+},
+{
+"id": "Semispinalis_thoracis_musclel",
+"label": "Semispinalis thoracis muscle left"
+},
+{
+"id": "Semispinalis_thoracis_muscler",
+"label": "Semispinalis thoracis muscle right"
+},
+{
+"id": "Dorsal_parts_of_lateral_intertransversarii_lumborum_musclesl",
+"label": "Dorsal parts of lateral intertransversarii lumborum muscles left"
+},
+{
+"id": "Dorsal_parts_of_lateral_intertransversarii_lumborum_musclesr",
+"label": "Dorsal parts of lateral intertransversarii lumborum muscles right"
+},
+{
+"id": "Latissimus_dorsi_musclel",
+"label": "Latissimus dorsi muscle left"
+},
+{
+"id": "Latissimus_dorsi_muscler",
+"label": "Latissimus dorsi muscle right"
+},
+{
+"id": "Levator_scapulael",
+"label": "Levator scapulae left"
+},
+{
+"id": "Levator_scapulaer",
+"label": "Levator scapulae right"
+},
+{
+"id": "Rhomboid_major_musclel",
+"label": "Rhomboid major muscle left"
+},
+{
+"id": "Rhomboid_major_muscler",
+"label": "Rhomboid major muscle right"
+},
+{
+"id": "Rhomboid_minor_musclel",
+"label": "Rhomboid minor muscle left"
+},
+{
+"id": "Rhomboid_minor_muscler",
+"label": "Rhomboid minor muscle right"
+},
+{
+"id": "Serratus_posterior_inferior_musclel",
+"label": "Serratus posterior inferior muscle left"
+},
+{
+"id": "Serratus_posterior_inferior_muscler",
+"label": "Serratus posterior inferior muscle right"
+},
+{
+"id": "Serratus_posterior_superior_musclel",
+"label": "Serratus posterior superior muscle left"
+},
+{
+"id": "Serratus_posterior_superior_muscler",
+"label": "Serratus posterior superior muscle right"
+},
+{
+"id": "Ascending_part_of_trapezius_musclel",
+"label": "Ascending part of trapezius muscle left"
+},
+{
+"id": "Ascending_part_of_trapezius_muscler",
+"label": "Ascending part of trapezius muscle right"
+},
+{
+"id": "Descending_part_of_trapezius_musclel",
+"label": "Descending part of trapezius muscle left"
+},
+{
+"id": "Descending_part_of_trapezius_muscler",
+"label": "Descending part of trapezius muscle right"
+},
+{
+"id": "Transverse_part_of_trapezius_musclel",
+"label": "Transverse part of trapezius muscle left"
+},
+{
+"id": "Transverse_part_of_trapezius_muscler",
+"label": "Transverse part of trapezius muscle right"
+},
+{
+"id": "Ventral_parts_of_lateral_intertransversarii_lumborum_musclesl",
+"label": "Ventral parts of lateral intertransversarii lumborum muscles left"
+},
+{
+"id": "Ventral_parts_of_lateral_intertransversarii_lumborum_musclesr",
+"label": "Ventral parts of lateral intertransversarii lumborum muscles right"
+},
+{
+"id": "Diaphragm",
+"label": "Diaphragm"
+},
+{
+"id": "External_intercostal_musclesl",
+"label": "External intercostal muscles left"
+},
+{
+"id": "External_intercostal_musclesr",
+"label": "External intercostal muscles right"
+},
+{
+"id": "Innermost_intercostal_musclesl",
+"label": "Innermost intercostal muscles left"
+},
+{
+"id": "Innermost_intercostal_musclesr",
+"label": "Innermost intercostal muscles right"
+},
+{
+"id": "Internal_intercostal_musclesl",
+"label": "Internal intercostal muscles left"
+},
+{
+"id": "Internal_intercostal_musclesr",
+"label": "Internal intercostal muscles right"
+},
+{
+"id": "Levatores_breves_costaruml",
+"label": "Levatores breves costarum left"
+},
+{
+"id": "Levatores_breves_costarumr",
+"label": "Levatores breves costarum right"
+},
+{
+"id": "Levatores_longi_costaruml",
+"label": "Levatores longi costarum left"
+},
+{
+"id": "Levatores_longi_costarumr",
+"label": "Levatores longi costarum right"
+},
+{
+"id": "(Abdominal_part_of_pectoralis_major_muscle)l",
+"label": "Abdominal part of pectoralis major muscle left"
+},
+{
+"id": "(Abdominal_part_of_pectoralis_major_muscle)r",
+"label": "Abdominal part of pectoralis major muscle right"
+},
+{
+"id": "Clavicular_head_of_pectoralis_major_musclel",
+"label": "Clavicular head of pectoralis major muscle left"
+},
+{
+"id": "Clavicular_head_of_pectoralis_major_muscler",
+"label": "Clavicular head of pectoralis major muscle right"
+},
+{
+"id": "Sternocostal_head_of_pectoralis_major_musclel",
+"label": "Sternocostal head of pectoralis major muscle left"
+},
+{
+"id": "Sternocostal_head_of_pectoralis_major_muscler",
+"label": "Sternocostal head of pectoralis major muscle right"
+},
+{
+"id": "Pectoralis_minor_musclel",
+"label": "Pectoralis minor muscle left"
+},
+{
+"id": "Pectoralis_minor_muscler",
+"label": "Pectoralis minor muscle right"
+},
+{
+"id": "Serratus_anterior_musclel",
+"label": "Serratus anterior muscle left"
+},
+{
+"id": "Serratus_anterior_muscler",
+"label": "Serratus anterior muscle right"
+},
+{
+"id": "Subclavius_musclel",
+"label": "Subclavius muscle left"
+},
+{
+"id": "Subclavius_muscler",
+"label": "Subclavius muscle right"
+},
+{
+"id": "Transversus_thoracis_musclel",
+"label": "Transversus thoracis muscle left"
+},
+{
+"id": "Transversus_thoracis_muscler",
+"label": "Transversus thoracis muscle right"
+},
+{
+"id": "External_abdominal_oblique_musclel",
+"label": "External abdominal oblique muscle left"
+},
+{
+"id": "Inguinal_ligamentl",
+"label": "Inguinal ligament left"
+},
+{
+"id": "External_abdominal_oblique_muscler",
+"label": "External abdominal oblique muscle right"
+},
+{
+"id": "Inguinal_ligamentr",
+"label": "Inguinal ligament right"
+},
+{
+"id": "Internal_abdominal_oblique_musclel",
+"label": "Internal abdominal oblique muscle left"
+},
+{
+"id": "Internal_abdominal_oblique_muscler",
+"label": "Internal abdominal oblique muscle right"
+},
+{
+"id": "Linea_alba",
+"label": "Linea alba"
+},
+{
+"id": "Pyramidalis_musclel",
+"label": "Pyramidalis muscle left"
+},
+{
+"id": "Pyramidalis_muscler",
+"label": "Pyramidalis muscle right"
+},
+{
+"id": "Quadratus_lumborum_musclel",
+"label": "Quadratus lumborum muscle left"
+},
+{
+"id": "Quadratus_lumborum_muscler",
+"label": "Quadratus lumborum muscle right"
+},
+{
+"id": "Rectus_abdominis_musclel",
+"label": "Rectus abdominis muscle left"
+},
+{
+"id": "Rectus_abdominis_muscler",
+"label": "Rectus abdominis muscle right"
+},
+{
+"id": "Transversus_abdominis_musclel",
+"label": "Transversus abdominis muscle left"
+},
+{
+"id": "Transversus_abdominis_muscler",
+"label": "Transversus abdominis muscle right"
+},
+{
+"id": "Coccygeus_musclel",
+"label": "Coccygeus muscle left"
+},
+{
+"id": "Coccygeus_muscler",
+"label": "Coccygeus muscle right"
+},
+{
+"id": "Iliococcygeus_musclel",
+"label": "Iliococcygeus muscle left"
+},
+{
+"id": "Iliococcygeus_muscler",
+"label": "Iliococcygeus muscle right"
+},
+{
+"id": "Pubo-analis_musclel",
+"label": "Pubo-analis muscle left"
+},
+{
+"id": "Pubo-analis_muscler",
+"label": "Pubo-analis muscle right"
+},
+{
+"id": "Pubococcygeus_musclel",
+"label": "Pubococcygeus muscle left"
+},
+{
+"id": "Pubococcygeus_muscler",
+"label": "Pubococcygeus muscle right"
+},
+{
+"id": "Tendinous_arch_of_levator_anil",
+"label": "Tendinous arch of levator ani left"
+},
+{
+"id": "Tendinous_arch_of_levator_anir",
+"label": "Tendinous arch of levator ani right"
+},
+{
+"id": "External_anal_sphincterl",
+"label": "External anal sphincter left"
+},
+{
+"id": "External_anal_sphincterr",
+"label": "External anal sphincter right"
+},
+{
+"id": "Bicipitoradial_bursal",
+"label": "Bicipitoradial bursa left"
+},
+{
+"id": "Bicipitoradial_bursar",
+"label": "Bicipitoradial bursa right"
+},
+{
+"id": "Coracobrachial_bursal",
+"label": "Coracobrachial bursa left"
+},
+{
+"id": "Coracobrachial_bursar",
+"label": "Coracobrachial bursa right"
+},
+{
+"id": "Subacromial_bursal",
+"label": "Subacromial bursa left"
+},
+{
+"id": "Subacromial_bursar",
+"label": "Subacromial bursa right"
+},
+{
+"id": "Subcutaneous_acromial_bursal",
+"label": "Subcutaneous acromial bursa left"
+},
+{
+"id": "Subcutaneous_acromial_bursar",
+"label": "Subcutaneous acromial bursa right"
+},
+{
+"id": "Subdeltoid_bursal",
+"label": "Subdeltoid bursa left"
+},
+{
+"id": "Subdeltoid_bursar",
+"label": "Subdeltoid bursa right"
+},
+{
+"id": "Subtendinous_bursa_of_infraspinatus_musclel",
+"label": "Subtendinous bursa of infraspinatus muscle left"
+},
+{
+"id": "Subtendinous_bursa_of_infraspinatus_muscler",
+"label": "Subtendinous bursa of infraspinatus muscle right"
+},
+{
+"id": "Subtendinous_bursa_of_teres_major_musclel",
+"label": "Subtendinous bursa of teres major muscle left"
+},
+{
+"id": "Subtendinous_bursa_of_teres_major_muscler",
+"label": "Subtendinous bursa of teres major muscle right"
+},
+{
+"id": "Subtendinous_bursa_of_trapezius_musclel",
+"label": "Subtendinous bursa of trapezius muscle left"
+},
+{
+"id": "Subtendinous_bursa_of_trapezius_muscler",
+"label": "Subtendinous bursa of trapezius muscle right"
+},
+{
+"id": "Subtendinous_bursa_of_triceps_brachii_musclel",
+"label": "Subtendinous bursa of triceps brachii muscle left"
+},
+{
+"id": "Subtendinous_bursa_of_triceps_brachii_muscler",
+"label": "Subtendinous bursa of triceps brachii muscle right"
+},
+{
+"id": "Long_head_of_biceps_brachiil",
+"label": "Long head of biceps brachii left"
+},
+{
+"id": "Long_head_of_biceps_brachiir",
+"label": "Long head of biceps brachii right"
+},
+{
+"id": "Short_head_of_biceps_brachiil",
+"label": "Short head of biceps brachii left"
+},
+{
+"id": "Short_head_of_biceps_brachiir",
+"label": "Short head of biceps brachii right"
+},
+{
+"id": "Brachialis_musclel",
+"label": "Brachialis muscle left"
+},
+{
+"id": "Brachialis_muscler",
+"label": "Brachialis muscle right"
+},
+{
+"id": "Coracobrachialis_musclel",
+"label": "Coracobrachialis muscle left"
+},
+{
+"id": "Coracobrachialis_muscler",
+"label": "Coracobrachialis muscle right"
+},
+{
+"id": "Flexor_digitorum_profundusl",
+"label": "Flexor digitorum profundus left"
+},
+{
+"id": "Flexor_digitorum_profundusr",
+"label": "Flexor digitorum profundus right"
+},
+{
+"id": "Flexor_pollicis_longusl",
+"label": "Flexor pollicis longus left"
+},
+{
+"id": "Flexor_pollicis_longusr",
+"label": "Flexor pollicis longus right"
+},
+{
+"id": "Pronator_quadratusl",
+"label": "Pronator quadratus left"
+},
+{
+"id": "Pronator_quadratusr",
+"label": "Pronator quadratus right"
+},
+{
+"id": "Deep_head_of_pronator_teresl",
+"label": "Deep head of pronator teres left"
+},
+{
+"id": "Deep_head_of_pronator_teresr",
+"label": "Deep head of pronator teres right"
+},
+{
+"id": "Flexor_carpi_radialisl",
+"label": "Flexor carpi radialis left"
+},
+{
+"id": "Flexor_carpi_radialisr",
+"label": "Flexor carpi radialis right"
+},
+{
+"id": "Humeral_head_of_flexor_carpi_ulnarisl",
+"label": "Humeral head of flexor carpi ulnaris left"
+},
+{
+"id": "Humeral_head_of_flexor_carpi_ulnarisr",
+"label": "Humeral head of flexor carpi ulnaris right"
+},
+{
+"id": "Humero-ulnar_head_of_flexor_digitorum_superficialisl",
+"label": "Humero-ulnar head of flexor digitorum superficialis left"
+},
+{
+"id": "Humero-ulnar_head_of_flexor_digitorum_superficialisr",
+"label": "Humero-ulnar head of flexor digitorum superficialis right"
+},
+{
+"id": "Palmaris_longus_musclel",
+"label": "Palmaris longus muscle left"
+},
+{
+"id": "Palmaris_longus_muscler",
+"label": "Palmaris longus muscle right"
+},
+{
+"id": "Radial_head_of_flexor_digitorum_superficialisl",
+"label": "Radial head of flexor digitorum superficialis left"
+},
+{
+"id": "Radial_head_of_flexor_digitorum_superficialisr",
+"label": "Radial head of flexor digitorum superficialis right"
+},
+{
+"id": "Superficial_head_of_pronator_teresl",
+"label": "Superficial head of pronator teres left"
+},
+{
+"id": "Superficial_head_of_pronator_teresr",
+"label": "Superficial head of pronator teres right"
+},
+{
+"id": "Ulnar_head_of_flexor_carpi_ulnarisl",
+"label": "Ulnar head of flexor carpi ulnaris left"
+},
+{
+"id": "Ulnar_head_of_flexor_carpi_ulnarisr",
+"label": "Ulnar head of flexor carpi ulnaris right"
+},
+{
+"id": "Abductor_digiti_minimi_of_handl",
+"label": "Abductor digiti minimi of hand left"
+},
+{
+"id": "Abductor_digiti_minimi_of_handr",
+"label": "Abductor digiti minimi of hand right"
+},
+{
+"id": "Abductor_pollicis_brevisl",
+"label": "Abductor pollicis brevis left"
+},
+{
+"id": "Abductor_pollicis_brevisr",
+"label": "Abductor pollicis brevis right"
+},
+{
+"id": "Deep_head_of_flexor_pollicis_brevisl",
+"label": "Deep head of flexor pollicis brevis left"
+},
+{
+"id": "Deep_head_of_flexor_pollicis_brevisr",
+"label": "Deep head of flexor pollicis brevis right"
+},
+{
+"id": "Dorsal_interossei_muscles_of_handl",
+"label": "Dorsal interossei muscles of hand left"
+},
+{
+"id": "Dorsal_interossei_muscles_of_handr",
+"label": "Dorsal interossei muscles of hand right"
+},
+{
+"id": "Flexor_digiti_minimi_of_handl",
+"label": "Flexor digiti minimi of hand left"
+},
+{
+"id": "Flexor_digiti_minimi_of_handr",
+"label": "Flexor digiti minimi of hand right"
+},
+{
+"id": "Lumbrical_muscles_of_handl",
+"label": "Lumbrical muscles of hand left"
+},
+{
+"id": "Lumbrical_muscles_of_handr",
+"label": "Lumbrical muscles of hand right"
+},
+{
+"id": "Oblique_head_of_adductor_pollicisl",
+"label": "Oblique head of adductor pollicis left"
+},
+{
+"id": "Oblique_head_of_adductor_pollicisr",
+"label": "Oblique head of adductor pollicis right"
+},
+{
+"id": "Opponens_digiti_minimi_muscle_of_handl",
+"label": "Opponens digiti minimi muscle of hand left"
+},
+{
+"id": "Opponens_digiti_minimi_muscle_of_handr",
+"label": "Opponens digiti minimi muscle of hand right"
+},
+{
+"id": "Opponens_pollicis_musclel",
+"label": "Opponens pollicis muscle left"
+},
+{
+"id": "Opponens_pollicis_muscler",
+"label": "Opponens pollicis muscle right"
+},
+{
+"id": "Palmar_interossei_musclesl",
+"label": "Palmar interossei muscles left"
+},
+{
+"id": "Palmar_interossei_musclesr",
+"label": "Palmar interossei muscles right"
+},
+{
+"id": "Superficial_head_of_flexor_pollicis_brevisl",
+"label": "Superficial head of flexor pollicis brevis left"
+},
+{
+"id": "Superficial_head_of_flexor_pollicis_brevisr",
+"label": "Superficial head of flexor pollicis brevis right"
+},
+{
+"id": "Transverse_head_of_adductor_pollicisl",
+"label": "Transverse head of adductor pollicis left"
+},
+{
+"id": "Transverse_head_of_adductor_pollicisr",
+"label": "Transverse head of adductor pollicis right"
+},
+{
+"id": "Lateral_head_of_triceps_brachiil",
+"label": "Lateral head of triceps brachii left"
+},
+{
+"id": "Lateral_head_of_triceps_brachiir",
+"label": "Lateral head of triceps brachii right"
+},
+{
+"id": "Long_head_of_triceps_brachiil",
+"label": "Long head of triceps brachii left"
+},
+{
+"id": "Long_head_of_triceps_brachiir",
+"label": "Long head of triceps brachii right"
+},
+{
+"id": "Medial_head_of_triceps_brachiil",
+"label": "Medial head of triceps brachii left"
+},
+{
+"id": "Medial_head_of_triceps_brachiir",
+"label": "Medial head of triceps brachii right"
+},
+{
+"id": "Abductor_pollicis_longusl",
+"label": "Abductor pollicis longus left"
+},
+{
+"id": "Abductor_pollicis_longusr",
+"label": "Abductor pollicis longus right"
+},
+{
+"id": "Extensor_indicisl",
+"label": "Extensor indicis left"
+},
+{
+"id": "Extensor_indicisr",
+"label": "Extensor indicis right"
+},
+{
+"id": "Extensor_pollicis_brevisl",
+"label": "Extensor pollicis brevis left"
+},
+{
+"id": "Extensor_pollicis_brevisr",
+"label": "Extensor pollicis brevis right"
+},
+{
+"id": "Extensor_pollicis_longusl",
+"label": "Extensor pollicis longus left"
+},
+{
+"id": "Extensor_pollicis_longusr",
+"label": "Extensor pollicis longus right"
+},
+{
+"id": "Supinatorl",
+"label": "Supinator left"
+},
+{
+"id": "Supinatorr",
+"label": "Supinator right"
+},
+{
+"id": "Anconeus_musclel",
+"label": "Anconeus muscle left"
+},
+{
+"id": "Anconeus_muscler",
+"label": "Anconeus muscle right"
+},
+{
+"id": "Brachioradialis_musclel",
+"label": "Brachioradialis muscle left"
+},
+{
+"id": "Brachioradialis_muscler",
+"label": "Brachioradialis muscle right"
+},
+{
+"id": "Extensor_carpi_radialis_brevisl",
+"label": "Extensor carpi radialis brevis left"
+},
+{
+"id": "Extensor_carpi_radialis_brevisr",
+"label": "Extensor carpi radialis brevis right"
+},
+{
+"id": "Extensor_carpi_radialis_longusl",
+"label": "Extensor carpi radialis longus left"
+},
+{
+"id": "Extensor_carpi_radialis_longusr",
+"label": "Extensor carpi radialis longus right"
+},
+{
+"id": "Extensor_digiti_minimil",
+"label": "Extensor digiti minimi left"
+},
+{
+"id": "Extensor_digiti_minimir",
+"label": "Extensor digiti minimi right"
+},
+{
+"id": "Extensor_digitoruml",
+"label": "Extensor digitorum left"
+},
+{
+"id": "Extensor_digitorumr",
+"label": "Extensor digitorum right"
+},
+{
+"id": "Humeral_head_of_extensor_carpi_ulnarisl",
+"label": "Humeral head of extensor carpi ulnaris left"
+},
+{
+"id": "Humeral_head_of_extensor_carpi_ulnarisr",
+"label": "Humeral head of extensor carpi ulnaris right"
+},
+{
+"id": "Ulnar_head_of_extensor_carpi_ulnarisl",
+"label": "Ulnar head of extensor carpi ulnaris left"
+},
+{
+"id": "Ulnar_head_of_extensor_carpi_ulnarisr",
+"label": "Ulnar head of extensor carpi ulnaris right"
+},
+{
+"id": "Acromial_part_of_deltoid_musclel",
+"label": "Acromial part of deltoid muscle left"
+},
+{
+"id": "Acromial_part_of_deltoid_muscler",
+"label": "Acromial part of deltoid muscle right"
+},
+{
+"id": "Clavicular_part_of_deltoid_musclel",
+"label": "Clavicular part of deltoid muscle left"
+},
+{
+"id": "Clavicular_part_of_deltoid_muscler",
+"label": "Clavicular part of deltoid muscle right"
+},
+{
+"id": "Scapular_spinal_part_of_deltoid_musclel",
+"label": "Scapular spinal part of deltoid muscle left"
+},
+{
+"id": "Scapular_spinal_part_of_deltoid_muscler",
+"label": "Scapular spinal part of deltoid muscle right"
+},
+{
+"id": "Infraspinatus_musclel",
+"label": "Infraspinatus muscle left"
+},
+{
+"id": "Infraspinatus_muscler",
+"label": "Infraspinatus muscle right"
+},
+{
+"id": "Subscapularis_musclel",
+"label": "Subscapularis muscle left"
+},
+{
+"id": "Subscapularis_muscler",
+"label": "Subscapularis muscle right"
+},
+{
+"id": "Supraspinatus_musclel",
+"label": "Supraspinatus muscle left"
+},
+{
+"id": "Supraspinatus_muscler",
+"label": "Supraspinatus muscle right"
+},
+{
+"id": "Teres_minor_musclel",
+"label": "Teres minor muscle left"
+},
+{
+"id": "Teres_minor_muscler",
+"label": "Teres minor muscle right"
+},
+{
+"id": "Teres_major_musclel",
+"label": "Teres major muscle left"
+},
+{
+"id": "Teres_major_muscler",
+"label": "Teres major muscle right"
+},
+{
+"id": "Tendon_sheath_-_abd_pollicis_longus_-_ext_pollicis_brevisl",
+"label": "Tendon sheath - abd pollicis longus - ext pollicis brevis left"
+},
+{
+"id": "Tendon_sheath_-_abd_pollicis_longus_-_ext_pollicis_brevisr",
+"label": "Tendon sheath - abd pollicis longus - ext pollicis brevis right"
+},
+{
+"id": "Tendon_sheath_of_extensor_carpi_ulnarisl",
+"label": "Tendon sheath of extensor carpi ulnaris left"
+},
+{
+"id": "Tendon_sheath_of_extensor_carpi_ulnarisr",
+"label": "Tendon sheath of extensor carpi ulnaris right"
+},
+{
+"id": "Tendon_sheath_of_extensor_digiti_minimi_manusl",
+"label": "Tendon sheath of extensor digiti minimi manus left"
+},
+{
+"id": "Tendon_sheath_of_extensor_digiti_minimi_manusr",
+"label": "Tendon sheath of extensor digiti minimi manus right"
+},
+{
+"id": "Tendon_sheath_of_extensor_digitorum_and_extensor_indicisl",
+"label": "Tendon sheath of extensor digitorum and extensor indicis left"
+},
+{
+"id": "Tendon_sheath_of_extensor_digitorum_and_extensor_indicisr",
+"label": "Tendon sheath of extensor digitorum and extensor indicis right"
+},
+{
+"id": "Tendon_sheath_of_extensor_pollicis_longusl",
+"label": "Tendon sheath of extensor pollicis longus left"
+},
+{
+"id": "Tendon_sheath_of_extensor_pollicis_longusr",
+"label": "Tendon sheath of extensor pollicis longus right"
+},
+{
+"id": "Tendon_sheath_of_extensors_carpi_radialisl",
+"label": "Tendon sheath of extensors carpi radialis left"
+},
+{
+"id": "Tendon_sheath_of_extensors_carpi_radialisr",
+"label": "Tendon sheath of extensors carpi radialis right"
+},
+{
+"id": "Common_flexor_tendon_sheathl",
+"label": "Common flexor tendon sheath left"
+},
+{
+"id": "Common_flexor_tendon_sheathr",
+"label": "Common flexor tendon sheath right"
+},
+{
+"id": "Tendon_sheath_of_flexor_carpi_radialisl",
+"label": "Tendon sheath of flexor carpi radialis left"
+},
+{
+"id": "Tendon_sheath_of_flexor_carpi_radialisr",
+"label": "Tendon sheath of flexor carpi radialis right"
+},
+{
+"id": "Tendon_sheath_of_flexor_pollicis_longusl",
+"label": "Tendon sheath of flexor pollicis longus left"
+},
+{
+"id": "Tendon_sheath_of_flexor_pollicis_longusr",
+"label": "Tendon sheath of flexor pollicis longus right"
+},
+{
+"id": "Intertubercular_tendon_sheathl",
+"label": "Intertubercular tendon sheath left"
+},
+{
+"id": "Intertubercular_tendon_sheathr",
+"label": "Intertubercular tendon sheath right"
+},
+{
+"id": "Cruciform_part_of_fibrous_sheath_of_digit_of_handl",
+"label": "Cruciform part of fibrous sheath of digit of hand left"
+},
+{
+"id": "Cruciform_part_of_fibrous_sheath_of_digit_of_handr",
+"label": "Cruciform part of fibrous sheath of digit of hand right"
+},
+{
+"id": "Synovial_sheaths_of_digits_of_handl",
+"label": "Synovial sheaths of digits of hand left"
+},
+{
+"id": "Synovial_sheaths_of_digits_of_handr",
+"label": "Synovial sheaths of digits of hand right"
+},
+{
+"id": "(Iliopectineal_bursa)l",
+"label": "Iliopectineal bursa left"
+},
+{
+"id": "(Iliopectineal_bursa)r",
+"label": "Iliopectineal bursa right"
+},
+{
+"id": "Anserine_bursal",
+"label": "Anserine bursa left"
+},
+{
+"id": "Anserine_bursar",
+"label": "Anserine bursa right"
+},
+{
+"id": "Bursa_of_piriformis_musclel",
+"label": "Bursa of piriformis muscle left"
+},
+{
+"id": "Bursa_of_piriformis_muscler",
+"label": "Bursa of piriformis muscle right"
+},
+{
+"id": "Deep_infrapatellar_bursal",
+"label": "Deep infrapatellar bursa left"
+},
+{
+"id": "Deep_infrapatellar_bursar",
+"label": "Deep infrapatellar bursa right"
+},
+{
+"id": "Inferior_subtendinous_bursa_of_biceps_femoris_musclel",
+"label": "Inferior subtendinous bursa of biceps femoris muscle left"
+},
+{
+"id": "Inferior_subtendinous_bursa_of_biceps_femoris_muscler",
+"label": "Inferior subtendinous bursa of biceps femoris muscle right"
+},
+{
+"id": "Intermuscular_gluteal_bursael",
+"label": "Intermuscular gluteal bursae left"
+},
+{
+"id": "Intermuscular_gluteal_bursaer",
+"label": "Intermuscular gluteal bursae right"
+},
+{
+"id": "Lateral_subtendinous_bursa_of_gastrocnemius_musclel",
+"label": "Lateral subtendinous bursa of gastrocnemius muscle left"
+},
+{
+"id": "Lateral_subtendinous_bursa_of_gastrocnemius_muscler",
+"label": "Lateral subtendinous bursa of gastrocnemius muscle right"
+},
+{
+"id": "Medial_subtendinous_bursa_of_gastrocnemius_musclel",
+"label": "Medial subtendinous bursa of gastrocnemius muscle left"
+},
+{
+"id": "Medial_subtendinous_bursa_of_gastrocnemius_muscler",
+"label": "Medial subtendinous bursa of gastrocnemius muscle right"
+},
+{
+"id": "Sciatic_bursa_of_gluteus_maximus_musclel",
+"label": "Sciatic bursa of gluteus maximus muscle left"
+},
+{
+"id": "Sciatic_bursa_of_gluteus_maximus_muscler",
+"label": "Sciatic bursa of gluteus maximus muscle right"
+},
+{
+"id": "Sciatic_bursa_of_obturator_internusl",
+"label": "Sciatic bursa of obturator internus left"
+},
+{
+"id": "Sciatic_bursa_of_obturator_internusr",
+"label": "Sciatic bursa of obturator internus right"
+},
+{
+"id": "Semimembranosus_bursal",
+"label": "Semimembranosus bursa left"
+},
+{
+"id": "Semimembranosus_bursar",
+"label": "Semimembranosus bursa right"
+},
+{
+"id": "Subcutaneous_bursa_of_lateral_malleolusl",
+"label": "Subcutaneous bursa of lateral malleolus left"
+},
+{
+"id": "Subcutaneous_bursa_of_lateral_malleolusr",
+"label": "Subcutaneous bursa of lateral malleolus right"
+},
+{
+"id": "Subcutaneous_bursa_of_medial_malleolusl",
+"label": "Subcutaneous bursa of medial malleolus left"
+},
+{
+"id": "Subcutaneous_bursa_of_medial_malleolusr",
+"label": "Subcutaneous bursa of medial malleolus right"
+},
+{
+"id": "Subcutaneous_bursa_of_tuberosity_of_tibial",
+"label": "Subcutaneous bursa of tuberosity of tibia left"
+},
+{
+"id": "Subcutaneous_bursa_of_tuberosity_of_tibiar",
+"label": "Subcutaneous bursa of tuberosity of tibia right"
+},
+{
+"id": "Subcutaneous_calcaneal_bursal",
+"label": "Subcutaneous calcaneal bursa left"
+},
+{
+"id": "Subcutaneous_calcaneal_bursar",
+"label": "Subcutaneous calcaneal bursa right"
+},
+{
+"id": "Subcutaneous_infrapatellar_bursal",
+"label": "Subcutaneous infrapatellar bursa left"
+},
+{
+"id": "Subcutaneous_infrapatellar_bursar",
+"label": "Subcutaneous infrapatellar bursa right"
+},
+{
+"id": "Subcutaneous_prepatellar_bursal",
+"label": "Subcutaneous prepatellar bursa left"
+},
+{
+"id": "Subcutaneous_prepatellar_bursar",
+"label": "Subcutaneous prepatellar bursa right"
+},
+{
+"id": "Subcutaneous_trochanteric_bursal",
+"label": "Subcutaneous trochanteric bursa left"
+},
+{
+"id": "Subcutaneous_trochanteric_bursar",
+"label": "Subcutaneous trochanteric bursa right"
+},
+{
+"id": "Subfacial_prepatellar_bursal",
+"label": "Subfacial prepatellar bursa left"
+},
+{
+"id": "Subfacial_prepatellar_bursar",
+"label": "Subfacial prepatellar bursa right"
+},
+{
+"id": "Subtendinous_bursa_of_iliacus_musclel",
+"label": "Subtendinous bursa of iliacus muscle left"
+},
+{
+"id": "Subtendinous_bursa_of_iliacus_muscler",
+"label": "Subtendinous bursa of iliacus muscle right"
+},
+{
+"id": "Subtendinous_bursa_of_obturator_internusl",
+"label": "Subtendinous bursa of obturator internus left"
+},
+{
+"id": "Subtendinous_bursa_of_obturator_internusr",
+"label": "Subtendinous bursa of obturator internus right"
+},
+{
+"id": "Subtendinous_bursa_of_sartorius_musclel",
+"label": "Subtendinous bursa of sartorius muscle left"
+},
+{
+"id": "Subtendinous_bursa_of_sartorius_muscler",
+"label": "Subtendinous bursa of sartorius muscle right"
+},
+{
+"id": "Subtendinous_bursa_of_tibialis_anteriorl",
+"label": "Subtendinous bursa of tibialis anterior left"
+},
+{
+"id": "Subtendinous_bursa_of_tibialis_anteriorr",
+"label": "Subtendinous bursa of tibialis anterior right"
+},
+{
+"id": "Subtendinous_calcaneal_bursal",
+"label": "Subtendinous calcaneal bursa left"
+},
+{
+"id": "Subtendinous_calcaneal_bursar",
+"label": "Subtendinous calcaneal bursa right"
+},
+{
+"id": "Subtendinous_prepatellar_bursal",
+"label": "Subtendinous prepatellar bursa left"
+},
+{
+"id": "Subtendinous_prepatellar_bursar",
+"label": "Subtendinous prepatellar bursa right"
+},
+{
+"id": "Superior_bursa_of_biceps_femoris_musclel",
+"label": "Superior bursa of biceps femoris muscle left"
+},
+{
+"id": "Superior_bursa_of_biceps_femoris_muscler",
+"label": "Superior bursa of biceps femoris muscle right"
+},
+{
+"id": "Suprapatellar_bursal",
+"label": "Suprapatellar bursa left"
+},
+{
+"id": "Suprapatellar_bursar",
+"label": "Suprapatellar bursa right"
+},
+{
+"id": "Trochanteric_bursa_of_gluteus_maximus_musclel",
+"label": "Trochanteric bursa of gluteus maximus muscle left"
+},
+{
+"id": "Trochanteric_bursa_of_gluteus_maximus_muscler",
+"label": "Trochanteric bursa of gluteus maximus muscle right"
+},
+{
+"id": "Trochanteric_bursa_of_gluteus_medius_musclel",
+"label": "Trochanteric bursa of gluteus medius muscle left"
+},
+{
+"id": "Trochanteric_bursa_of_gluteus_medius_muscler",
+"label": "Trochanteric bursa of gluteus medius muscle right"
+},
+{
+"id": "Trochanteric_bursa_of_gluteus_minimus_musclel",
+"label": "Trochanteric bursa of gluteus minimus muscle left"
+},
+{
+"id": "Trochanteric_bursa_of_gluteus_minimus_muscler",
+"label": "Trochanteric bursa of gluteus minimus muscle right"
+},
+{
+"id": "Extensor_digitorum_longusl",
+"label": "Extensor digitorum longus left"
+},
+{
+"id": "Tendon_of_extensor_digitorum_longusl",
+"label": "Tendon of extensor digitorum longus left"
+},
+{
+"id": "Extensor_digitorum_longusr",
+"label": "Extensor digitorum longus right"
+},
+{
+"id": "Tendon_of_extensor_digitorum_longusr",
+"label": "Tendon of extensor digitorum longus right"
+},
+{
+"id": "Extensor_hallucis_longusl",
+"label": "Extensor hallucis longus left"
+},
+{
+"id": "Extensor_hallucis_longusr",
+"label": "Extensor hallucis longus right"
+},
+{
+"id": "Fibularis_tertius_musclel",
+"label": "Fibularis tertius muscle left"
+},
+{
+"id": "Fibularis_tertius_muscler",
+"label": "Fibularis tertius muscle right"
+},
+{
+"id": "Tibialis_anterior_musclel",
+"label": "Tibialis anterior muscle left"
+},
+{
+"id": "Tibialis_anterior_muscler",
+"label": "Tibialis anterior muscle right"
+},
+{
+"id": "Lateral_patellar_retinaculuml",
+"label": "Lateral patellar retinaculum left"
+},
+{
+"id": "Lateral_patellar_retinaculumr",
+"label": "Lateral patellar retinaculum right"
+},
+{
+"id": "Medial_patellar_retinaculuml",
+"label": "Medial patellar retinaculum left"
+},
+{
+"id": "Medial_patellar_retinaculumr",
+"label": "Medial patellar retinaculum right"
+},
+{
+"id": "Rectus_femoris_musclel",
+"label": "Rectus femoris muscle left"
+},
+{
+"id": "Rectus_femoris_muscler",
+"label": "Rectus femoris muscle right"
+},
+{
+"id": "Sartorius_musclel",
+"label": "Sartorius muscle left"
+},
+{
+"id": "Sartorius_muscler",
+"label": "Sartorius muscle right"
+},
+{
+"id": "Vastus_intermedius_musclel",
+"label": "Vastus intermedius muscle left"
+},
+{
+"id": "Vastus_intermedius_muscler",
+"label": "Vastus intermedius muscle right"
+},
+{
+"id": "Vastus_lateralis_musclel",
+"label": "Vastus lateralis muscle left"
+},
+{
+"id": "Vastus_lateralis_muscler",
+"label": "Vastus lateralis muscle right"
+},
+{
+"id": "Vastus_medialis_musclel",
+"label": "Vastus medialis muscle left"
+},
+{
+"id": "Vastus_medialis_muscler",
+"label": "Vastus medialis muscle right"
+},
+{
+"id": "Inferior_gemellus_musclel",
+"label": "Inferior gemellus muscle left"
+},
+{
+"id": "Inferior_gemellus_muscler",
+"label": "Inferior gemellus muscle right"
+},
+{
+"id": "Obturator_internusl",
+"label": "Obturator internus left"
+},
+{
+"id": "Obturator_internusr",
+"label": "Obturator internus right"
+},
+{
+"id": "Piriformis_musclel",
+"label": "Piriformis muscle left"
+},
+{
+"id": "Piriformis_muscler",
+"label": "Piriformis muscle right"
+},
+{
+"id": "Quadratus_femoris_musclel",
+"label": "Quadratus femoris muscle left"
+},
+{
+"id": "Quadratus_femoris_muscler",
+"label": "Quadratus femoris muscle right"
+},
+{
+"id": "Superior_gemellus_musclel",
+"label": "Superior gemellus muscle left"
+},
+{
+"id": "Superior_gemellus_muscler",
+"label": "Superior gemellus muscle right"
+},
+{
+"id": "Iliacus_musclel",
+"label": "Iliacus muscle left"
+},
+{
+"id": "Iliacus_muscler",
+"label": "Iliacus muscle right"
+},
+{
+"id": "Psoas_majorl",
+"label": "Psoas major left"
+},
+{
+"id": "Psoas_majorr",
+"label": "Psoas major right"
+},
+{
+"id": "Fibularis_brevis_musclel",
+"label": "Fibularis brevis muscle left"
+},
+{
+"id": "Fibularis_brevis_muscler",
+"label": "Fibularis brevis muscle right"
+},
+{
+"id": "Fibularis_longus_musclel",
+"label": "Fibularis longus muscle left"
+},
+{
+"id": "Fibularis_longus_muscler",
+"label": "Fibularis longus muscle right"
+},
+{
+"id": "Adductor_brevisl",
+"label": "Adductor brevis left"
+},
+{
+"id": "Adductor_brevisr",
+"label": "Adductor brevis right"
+},
+{
+"id": "Adductor_longusl",
+"label": "Adductor longus left"
+},
+{
+"id": "Adductor_longusr",
+"label": "Adductor longus right"
+},
+{
+"id": "Adductor_magnusl",
+"label": "Adductor magnus left"
+},
+{
+"id": "(Adductor_minimus)l",
+"label": "Adductor minimus left"
+},
+{
+"id": "Adductor_magnusr",
+"label": "Adductor magnus right"
+},
+{
+"id": "(Adductor_minimus)r",
+"label": "Adductor minimus right"
+},
+{
+"id": "Gracilis_musclel",
+"label": "Gracilis muscle left"
+},
+{
+"id": "Gracilis_muscler",
+"label": "Gracilis muscle right"
+},
+{
+"id": "Obturator_externusl",
+"label": "Obturator externus left"
+},
+{
+"id": "Obturator_externusr",
+"label": "Obturator externus right"
+},
+{
+"id": "Pectineus_musclel",
+"label": "Pectineus muscle left"
+},
+{
+"id": "Pectineus_muscler",
+"label": "Pectineus muscle right"
+},
+{
+"id": "(Opponens_digiti_minimi_muscle_of_foot)l",
+"label": "Opponens digiti minimi muscle of foot left"
+},
+{
+"id": "(Opponens_digiti_minimi_muscle_of_foot)r",
+"label": "Opponens digiti minimi muscle of foot right"
+},
+{
+"id": "Abductor_digiti_minimi_of_footl",
+"label": "Abductor digiti minimi of foot left"
+},
+{
+"id": "Abductor_digiti_minimi_of_footr",
+"label": "Abductor digiti minimi of foot right"
+},
+{
+"id": "Abductor_hallucisl",
+"label": "Abductor hallucis left"
+},
+{
+"id": "Abductor_hallucisr",
+"label": "Abductor hallucis right"
+},
+{
+"id": "Oblique_head_of_adductor_hallucisl",
+"label": "Oblique head of adductor hallucis left"
+},
+{
+"id": "Oblique_head_of_adductor_hallucisr",
+"label": "Oblique head of adductor hallucis right"
+},
+{
+"id": "Transverse_head_of_adductor_hallucisl",
+"label": "Transverse head of adductor hallucis left"
+},
+{
+"id": "Transverse_head_of_adductor_hallucisr",
+"label": "Transverse head of adductor hallucis right"
+},
+{
+"id": "Dorsal_interossei_muscles_of_footl",
+"label": "Dorsal interossei muscles of foot left"
+},
+{
+"id": "Dorsal_interossei_muscles_of_footr",
+"label": "Dorsal interossei muscles of foot right"
+},
+{
+"id": "Extensor_digitorum_brevisl",
+"label": "Extensor digitorum brevis left"
+},
+{
+"id": "Extensor_digitorum_brevisr",
+"label": "Extensor digitorum brevis right"
+},
+{
+"id": "Extensor_hallucis_brevisl",
+"label": "Extensor hallucis brevis left"
+},
+{
+"id": "Extensor_hallucis_brevisr",
+"label": "Extensor hallucis brevis right"
+},
+{
+"id": "Flexor_digiti_minimi_of_footl",
+"label": "Flexor digiti minimi of foot left"
+},
+{
+"id": "Flexor_digiti_minimi_of_footr",
+"label": "Flexor digiti minimi of foot right"
+},
+{
+"id": "Flexor_digitorum_brevisl",
+"label": "Flexor digitorum brevis left"
+},
+{
+"id": "Flexor_digitorum_brevisr",
+"label": "Flexor digitorum brevis right"
+},
+{
+"id": "Lateral_head_of_flexor_hallucis_brevisl",
+"label": "Lateral head of flexor hallucis brevis left"
+},
+{
+"id": "Lateral_head_of_flexor_hallucis_brevisr",
+"label": "Lateral head of flexor hallucis brevis right"
+},
+{
+"id": "Medial_head_of_flexor_hallucis_brevisl",
+"label": "Medial head of flexor hallucis brevis left"
+},
+{
+"id": "Medial_head_of_flexor_hallucis_brevisr",
+"label": "Medial head of flexor hallucis brevis right"
+},
+{
+"id": "Lumbrical_muscles_of_footl",
+"label": "Lumbrical muscles of foot left"
+},
+{
+"id": "Lumbrical_muscles_of_footr",
+"label": "Lumbrical muscles of foot right"
+},
+{
+"id": "Plantar_interossei_musclesl",
+"label": "Plantar interossei muscles left"
+},
+{
+"id": "Plantar_interossei_musclesr",
+"label": "Plantar interossei muscles right"
+},
+{
+"id": "Quadratus_plantae_musclel",
+"label": "Quadratus plantae muscle left"
+},
+{
+"id": "Quadratus_plantae_muscler",
+"label": "Quadratus plantae muscle right"
+},
+{
+"id": "Flexor_digitorum_longusl",
+"label": "Flexor digitorum longus left"
+},
+{
+"id": "Flexor_digitorum_longusr",
+"label": "Flexor digitorum longus right"
+},
+{
+"id": "Flexor_hallucis_longusl",
+"label": "Flexor hallucis longus left"
+},
+{
+"id": "Flexor_hallucis_longusr",
+"label": "Flexor hallucis longus right"
+},
+{
+"id": "Popliteus_musclel",
+"label": "Popliteus muscle left"
+},
+{
+"id": "Popliteus_muscler",
+"label": "Popliteus muscle right"
+},
+{
+"id": "Tibialis_posterior_musclel",
+"label": "Tibialis posterior muscle left"
+},
+{
+"id": "Tibialis_posterior_muscler",
+"label": "Tibialis posterior muscle right"
+},
+{
+"id": "Calcaneal_tendonl",
+"label": "Calcaneal tendon left"
+},
+{
+"id": "Calcaneal_tendonr",
+"label": "Calcaneal tendon right"
+},
+{
+"id": "Lateral_head_of_gastrocnemiusl",
+"label": "Lateral head of gastrocnemius left"
+},
+{
+"id": "Lateral_head_of_gastrocnemiusr",
+"label": "Lateral head of gastrocnemius right"
+},
+{
+"id": "Medial_head_of_gastrocnemiusl",
+"label": "Medial head of gastrocnemius left"
+},
+{
+"id": "Medial_head_of_gastrocnemiusr",
+"label": "Medial head of gastrocnemius right"
+},
+{
+"id": "Plantaris_musclel",
+"label": "Plantaris muscle left"
+},
+{
+"id": "Plantaris_muscler",
+"label": "Plantaris muscle right"
+},
+{
+"id": "Soleus_musclel",
+"label": "Soleus muscle left"
+},
+{
+"id": "Soleus_muscler",
+"label": "Soleus muscle right"
+},
+{
+"id": "Long_head_of_biceps_femorisl",
+"label": "Long head of biceps femoris left"
+},
+{
+"id": "Long_head_of_biceps_femorisr",
+"label": "Long head of biceps femoris right"
+},
+{
+"id": "Semimembranosus_musclel",
+"label": "Semimembranosus muscle left"
+},
+{
+"id": "Semimembranosus_muscler",
+"label": "Semimembranosus muscle right"
+},
+{
+"id": "Semitendinosus_musclel",
+"label": "Semitendinosus muscle left"
+},
+{
+"id": "Semitendinosus_muscler",
+"label": "Semitendinosus muscle right"
+},
+{
+"id": "Short_head_of_biceps_femorisl",
+"label": "Short head of biceps femoris left"
+},
+{
+"id": "Short_head_of_biceps_femorisr",
+"label": "Short head of biceps femoris right"
+},
+{
+"id": "Gluteus_maximus_musclel",
+"label": "Gluteus maximus muscle left"
+},
+{
+"id": "Gluteus_maximus_muscler",
+"label": "Gluteus maximus muscle right"
+},
+{
+"id": "Gluteus_medius_musclel",
+"label": "Gluteus medius muscle left"
+},
+{
+"id": "Gluteus_medius_muscler",
+"label": "Gluteus medius muscle right"
+},
+{
+"id": "Gluteus_minimus_musclel",
+"label": "Gluteus minimus muscle left"
+},
+{
+"id": "Gluteus_minimus_muscler",
+"label": "Gluteus minimus muscle right"
+},
+{
+"id": "Tensor_fasciae_latael",
+"label": "Tensor fasciae latae left"
+},
+{
+"id": "Iliotibial_tractl",
+"label": "Iliotibial tract left"
+},
+{
+"id": "Tensor_fasciae_lataer",
+"label": "Tensor fasciae latae right"
+},
+{
+"id": "Iliotibial_tractr",
+"label": "Iliotibial tract right"
+},
+{
+"id": "Tendon_sheath_of_extensor_digitorum_longusl",
+"label": "Tendon sheath of extensor digitorum longus left"
+},
+{
+"id": "Tendon_sheath_of_extensor_digitorum_longusr",
+"label": "Tendon sheath of extensor digitorum longus right"
+},
+{
+"id": "Tendon_sheath_of_extensor_hallucis_longusl",
+"label": "Tendon sheath of extensor hallucis longus left"
+},
+{
+"id": "Tendon_sheath_of_extensor_hallucis_longusr",
+"label": "Tendon sheath of extensor hallucis longus right"
+},
+{
+"id": "Tendon_sheath_of_tibialis_anteriorl",
+"label": "Tendon sheath of tibialis anterior left"
+},
+{
+"id": "Tendon_sheath_of_tibialis_anteriorr",
+"label": "Tendon sheath of tibialis anterior right"
+},
+{
+"id": "Common_tendon_sheath_of_fibularis_musclesl",
+"label": "Common tendon sheath of fibularis muscles left"
+},
+{
+"id": "Common_tendon_sheath_of_fibularis_musclesr",
+"label": "Common tendon sheath of fibularis muscles right"
+},
+{
+"id": "Plantar_tendon_sheath_of_fibularis_longus_musclel",
+"label": "Plantar tendon sheath of fibularis longus muscle left"
+},
+{
+"id": "Plantar_tendon_sheath_of_fibularis_longus_muscler",
+"label": "Plantar tendon sheath of fibularis longus muscle right"
+},
+{
+"id": "Tendon_sheath_of_flexor_digitorum_longusl",
+"label": "Tendon sheath of flexor digitorum longus left"
+},
+{
+"id": "Tendon_sheath_of_flexor_digitorum_longusr",
+"label": "Tendon sheath of flexor digitorum longus right"
+},
+{
+"id": "Tendon_sheath_of_flexor_hallucis_longusl",
+"label": "Tendon sheath of flexor hallucis longus left"
+},
+{
+"id": "Tendon_sheath_of_flexor_hallucis_longusr",
+"label": "Tendon sheath of flexor hallucis longus right"
+},
+{
+"id": "Tendon_sheath_of_tibialis_posterior_musclel",
+"label": "Tendon sheath of tibialis posterior muscle left"
+},
+{
+"id": "Tendon_sheath_of_tibialis_posterior_muscler",
+"label": "Tendon sheath of tibialis posterior muscle right"
+},
+{
+"id": "Pterygospinous_ligamentl",
+"label": "Pterygospinous ligament left"
+},
+{
+"id": "Pterygospinous_ligamentr",
+"label": "Pterygospinous ligament right"
+},
+{
+"id": "Sphenomandibular_ligamentl",
+"label": "Sphenomandibular ligament left"
+},
+{
+"id": "Sphenomandibular_ligamentr",
+"label": "Sphenomandibular ligament right"
+},
+{
+"id": "Stylohyoid_ligamentl",
+"label": "Stylohyoid ligament left"
+},
+{
+"id": "Stylohyoid_ligamentr",
+"label": "Stylohyoid ligament right"
+},
+{
+"id": "Stylomandibular_ligamentl",
+"label": "Stylomandibular ligament left"
+},
+{
+"id": "Stylomandibular_ligamentr",
+"label": "Stylomandibular ligament right"
+},
+{
+"id": "Articular_capsule_of_temporomandibular_jointl",
+"label": "Articular capsule of temporomandibular joint left"
+},
+{
+"id": "Articular_capsule_of_temporomandibular_jointr",
+"label": "Articular capsule of temporomandibular joint right"
+},
+{
+"id": "Articular_disc_of_temporomandibular_jointl",
+"label": "Articular disc of temporomandibular joint left"
+},
+{
+"id": "Articular_disc_of_temporomandibular_jointr",
+"label": "Articular disc of temporomandibular joint right"
+},
+{
+"id": "Lateral_temporomandibular_ligamentl",
+"label": "Lateral temporomandibular ligament left"
+},
+{
+"id": "Lateral_temporomandibular_ligamentr",
+"label": "Lateral temporomandibular ligament right"
+},
+{
+"id": "External_intercostal_membranel",
+"label": "External intercostal membrane left"
+},
+{
+"id": "External_intercostal_membraner",
+"label": "External intercostal membrane right"
+},
+{
+"id": "Internal_intercostal_membranel",
+"label": "Internal intercostal membrane left"
+},
+{
+"id": "Internal_intercostal_membraner",
+"label": "Internal intercostal membrane right"
+},
+{
+"id": "Costotransverse_ligamentl",
+"label": "Costotransverse ligament left"
+},
+{
+"id": "Costotransverse_ligamentr",
+"label": "Costotransverse ligament right"
+},
+{
+"id": "Intra-articular_ligament_of_head_of_rib",
+"label": "Intra-articular ligament of head of rib"
+},
+{
+"id": "Intra-articular_ligament_of_head_of_ribr",
+"label": "Intra-articular ligament of head of rib right"
+},
+{
+"id": "Radiate_ligament_of_head_of_ribl",
+"label": "Radiate ligament of head of rib left"
+},
+{
+"id": "Radiate_ligament_of_head_of_ribr",
+"label": "Radiate ligament of head of rib right"
+},
+{
+"id": "Interosseous_membrane_of_forearml",
+"label": "Interosseous membrane of forearm left"
+},
+{
+"id": "Interosseous_membrane_of_forearmr",
+"label": "Interosseous membrane of forearm right"
+},
+{
+"id": "Oblique_cordl",
+"label": "Oblique cord left"
+},
+{
+"id": "Oblique_cordr",
+"label": "Oblique cord right"
+},
+{
+"id": "Articular_disc_of_distal_radio-ulnar_jointl",
+"label": "Articular disc of distal radio-ulnar joint left"
+},
+{
+"id": "Articular_disc_of_distal_radio-ulnar_jointr",
+"label": "Articular disc of distal radio-ulnar joint right"
+},
+{
+"id": "Dorsal_radio-ulnar_ligamentl",
+"label": "Dorsal radio-ulnar ligament left"
+},
+{
+"id": "Dorsal_radio-ulnar_ligamentr",
+"label": "Dorsal radio-ulnar ligament right"
+},
+{
+"id": "Palmar_radio-ulnar_ligamentl",
+"label": "Palmar radio-ulnar ligament left"
+},
+{
+"id": "Palmar_radio-ulnar_ligamentr",
+"label": "Palmar radio-ulnar ligament right"
+},
+{
+"id": "Annular_ligament_of_radiusl",
+"label": "Annular ligament of radius left"
+},
+{
+"id": "Annular_ligament_of_radiusr",
+"label": "Annular ligament of radius right"
+},
+{
+"id": "Articular_capsule_of_elbow_jointl",
+"label": "Articular capsule of elbow joint left"
+},
+{
+"id": "Articular_capsule_of_elbow_jointr",
+"label": "Articular capsule of elbow joint right"
+},
+{
+"id": "Quadrate_ligamentl",
+"label": "Quadrate ligament left"
+},
+{
+"id": "Quadrate_ligamentr",
+"label": "Quadrate ligament right"
+},
+{
+"id": "Radial_collateral_ligamentl",
+"label": "Radial collateral ligament left"
+},
+{
+"id": "Radial_collateral_ligamentr",
+"label": "Radial collateral ligament right"
+},
+{
+"id": "Ulnar_collateral_ligamentl",
+"label": "Ulnar collateral ligament left"
+},
+{
+"id": "Ulnar_collateral_ligamentr",
+"label": "Ulnar collateral ligament right"
+},
+{
+"id": "Articular_capsule_of_glenohumeral_jointl",
+"label": "Articular capsule of glenohumeral joint left"
+},
+{
+"id": "Articular_capsule_of_glenohumeral_jointr",
+"label": "Articular capsule of glenohumeral joint right"
+},
+{
+"id": "Coracohumeral_ligamentl",
+"label": "Coracohumeral ligament left"
+},
+{
+"id": "Coracohumeral_ligamentr",
+"label": "Coracohumeral ligament right"
+},
+{
+"id": "Glenoid_labruml",
+"label": "Glenoid labrum left"
+},
+{
+"id": "Glenoid_labrumr",
+"label": "Glenoid labrum right"
+},
+{
+"id": "Inferior_glenohumeral_ligamentl",
+"label": "Inferior glenohumeral ligament left"
+},
+{
+"id": "Inferior_glenohumeral_ligamentr",
+"label": "Inferior glenohumeral ligament right"
+},
+{
+"id": "Middle_glenohumeral_ligamentl",
+"label": "Middle glenohumeral ligament left"
+},
+{
+"id": "Middle_glenohumeral_ligamentr",
+"label": "Middle glenohumeral ligament right"
+},
+{
+"id": "Superior_glenohumeral_ligamentl",
+"label": "Superior glenohumeral ligament left"
+},
+{
+"id": "Superior_glenohumeral_ligamentr",
+"label": "Superior glenohumeral ligament right"
+},
+{
+"id": "Transverse_humeral_ligamentl",
+"label": "Transverse humeral ligament left"
+},
+{
+"id": "Transverse_humeral_ligamentr",
+"label": "Transverse humeral ligament right"
+},
+{
+"id": "Dorsal_carpometacarpal_ligamentsl",
+"label": "Dorsal carpometacarpal ligaments left"
+},
+{
+"id": "Dorsal_carpometacarpal_ligamentsr",
+"label": "Dorsal carpometacarpal ligaments right"
+},
+{
+"id": "Palmar_carpometacarpal_ligamentsl",
+"label": "Palmar carpometacarpal ligaments left"
+},
+{
+"id": "Palmar_carpometacarpal_ligamentsr",
+"label": "Palmar carpometacarpal ligaments right"
+},
+{
+"id": "Capitohamate_interosseous_ligamentl",
+"label": "Capitohamate interosseous ligament left"
+},
+{
+"id": "Capitohamate_interosseous_ligamentr",
+"label": "Capitohamate interosseous ligament right"
+},
+{
+"id": "Dorsal_intercarpal_ligamentsl",
+"label": "Dorsal intercarpal ligaments left"
+},
+{
+"id": "Dorsal_scaphotriquetral_ligamentl",
+"label": "Dorsal scaphotriquetral ligament left"
+},
+{
+"id": "Dorsal_intercarpal_ligamentsr",
+"label": "Dorsal intercarpal ligaments right"
+},
+{
+"id": "Dorsal_scaphotriquetral_ligamentr",
+"label": "Dorsal scaphotriquetral ligament right"
+},
+{
+"id": "Dorsal_ulnocarpal_ligamentl",
+"label": "Dorsal ulnocarpal ligament left"
+},
+{
+"id": "Dorsal_ulnocarpal_ligamentr",
+"label": "Dorsal ulnocarpal ligament right"
+},
+{
+"id": "Lunotriquetral_interosseous_ligamentl",
+"label": "Lunotriquetral interosseous ligament left"
+},
+{
+"id": "Lunotriquetral_interosseous_ligamentr",
+"label": "Lunotriquetral interosseous ligament right"
+},
+{
+"id": "Palmar_capitohamate_ligamentl",
+"label": "Palmar capitohamate ligament left"
+},
+{
+"id": "Palmar_capitohamate_ligamentr",
+"label": "Palmar capitohamate ligament right"
+},
+{
+"id": "Palmar_lunotriquetral_ligamentl",
+"label": "Palmar lunotriquetral ligament left"
+},
+{
+"id": "Palmar_lunotriquetral_ligamentr",
+"label": "Palmar lunotriquetral ligament right"
+},
+{
+"id": "Palmar_scaphotriquetral_ligamentl",
+"label": "Palmar scaphotriquetral ligament left"
+},
+{
+"id": "Palmar_scaphotriquetral_ligamentr",
+"label": "Palmar scaphotriquetral ligament right"
+},
+{
+"id": "Palmar_trapezoideocapitate_ligamentl",
+"label": "Palmar trapezoideocapitate ligament left"
+},
+{
+"id": "Palmar_trapezoideocapitate_ligamentr",
+"label": "Palmar trapezoideocapitate ligament right"
+},
+{
+"id": "Pisohamate_ligamentl",
+"label": "Pisohamate ligament left"
+},
+{
+"id": "Pisohamate_ligamentr",
+"label": "Pisohamate ligament right"
+},
+{
+"id": "Pisometacarpal_ligamentl",
+"label": "Pisometacarpal ligament left"
+},
+{
+"id": "Pisometacarpal_ligamentr",
+"label": "Pisometacarpal ligament right"
+},
+{
+"id": "Pisotriquetral_ligamentl",
+"label": "Pisotriquetral ligament left"
+},
+{
+"id": "Pisotriquetral_ligamentr",
+"label": "Pisotriquetral ligament right"
+},
+{
+"id": "Radial_collateral_ligament_of_wrist_jointr",
+"label": "Radial collateral ligament of wrist joint right"
+},
+{
+"id": "Radiate_carpal_ligamentl",
+"label": "Radiate carpal ligament left"
+},
+{
+"id": "Radiate_carpal_ligamentr",
+"label": "Radiate carpal ligament right"
+},
+{
+"id": "Scaphocapitate_ligamentl",
+"label": "Scaphocapitate ligament left"
+},
+{
+"id": "Scaphocapitate_ligamentr",
+"label": "Scaphocapitate ligament right"
+},
+{
+"id": "Scapholunate_interosseous_ligamentl",
+"label": "Scapholunate interosseous ligament left"
+},
+{
+"id": "Scapholunate_interosseous_ligamentr",
+"label": "Scapholunate interosseous ligament right"
+},
+{
+"id": "Scaphotrapeziotrapezoidal_ligamentl",
+"label": "Scaphotrapeziotrapezoidal ligament left"
+},
+{
+"id": "Scaphotrapeziotrapezoidal_ligamentr",
+"label": "Scaphotrapeziotrapezoidal ligament right"
+},
+{
+"id": "Trapeziotrapezoidal_interosseous_ligamentl",
+"label": "Trapeziotrapezoidal interosseous ligament left"
+},
+{
+"id": "Trapeziotrapezoidal_interosseous_ligamentr",
+"label": "Trapeziotrapezoidal interosseous ligament right"
+},
+{
+"id": "Trapezoideocapitate_interosseous_ligamentl",
+"label": "Trapezoideocapitate interosseous ligament left"
+},
+{
+"id": "Trapezoideocapitate_interosseous_ligamentr",
+"label": "Trapezoideocapitate interosseous ligament right"
+},
+{
+"id": "Triquetrocapitate_ligamentl",
+"label": "Triquetrocapitate ligament left"
+},
+{
+"id": "Triquetrocapitate_ligamentr",
+"label": "Triquetrocapitate ligament right"
+},
+{
+"id": "Triquetrohamate_ligamentl",
+"label": "Triquetrohamate ligament left"
+},
+{
+"id": "Triquetrohamate_ligamentr",
+"label": "Triquetrohamate ligament right"
+},
+{
+"id": "Ulnar_collateral_ligament_of_wrist_jointr",
+"label": "Ulnar collateral ligament of wrist joint right"
+},
+{
+"id": "Dorsal_metacarpal_ligamentsl",
+"label": "Dorsal metacarpal ligaments left"
+},
+{
+"id": "Dorsal_metacarpal_ligamentsr",
+"label": "Dorsal metacarpal ligaments right"
+},
+{
+"id": "Interosseous_metacarpal_ligamentsl",
+"label": "Interosseous metacarpal ligaments left"
+},
+{
+"id": "Interosseous_metacarpal_ligamentsr",
+"label": "Interosseous metacarpal ligaments right"
+},
+{
+"id": "Palmar_metacarpal_ligamentsl",
+"label": "Palmar metacarpal ligaments left"
+},
+{
+"id": "Palmar_metacarpal_ligamentsr",
+"label": "Palmar metacarpal ligaments right"
+},
+{
+"id": "Articular_capsules_of_distal_interphalangeal_jointsl",
+"label": "Articular capsules of distal interphalangeal joints left"
+},
+{
+"id": "Articular_capsules_of_distal_interphalangeal_jointsr",
+"label": "Articular capsules of distal interphalangeal joints right"
+},
+{
+"id": "Articular_capsules_of_proximal_interphalangeal_jointsl",
+"label": "Articular capsules of proximal interphalangeal joints left"
+},
+{
+"id": "Articular_capsules_of_proximal_interphalangeal_jointsr",
+"label": "Articular capsules of proximal interphalangeal joints right"
+},
+{
+"id": "Collateral_interphalangeal_ligaments_of_handl",
+"label": "Collateral interphalangeal ligaments of hand left"
+},
+{
+"id": "Collateral_interphalangeal_ligaments_of_handr",
+"label": "Collateral interphalangeal ligaments of hand right"
+},
+{
+"id": "Palmar_interphalangeal_ligamentsl",
+"label": "Palmar interphalangeal ligaments left"
+},
+{
+"id": "Palmar_interphalangeal_ligamentsr",
+"label": "Palmar interphalangeal ligaments right"
+},
+{
+"id": "Articular_capsules_of_metacarpophalangeal_jointsl",
+"label": "Articular capsules of metacarpophalangeal joints left"
+},
+{
+"id": "Articular_capsules_of_metacarpophalangeal_jointsr",
+"label": "Articular capsules of metacarpophalangeal joints right"
+},
+{
+"id": "Collateral_metacarpophalangeal_ligamentsl",
+"label": "Collateral metacarpophalangeal ligaments left"
+},
+{
+"id": "Collateral_metacarpophalangeal_ligamentsr",
+"label": "Collateral metacarpophalangeal ligaments right"
+},
+{
+"id": "Deep_transverse_metacarpal_ligamentl",
+"label": "Deep transverse metacarpal ligament left"
+},
+{
+"id": "Deep_transverse_metacarpal_ligamentr",
+"label": "Deep transverse metacarpal ligament right"
+},
+{
+"id": "Articular_capsule_of_radiocarpal_jointl",
+"label": "Articular capsule of radiocarpal joint left"
+},
+{
+"id": "Articular_capsule_of_radiocarpal_jointr",
+"label": "Articular capsule of radiocarpal joint right"
+},
+{
+"id": "Dorsal_radiocarpal_ligamentl",
+"label": "Dorsal radiocarpal ligament left"
+},
+{
+"id": "Dorsal_radiocarpal_ligamentr",
+"label": "Dorsal radiocarpal ligament right"
+},
+{
+"id": "Radial_collateral_ligament_of_wrist_jointl",
+"label": "Radial collateral ligament of wrist joint left"
+},
+{
+"id": "Radiocapitate_ligamentl",
+"label": "Radiocapitate ligament left"
+},
+{
+"id": "Radiocapitate_ligamentr",
+"label": "Radiocapitate ligament right"
+},
+{
+"id": "Radioscaphocapitate_ligamentl",
+"label": "Radioscaphocapitate ligament left"
+},
+{
+"id": "Radioscaphocapitate_ligamentr",
+"label": "Radioscaphocapitate ligament right"
+},
+{
+"id": "Ulnar_collateral_ligament_of_wrist_jointl",
+"label": "Ulnar collateral ligament of wrist joint left"
+},
+{
+"id": "Ulnocapitate_ligamentl",
+"label": "Ulnocapitate ligament left"
+},
+{
+"id": "Ulnocapitate_ligamentr",
+"label": "Ulnocapitate ligament right"
+},
+{
+"id": "Ulnolunate_ligamentl",
+"label": "Ulnolunate ligament left"
+},
+{
+"id": "Ulnolunate_ligamentr",
+"label": "Ulnolunate ligament right"
+},
+{
+"id": "Ulnopisiform_ligament",
+"label": "Ulnopisiform ligament"
+},
+{
+"id": "Ulnopisiform_ligamentl",
+"label": "Ulnopisiform ligament left"
+},
+{
+"id": "Ulnotriquetral_ligamentl",
+"label": "Ulnotriquetral ligament left"
+},
+{
+"id": "Ulnotriquetral_ligamentr",
+"label": "Ulnotriquetral ligament right"
+},
+{
+"id": "Coraco-acromial_ligamentl",
+"label": "Coraco-acromial ligament left"
+},
+{
+"id": "Coraco-acromial_ligamentr",
+"label": "Coraco-acromial ligament right"
+},
+{
+"id": "Inferior_transverse_scapular_ligamentl",
+"label": "Inferior transverse scapular ligament left"
+},
+{
+"id": "Inferior_transverse_scapular_ligamentr",
+"label": "Inferior transverse scapular ligament right"
+},
+{
+"id": "Superior_transverse_scapular_ligamentl",
+"label": "Superior transverse scapular ligament left"
+},
+{
+"id": "Superior_transverse_scapular_ligamentr",
+"label": "Superior transverse scapular ligament right"
+},
+{
+"id": "Acromioclavicular_ligamentl",
+"label": "Acromioclavicular ligament left"
+},
+{
+"id": "Acromioclavicular_ligamentr",
+"label": "Acromioclavicular ligament right"
+},
+{
+"id": "Articular_capsule_of_acromioclavicular_jointl",
+"label": "Articular capsule of acromioclavicular joint left"
+},
+{
+"id": "Articular_capsule_of_acromioclavicular_jointr",
+"label": "Articular capsule of acromioclavicular joint right"
+},
+{
+"id": "Articular_disc_of_acromioclavicular_jointl",
+"label": "Articular disc of acromioclavicular joint left"
+},
+{
+"id": "Articular_disc_of_acromioclavicular_jointr",
+"label": "Articular disc of acromioclavicular joint right"
+},
+{
+"id": "Conoid_ligamentl",
+"label": "Conoid ligament left"
+},
+{
+"id": "Conoid_ligamentr",
+"label": "Conoid ligament right"
+},
+{
+"id": "Trapezoid_ligamentl",
+"label": "Trapezoid ligament left"
+},
+{
+"id": "Trapezoid_ligamentr",
+"label": "Trapezoid ligament right"
+},
+{
+"id": "Anterior_sternoclavicular_ligamentl",
+"label": "Anterior sternoclavicular ligament left"
+},
+{
+"id": "Anterior_sternoclavicular_ligamentr",
+"label": "Anterior sternoclavicular ligament right"
+},
+{
+"id": "Articular_capsule_of_sternoclavicular_jointl",
+"label": "Articular capsule of sternoclavicular joint left"
+},
+{
+"id": "Articular_capsule_of_sternoclavicular_jointr",
+"label": "Articular capsule of sternoclavicular joint right"
+},
+{
+"id": "Articular_disc_of_sternoclavicular_jointl",
+"label": "Articular disc of sternoclavicular joint left"
+},
+{
+"id": "Articular_disc_of_sternoclavicular_jointr",
+"label": "Articular disc of sternoclavicular joint right"
+},
+{
+"id": "Costoclavicular_ligamentl",
+"label": "Costoclavicular ligament left"
+},
+{
+"id": "Costoclavicular_ligamentr",
+"label": "Costoclavicular ligament right"
+},
+{
+"id": "Interclavicular_ligamentl",
+"label": "Interclavicular ligament left"
+},
+{
+"id": "Interclavicular_ligamentr",
+"label": "Interclavicular ligament right"
+},
+{
+"id": "Posterior_sternoclavicular_ligamentl",
+"label": "Posterior sternoclavicular ligament left"
+},
+{
+"id": "Posterior_sternoclavicular_ligamentr",
+"label": "Posterior sternoclavicular ligament right"
+},
+{
+"id": "Quadrangular_membranel",
+"label": "Quadrangular membrane left"
+},
+{
+"id": "Quadrangular_membraner",
+"label": "Quadrangular membrane right"
+},
+{
+"id": "Median_cricothyroid_ligament",
+"label": "Median cricothyroid ligament"
+},
+{
+"id": "Lateral_thyrohyoid_ligamentl",
+"label": "Lateral thyrohyoid ligament left"
+},
+{
+"id": "Lateral_thyrohyoid_ligamentr",
+"label": "Lateral thyrohyoid ligament right"
+},
+{
+"id": "Median_thyrohyoid_ligament",
+"label": "Median thyrohyoid ligament"
+},
+{
+"id": "Cricopharyngeal_ligamentl",
+"label": "Cricopharyngeal ligament left"
+},
+{
+"id": "Cricopharyngeal_ligamentr",
+"label": "Cricopharyngeal ligament right"
+},
+{
+"id": "Interosseous_membrane_of_legl",
+"label": "Interosseous membrane of leg left"
+},
+{
+"id": "Interosseous_membrane_of_legr",
+"label": "Interosseous membrane of leg right"
+},
+{
+"id": "Anterior_tibiofibular_ligamentl",
+"label": "Anterior tibiofibular ligament left"
+},
+{
+"id": "Anterior_tibiofibular_ligamentr",
+"label": "Anterior tibiofibular ligament right"
+},
+{
+"id": "Posterior_tibiofibular_ligamentl",
+"label": "Posterior tibiofibular ligament left"
+},
+{
+"id": "Posterior_tibiofibular_ligamentr",
+"label": "Posterior tibiofibular ligament right"
+},
+{
+"id": "Transverse_tibiofibular_ligamentl",
+"label": "Transverse tibiofibular ligament left"
+},
+{
+"id": "Transverse_tibiofibular_ligamentr",
+"label": "Transverse tibiofibular ligament right"
+},
+{
+"id": "Anterior_talofibular_ligamentl",
+"label": "Anterior talofibular ligament left"
+},
+{
+"id": "Anterior_talofibular_ligamentr",
+"label": "Anterior talofibular ligament right"
+},
+{
+"id": "Calcaneofibular_ligamentl",
+"label": "Calcaneofibular ligament left"
+},
+{
+"id": "Calcaneofibular_ligamentr",
+"label": "Calcaneofibular ligament right"
+},
+{
+"id": "Posterior_talofibular_ligamentl",
+"label": "Posterior talofibular ligament left"
+},
+{
+"id": "Posterior_talofibular_ligamentr",
+"label": "Posterior talofibular ligament right"
+},
+{
+"id": "Posterior_tibiotalar_ligamentl",
+"label": "Posterior tibiotalar ligament left"
+},
+{
+"id": "Posterior_tibiotalar_ligamentr",
+"label": "Posterior tibiotalar ligament right"
+},
+{
+"id": "Tibiocalcaneal_ligamentl",
+"label": "Tibiocalcaneal ligament left"
+},
+{
+"id": "Tibiocalcaneal_ligamentr",
+"label": "Tibiocalcaneal ligament right"
+},
+{
+"id": "Tibionavicular_ligamentl",
+"label": "Tibionavicular ligament left"
+},
+{
+"id": "Tibionavicular_ligamentr",
+"label": "Tibionavicular ligament right"
+},
+{
+"id": "Acetabular_labruml",
+"label": "Acetabular labrum left"
+},
+{
+"id": "Acetabular_labrumr",
+"label": "Acetabular labrum right"
+},
+{
+"id": "Articular_capsule_of_hip_jointl",
+"label": "Articular capsule of hip joint left"
+},
+{
+"id": "Articular_capsule_of_hip_jointr",
+"label": "Articular capsule of hip joint right"
+},
+{
+"id": "Descending_part_of_iliofemoral_ligamentl",
+"label": "Descending part of iliofemoral ligament left"
+},
+{
+"id": "Descending_part_of_iliofemoral_ligamentr",
+"label": "Descending part of iliofemoral ligament right"
+},
+{
+"id": "Frenula_capsulael",
+"label": "Frenula capsulae left"
+},
+{
+"id": "Frenula_capsulaer",
+"label": "Frenula capsulae right"
+},
+{
+"id": "Ischiofemoral_ligamentl",
+"label": "Ischiofemoral ligament left"
+},
+{
+"id": "Ischiofemoral_ligamentr",
+"label": "Ischiofemoral ligament right"
+},
+{
+"id": "Ligament_of_head_of_femurl",
+"label": "Ligament of head of femur left"
+},
+{
+"id": "Ligament_of_head_of_femurr",
+"label": "Ligament of head of femur right"
+},
+{
+"id": "Pubofemoral_ligamentl",
+"label": "Pubofemoral ligament left"
+},
+{
+"id": "Pubofemoral_ligamentr",
+"label": "Pubofemoral ligament right"
+},
+{
+"id": "Transverse_acetabular_ligamentl",
+"label": "Transverse acetabular ligament left"
+},
+{
+"id": "Transverse_acetabular_ligamentr",
+"label": "Transverse acetabular ligament right"
+},
+{
+"id": "Transverse_part_of_iliofemoral_ligamentl",
+"label": "Transverse part of iliofemoral ligament left"
+},
+{
+"id": "Transverse_part_of_iliofemoral_ligamentr",
+"label": "Transverse part of iliofemoral ligament right"
+},
+{
+"id": "Zona_orbicularisl",
+"label": "Zona orbicularis left"
+},
+{
+"id": "Zona_orbicularisr",
+"label": "Zona orbicularis right"
+},
+{
+"id": "Dorsal_metatarsal_ligamentsl",
+"label": "Dorsal metatarsal ligaments left"
+},
+{
+"id": "Dorsal_metatarsal_ligamentsr",
+"label": "Dorsal metatarsal ligaments right"
+},
+{
+"id": "Intersesamoid_ligamentl",
+"label": "Intersesamoid ligament left"
+},
+{
+"id": "Intersesamoid_ligamentr",
+"label": "Intersesamoid ligament right"
+},
+{
+"id": "Metatarsal_interosseous_ligamentsl",
+"label": "Metatarsal interosseous ligaments left"
+},
+{
+"id": "Metatarsal_interosseous_ligamentsr",
+"label": "Metatarsal interosseous ligaments right"
+},
+{
+"id": "Plantar_metatarsal_ligamentsl",
+"label": "Plantar metatarsal ligaments left"
+},
+{
+"id": "Plantar_metatarsal_ligamentsr",
+"label": "Plantar metatarsal ligaments right"
+},
+{
+"id": "Articular_capsule_of_interphalangeal_joint_of_great_toel",
+"label": "Articular capsule of interphalangeal joint of great toe left"
+},
+{
+"id": "Articular_capsule_of_interphalangeal_joint_of_great_toer",
+"label": "Articular capsule of interphalangeal joint of great toe right"
+},
+{
+"id": "Articular_capsules_of_distal_interphalangeal_joints_of_footl",
+"label": "Articular capsules of distal interphalangeal joints of foot left"
+},
+{
+"id": "Articular_capsules_of_distal_interphalangeal_joints_of_footr",
+"label": "Articular capsules of distal interphalangeal joints of foot right"
+},
+{
+"id": "Articular_capsules_of_proximal_interphalangeal_joints_of_footl",
+"label": "Articular capsules of proximal interphalangeal joints of foot left"
+},
+{
+"id": "Articular_capsules_of_proximal_interphalangeal_joints_of_footr",
+"label": "Articular capsules of proximal interphalangeal joints of foot right"
+},
+{
+"id": "Collateral_interphalangeal_ligaments_of_footl",
+"label": "Collateral interphalangeal ligaments of foot left"
+},
+{
+"id": "Collateral_interphalangeal_ligaments_of_footr",
+"label": "Collateral interphalangeal ligaments of foot right"
+},
+{
+"id": "Plantar_interphalangeal_ligamentsl",
+"label": "Plantar interphalangeal ligaments left"
+},
+{
+"id": "Plantar_interphalangeal_ligamentsr",
+"label": "Plantar interphalangeal ligaments right"
+},
+{
+"id": "Anterior_talocalcaneal_ligamentl",
+"label": "Anterior talocalcaneal ligament left"
+},
+{
+"id": "Anterior_talocalcaneal_ligamentr",
+"label": "Anterior talocalcaneal ligament right"
+},
+{
+"id": "Calcaneocuboid_ligamentl",
+"label": "Calcaneocuboid ligament left"
+},
+{
+"id": "Calcaneocuboid_ligamentr",
+"label": "Calcaneocuboid ligament right"
+},
+{
+"id": "Calcaneonavicular_ligamentl",
+"label": "Calcaneonavicular ligament left"
+},
+{
+"id": "Calcaneonavicular_ligamentr",
+"label": "Calcaneonavicular ligament right"
+},
+{
+"id": "Cuneocuboid_interosseous_ligamentl",
+"label": "Cuneocuboid interosseous ligament left"
+},
+{
+"id": "Cuneocuboid_interosseous_ligamentr",
+"label": "Cuneocuboid interosseous ligament right"
+},
+{
+"id": "Dorsal_calcaneocuboid_ligamentl",
+"label": "Dorsal calcaneocuboid ligament left"
+},
+{
+"id": "Dorsal_calcaneocuboid_ligamentr",
+"label": "Dorsal calcaneocuboid ligament right"
+},
+{
+"id": "Dorsal_cuboideonavicular_ligamentl",
+"label": "Dorsal cuboideonavicular ligament left"
+},
+{
+"id": "Dorsal_cuboideonavicular_ligamentr",
+"label": "Dorsal cuboideonavicular ligament right"
+},
+{
+"id": "Dorsal_cuneocuboid_ligamentl",
+"label": "Dorsal cuneocuboid ligament left"
+},
+{
+"id": "Dorsal_cuneocuboid_ligamentr",
+"label": "Dorsal cuneocuboid ligament right"
+},
+{
+"id": "Dorsal_cuneonavicular_ligamentsl",
+"label": "Dorsal cuneonavicular ligaments left"
+},
+{
+"id": "Dorsal_cuneonavicular_ligamentsr",
+"label": "Dorsal cuneonavicular ligaments right"
+},
+{
+"id": "Dorsal_intercuneiform_ligamentsl",
+"label": "Dorsal intercuneiform ligaments left"
+},
+{
+"id": "Dorsal_intercuneiform_ligamentsr",
+"label": "Dorsal intercuneiform ligaments right"
+},
+{
+"id": "Intercuneiform_interosseous_ligamentsl",
+"label": "Intercuneiform interosseous ligaments left"
+},
+{
+"id": "Intercuneiform_interosseous_ligamentsr",
+"label": "Intercuneiform interosseous ligaments right"
+},
+{
+"id": "Lateral_talocalcaneal_ligamentl",
+"label": "Lateral talocalcaneal ligament left"
+},
+{
+"id": "Lateral_talocalcaneal_ligamentr",
+"label": "Lateral talocalcaneal ligament right"
+},
+{
+"id": "Long_plantar_ligamentl",
+"label": "Long plantar ligament left"
+},
+{
+"id": "Long_plantar_ligamentr",
+"label": "Long plantar ligament right"
+},
+{
+"id": "Medial_talocalcaneal_ligamentl",
+"label": "Medial talocalcaneal ligament left"
+},
+{
+"id": "Medial_talocalcaneal_ligamentr",
+"label": "Medial talocalcaneal ligament right"
+},
+{
+"id": "Plantar_calcaneocuboid_ligamentl",
+"label": "Plantar calcaneocuboid ligament left"
+},
+{
+"id": "Plantar_calcaneocuboid_ligamentr",
+"label": "Plantar calcaneocuboid ligament right"
+},
+{
+"id": "Plantar_calcaneonavicular_ligamentl",
+"label": "Plantar calcaneonavicular ligament left"
+},
+{
+"id": "Plantar_calcaneonavicular_ligamentr",
+"label": "Plantar calcaneonavicular ligament right"
+},
+{
+"id": "Plantar_cuboideonavicular_ligamentl",
+"label": "Plantar cuboideonavicular ligament left"
+},
+{
+"id": "Plantar_cuboideonavicular_ligamentr",
+"label": "Plantar cuboideonavicular ligament right"
+},
+{
+"id": "Plantar_cuneocuboid_ligamentl",
+"label": "Plantar cuneocuboid ligament left"
+},
+{
+"id": "Plantar_cuneocuboid_ligamentr",
+"label": "Plantar cuneocuboid ligament right"
+},
+{
+"id": "Plantar_cuneonavicular_ligamentsl",
+"label": "Plantar cuneonavicular ligaments left"
+},
+{
+"id": "Plantar_cuneonavicular_ligamentsr",
+"label": "Plantar cuneonavicular ligaments right"
+},
+{
+"id": "Plantar_intercuneiform_ligamentsl",
+"label": "Plantar intercuneiform ligaments left"
+},
+{
+"id": "Plantar_intercuneiform_ligamentsr",
+"label": "Plantar intercuneiform ligaments right"
+},
+{
+"id": "Posterior_talocalcaneal_ligamentl",
+"label": "Posterior talocalcaneal ligament left"
+},
+{
+"id": "Posterior_talocalcaneal_ligamentr",
+"label": "Posterior talocalcaneal ligament right"
+},
+{
+"id": "Talocalcaneal_interosseous_ligamentl",
+"label": "Talocalcaneal interosseous ligament left"
+},
+{
+"id": "Talocalcaneal_interosseous_ligamentr",
+"label": "Talocalcaneal interosseous ligament right"
+},
+{
+"id": "Talonavicular_ligamentl",
+"label": "Talonavicular ligament left"
+},
+{
+"id": "Talonavicular_ligamentr",
+"label": "Talonavicular ligament right"
+},
+{
+"id": "Articular_capsules_of_metatarsophalangeal_jointsl",
+"label": "Articular capsules of metatarsophalangeal joints left"
+},
+{
+"id": "Articular_capsules_of_metatarsophalangeal_jointsr",
+"label": "Articular capsules of metatarsophalangeal joints right"
+},
+{
+"id": "Collateral_metatarsophalangeal_ligamentsl",
+"label": "Collateral metatarsophalangeal ligaments left"
+},
+{
+"id": "Collateral_metatarsophalangeal_ligamentsr",
+"label": "Collateral metatarsophalangeal ligaments right"
+},
+{
+"id": "Deep_transverse_metatarsal_ligamentl",
+"label": "Deep transverse metatarsal ligament left"
+},
+{
+"id": "Deep_transverse_metatarsal_ligamentr",
+"label": "Deep transverse metatarsal ligament right"
+},
+{
+"id": "Plantar_metatarsophalangeal_ligamentsl",
+"label": "Plantar metatarsophalangeal ligaments left"
+},
+{
+"id": "Plantar_metatarsophalangeal_ligamentsr",
+"label": "Plantar metatarsophalangeal ligaments right"
+},
+{
+"id": "Cuneometatarsal_interosseous_ligamentsl",
+"label": "Cuneometatarsal interosseous ligaments left"
+},
+{
+"id": "Cuneometatarsal_interosseous_ligamentsr",
+"label": "Cuneometatarsal interosseous ligaments right"
+},
+{
+"id": "Dorsal_tarsometatarsal_ligamentsl",
+"label": "Dorsal tarsometatarsal ligaments left"
+},
+{
+"id": "Dorsal_tarsometatarsal_ligamentsr",
+"label": "Dorsal tarsometatarsal ligaments right"
+},
+{
+"id": "Plantar_tarsometatarsal_ligamentsl",
+"label": "Plantar tarsometatarsal ligaments left"
+},
+{
+"id": "Plantar_tarsometatarsal_ligamentsr",
+"label": "Plantar tarsometatarsal ligaments right"
+},
+{
+"id": "Anterior_cruciate_ligamentl",
+"label": "Anterior cruciate ligament left"
+},
+{
+"id": "Anterior_cruciate_ligamentr",
+"label": "Anterior cruciate ligament right"
+},
+{
+"id": "Anterior_meniscotibial_ligament_(Lateral_meniscus)l",
+"label": "Anterior meniscotibial ligament (Lateral meniscus) left"
+},
+{
+"id": "Anterior_meniscotibial_ligament_(Lateral_meniscus)r",
+"label": "Anterior meniscotibial ligament (Lateral meniscus) right"
+},
+{
+"id": "Anterior_meniscotibial_ligament_(Medial_meniscus)l",
+"label": "Anterior meniscotibial ligament (Medial meniscus) left"
+},
+{
+"id": "Anterior_meniscotibial_ligament_(Medial_meniscus)r",
+"label": "Anterior meniscotibial ligament (Medial meniscus) right"
+},
+{
+"id": "Arcuate_popliteal_ligamentl",
+"label": "Arcuate popliteal ligament left"
+},
+{
+"id": "Arcuate_popliteal_ligamentr",
+"label": "Arcuate popliteal ligament right"
+},
+{
+"id": "Articular_capsule_of_knee_jointl",
+"label": "Articular capsule of knee joint left"
+},
+{
+"id": "Articular_capsule_of_knee_jointr",
+"label": "Articular capsule of knee joint right"
+},
+{
+"id": "Deep_part_of_tibial_collateral_ligamentl",
+"label": "Deep part of tibial collateral ligament left"
+},
+{
+"id": "Deep_part_of_tibial_collateral_ligamentr",
+"label": "Deep part of tibial collateral ligament right"
+},
+{
+"id": "Fibular_collateral_ligamentl",
+"label": "Fibular collateral ligament left"
+},
+{
+"id": "Fibular_collateral_ligamentr",
+"label": "Fibular collateral ligament right"
+},
+{
+"id": "Infrapatellar_fat_padl",
+"label": "Infrapatellar fat pad left"
+},
+{
+"id": "Infrapatellar_fat_padr",
+"label": "Infrapatellar fat pad right"
+},
+{
+"id": "Lateral_meniscusl",
+"label": "Lateral meniscus left"
+},
+{
+"id": "Lateral_meniscusr",
+"label": "Lateral meniscus right"
+},
+{
+"id": "Medial_meniscusl",
+"label": "Medial meniscus left"
+},
+{
+"id": "Medial_meniscusr",
+"label": "Medial meniscus right"
+},
+{
+"id": "Meniscopatellar_ligamentl",
+"label": "Meniscopatellar ligament left"
+},
+{
+"id": "Meniscopatellar_ligamentr",
+"label": "Meniscopatellar ligament right"
+},
+{
+"id": "Oblique_popliteal_ligamentl",
+"label": "Oblique popliteal ligament left"
+},
+{
+"id": "Oblique_popliteal_ligamentr",
+"label": "Oblique popliteal ligament right"
+},
+{
+"id": "Popliteofibular_ligamentl",
+"label": "Popliteofibular ligament left"
+},
+{
+"id": "Popliteofibular_ligamentr",
+"label": "Popliteofibular ligament right"
+},
+{
+"id": "Posterior_cruciate_ligamentl",
+"label": "Posterior cruciate ligament left"
+},
+{
+"id": "Posterior_cruciate_ligamentr",
+"label": "Posterior cruciate ligament right"
+},
+{
+"id": "Posterior_meniscotibial_ligament_(Lateral_meniscus)l",
+"label": "Posterior meniscotibial ligament (Lateral meniscus) left"
+},
+{
+"id": "Posterior_meniscotibial_ligament_(Lateral_meniscus)r",
+"label": "Posterior meniscotibial ligament (Lateral meniscus) right"
+},
+{
+"id": "Posterior_meniscotibial_ligament_(Medial_meniscus)l",
+"label": "Posterior meniscotibial ligament (Medial meniscus) left"
+},
+{
+"id": "Posterior_meniscotibial_ligament_(Medial_meniscus)r",
+"label": "Posterior meniscotibial ligament (Medial meniscus) right"
+},
+{
+"id": "Superficial_part_of_tibial_collateral_ligamentl",
+"label": "Superficial part of tibial collateral ligament left"
+},
+{
+"id": "Superficial_part_of_tibial_collateral_ligamentr",
+"label": "Superficial part of tibial collateral ligament right"
+},
+{
+"id": "Transverse_ligament_of_kneel",
+"label": "Transverse ligament of knee left"
+},
+{
+"id": "Transverse_ligament_of_kneer",
+"label": "Transverse ligament of knee right"
+},
+{
+"id": "Anterior_ligament_of_fibular_headl",
+"label": "Anterior ligament of fibular head left"
+},
+{
+"id": "Anterior_ligament_of_fibular_headr",
+"label": "Anterior ligament of fibular head right"
+},
+{
+"id": "Articular_capsule_of_superior_tibiofibular_jointl",
+"label": "Articular capsule of superior tibiofibular joint left"
+},
+{
+"id": "Articular_capsule_of_superior_tibiofibular_jointr",
+"label": "Articular capsule of superior tibiofibular joint right"
+},
+{
+"id": "Posterior_ligament_of_fibular_headl",
+"label": "Posterior ligament of fibular head left"
+},
+{
+"id": "Posterior_ligament_of_fibular_headr",
+"label": "Posterior ligament of fibular head right"
+},
+{
+"id": "Pubic_symphysis",
+"label": "Pubic symphysis"
+},
+{
+"id": "Inferior_pubic_ligament",
+"label": "Inferior pubic ligament"
+},
+{
+"id": "Interpubic_disc",
+"label": "Interpubic disc"
+},
+{
+"id": "Superior_pubic_ligament",
+"label": "Superior pubic ligament"
+},
+{
+"id": "Triradiate_cartilagel",
+"label": "Triradiate cartilage left"
+},
+{
+"id": "Triradiate_cartilager",
+"label": "Triradiate cartilage right"
+},
+{
+"id": "Iliolumbar_ligamentl",
+"label": "Iliolumbar ligament left"
+},
+{
+"id": "Iliolumbar_ligamentr",
+"label": "Iliolumbar ligament right"
+},
+{
+"id": "Obturator_membranel",
+"label": "Obturator membrane left"
+},
+{
+"id": "Obturator_membraner",
+"label": "Obturator membrane right"
+},
+{
+"id": "Sacrospinous_ligamentl",
+"label": "Sacrospinous ligament left"
+},
+{
+"id": "Sacrospinous_ligamentr",
+"label": "Sacrospinous ligament right"
+},
+{
+"id": "Sacrotuberous_ligamentl",
+"label": "Sacrotuberous ligament left"
+},
+{
+"id": "Sacrotuberous_ligamentr",
+"label": "Sacrotuberous ligament right"
+},
+{
+"id": "Anterior_sacro-iliac_ligamentl",
+"label": "Anterior sacro-iliac ligament left"
+},
+{
+"id": "Anterior_sacro-iliac_ligamentr",
+"label": "Anterior sacro-iliac ligament right"
+},
+{
+"id": "Interosseous_sacro-iliac_ligamentl",
+"label": "Interosseous sacro-iliac ligament left"
+},
+{
+"id": "Interosseous_sacro-iliac_ligamentr",
+"label": "Interosseous sacro-iliac ligament right"
+},
+{
+"id": "Posterior_sacro-iliac_ligamentl",
+"label": "Posterior sacro-iliac ligament left"
+},
+{
+"id": "Posterior_sacro-iliac_ligamentr",
+"label": "Posterior sacro-iliac ligament right"
+},
+{
+"id": "Intervertebral_disc_C2-C3",
+"label": "Intervertebral disc C2-C3"
+},
+{
+"id": "Intervertebral_disc_C3-C4",
+"label": "Intervertebral disc C3-C4"
+},
+{
+"id": "Intervertebral_disc_C4-C5",
+"label": "Intervertebral disc C4-C5"
+},
+{
+"id": "Intervertebral_disc_C5-C6",
+"label": "Intervertebral disc C5-C6"
+},
+{
+"id": "Intervertebral_disc_C6-C7",
+"label": "Intervertebral disc C6-C7"
+},
+{
+"id": "Intervertebral_disc_C7-T1",
+"label": "Intervertebral disc C7-T1"
+},
+{
+"id": "Intervertebral_disc_L1-L2",
+"label": "Intervertebral disc L1-L2"
+},
+{
+"id": "Intervertebral_disc_L2-L3",
+"label": "Intervertebral disc L2-L3"
+},
+{
+"id": "Intervertebral_disc_L3-L4",
+"label": "Intervertebral disc L3-L4"
+},
+{
+"id": "Intervertebral_disc_L4-L5",
+"label": "Intervertebral disc L4-L5"
+},
+{
+"id": "Intervertebral_disc_L5-S1",
+"label": "Intervertebral disc L5-S1"
+},
+{
+"id": "Intervertebral_disc_T1-T2",
+"label": "Intervertebral disc T1-T2"
+},
+{
+"id": "Intervertebral_disc_T10-T11",
+"label": "Intervertebral disc T10-T11"
+},
+{
+"id": "Intervertebral_disc_T11-T12",
+"label": "Intervertebral disc T11-T12"
+},
+{
+"id": "Intervertebral_disc_T12-L1",
+"label": "Intervertebral disc T12-L1"
+},
+{
+"id": "Intervertebral_disc_T2-T3",
+"label": "Intervertebral disc T2-T3"
+},
+{
+"id": "Intervertebral_disc_T3-T4",
+"label": "Intervertebral disc T3-T4"
+},
+{
+"id": "Intervertebral_disc_T4-T5",
+"label": "Intervertebral disc T4-T5"
+},
+{
+"id": "Intervertebral_disc_T5-T6",
+"label": "Intervertebral disc T5-T6"
+},
+{
+"id": "Intervertebral_disc_T6-T7",
+"label": "Intervertebral disc T6-T7"
+},
+{
+"id": "Intervertebral_disc_T7-T8",
+"label": "Intervertebral disc T7-T8"
+},
+{
+"id": "Intervertebral_disc_T8-T9",
+"label": "Intervertebral disc T8-T9"
+},
+{
+"id": "Intervertebral_disc_T9-T10",
+"label": "Intervertebral disc T9-T10"
+},
+{
+"id": "Nucleus_pulposus_C2-C3",
+"label": "Nucleus pulposus C2-C3"
+},
+{
+"id": "Nucleus_pulposus_C3-C4",
+"label": "Nucleus pulposus C3-C4"
+},
+{
+"id": "Nucleus_pulposus_C4-C5",
+"label": "Nucleus pulposus C4-C5"
+},
+{
+"id": "Nucleus_pulposus_C5-C6",
+"label": "Nucleus pulposus C5-C6"
+},
+{
+"id": "Nucleus_pulposus_C6-C7",
+"label": "Nucleus pulposus C6-C7"
+},
+{
+"id": "Nucleus_pulposus_C7-T1",
+"label": "Nucleus pulposus C7-T1"
+},
+{
+"id": "Nucleus_pulposus_L1-L2",
+"label": "Nucleus pulposus L1-L2"
+},
+{
+"id": "Nucleus_pulposus_L2-L3",
+"label": "Nucleus pulposus L2-L3"
+},
+{
+"id": "Nucleus_pulposus_L3-L4",
+"label": "Nucleus pulposus L3-L4"
+},
+{
+"id": "Nucleus_pulposus_L4-L5",
+"label": "Nucleus pulposus L4-L5"
+},
+{
+"id": "Nucleus_pulposus_L5-S1",
+"label": "Nucleus pulposus L5-S1"
+},
+{
+"id": "Nucleus_pulposus_T1-T2",
+"label": "Nucleus pulposus T1-T2"
+},
+{
+"id": "Nucleus_pulposus_T10-T11",
+"label": "Nucleus pulposus T10-T11"
+},
+{
+"id": "Nucleus_pulposus_T11-T12",
+"label": "Nucleus pulposus T11-T12"
+},
+{
+"id": "Nucleus_pulposus_T12-L1",
+"label": "Nucleus pulposus T12-L1"
+},
+{
+"id": "Nucleus_pulposus_T2-T3",
+"label": "Nucleus pulposus T2-T3"
+},
+{
+"id": "Nucleus_pulposus_T3-T4",
+"label": "Nucleus pulposus T3-T4"
+},
+{
+"id": "Nucleus_pulposus_T4-T5",
+"label": "Nucleus pulposus T4-T5"
+},
+{
+"id": "Nucleus_pulposus_T5-T6",
+"label": "Nucleus pulposus T5-T6"
+},
+{
+"id": "Nucleus_pulposus_T6-T7",
+"label": "Nucleus pulposus T6-T7"
+},
+{
+"id": "Nucleus_pulposus_T7-T8",
+"label": "Nucleus pulposus T7-T8"
+},
+{
+"id": "Nucleus_pulposus_T8-T9",
+"label": "Nucleus pulposus T8-T9"
+},
+{
+"id": "Nucleus_pulposus_T9-T10",
+"label": "Nucleus pulposus T9-T10"
+},
+{
+"id": "Sacrococcygeal_symphysis",
+"label": "Sacrococcygeal symphysis"
+},
+{
+"id": "Anterior_longitudinal_ligament",
+"label": "Anterior longitudinal ligament"
+},
+{
+"id": "Intercornual_ligamentl",
+"label": "Intercornual ligament left"
+},
+{
+"id": "Intercornual_ligamentr",
+"label": "Intercornual ligament right"
+},
+{
+"id": "Interspinous_ligaments",
+"label": "Interspinous ligaments"
+},
+{
+"id": "Intertransverse_ligamentsl",
+"label": "Intertransverse ligaments left"
+},
+{
+"id": "Intertransverse_ligamentsr",
+"label": "Intertransverse ligaments right"
+},
+{
+"id": "Ligamenta_flava",
+"label": "Ligamenta flava"
+},
+{
+"id": "Nuchal_ligament",
+"label": "Nuchal ligament"
+},
+{
+"id": "Posterior_longitudinal_ligament",
+"label": "Posterior longitudinal ligament"
+},
+{
+"id": "Supraspinous_ligament",
+"label": "Supraspinous ligament"
+},
+{
+"id": "Tympanic_membranel",
+"label": "Tympanic membrane left"
+},
+{
+"id": "Tympanic_membraner",
+"label": "Tympanic membrane right"
+},
+{
+"id": "Cochleal",
+"label": "Cochlea left"
+},
+{
+"id": "Cochlear",
+"label": "Cochlea right"
+},
+{
+"id": "Base_of_cochleat",
+"label": "Base of cochleat"
+},
+{
+"id": "Cochlear_cupulat",
+"label": "Cochlear cupulat"
+},
+{
+"id": "Spiral_canal_of_cochleat",
+"label": "Spiral canal of cochleat"
+},
+{
+"id": "Vestibulel",
+"label": "Vestibule left"
+},
+{
+"id": "Vestibuler",
+"label": "Vestibule right"
+},
+{
+"id": "Anterior_bony_ampullat",
+"label": "Anterior bony ampullat"
+},
+{
+"id": "Anterior_semicircular_canalt",
+"label": "Anterior semicircular canalt"
+},
+{
+"id": "Common_bony_limbt",
+"label": "Common bony limbt"
+},
+{
+"id": "Lateral_bony_ampullat",
+"label": "Lateral bony ampullat"
+},
+{
+"id": "Lateral_semicircular_canalt",
+"label": "Lateral semicircular canalt"
+},
+{
+"id": "Posterior_bony_ampullat",
+"label": "Posterior bony ampullat"
+},
+{
+"id": "Posterior_semicircular_canalt",
+"label": "Posterior semicircular canalt"
+},
+{
+"id": "Simple_bony_limbt",
+"label": "Simple bony limbt"
+},
+{
+"id": "Auditory_tubel",
+"label": "Auditory tube left"
+},
+{
+"id": "Auditory_tuber",
+"label": "Auditory tube right"
+},
+{
+"id": "Lacrimal_canaliculusl",
+"label": "Lacrimal canaliculus left"
+},
+{
+"id": "Ampulla_of_lacrimal_canaliculusl",
+"label": "Ampulla of lacrimal canaliculus left"
+},
+{
+"id": "Lacrimal_canaliculusr",
+"label": "Lacrimal canaliculus right"
+},
+{
+"id": "Ampulla_of_lacrimal_canaliculusr",
+"label": "Ampulla of lacrimal canaliculus right"
+},
+{
+"id": "Lacrimal_glandl",
+"label": "Lacrimal gland left"
+},
+{
+"id": "Lacrimal_glandr",
+"label": "Lacrimal gland right"
+},
+{
+"id": "Lacrimal_sacl",
+"label": "Lacrimal sac left"
+},
+{
+"id": "Lacrimal_sacr",
+"label": "Lacrimal sac right"
+},
+{
+"id": "Nasolacrimal_ductl",
+"label": "Nasolacrimal duct left"
+},
+{
+"id": "Nasolacrimal_ductr",
+"label": "Nasolacrimal duct right"
+},
+{
+"id": "Suspensory_ligament_of_eyeballl",
+"label": "Suspensory ligament of eyeball left"
+},
+{
+"id": "Suspensory_ligament_of_eyeballr",
+"label": "Suspensory ligament of eyeball right"
+},
+{
+"id": "Anterior_segment_of_eyeballl",
+"label": "Anterior segment of eyeball left"
+},
+{
+"id": "Anterior_chamber_of_eyeballl",
+"label": "Anterior chamber of eyeball left"
+},
+{
+"id": "Zonular_fibresl",
+"label": "Zonular fibres left"
+},
+{
+"id": "Anterior_segment_of_eyeballr",
+"label": "Anterior segment of eyeball right"
+},
+{
+"id": "Anterior_chamber_of_eyeballr",
+"label": "Anterior chamber of eyeball right"
+},
+{
+"id": "Zonular_fibresr",
+"label": "Zonular fibres right"
+},
+{
+"id": "Ciliary_body-curver",
+"label": "Ciliary body-curve right"
+},
+{
+"id": "Corneal",
+"label": "Cornea left"
+},
+{
+"id": "Cornear",
+"label": "Cornea right"
+},
+{
+"id": "Anterior_pole_of_eyeballt",
+"label": "Anterior pole of eyeballt"
+},
+{
+"id": "Anterior_surface_of_corneat",
+"label": "Anterior surface of corneat"
+},
+{
+"id": "Corneal_vertext",
+"label": "Corneal vertext"
+},
+{
+"id": "Corneoscleral_junctiont",
+"label": "Corneoscleral junctiont"
+},
+{
+"id": "Posterior_surface_of_corneat",
+"label": "Posterior surface of corneat"
+},
+{
+"id": "Sulcus_scleraet",
+"label": "Sulcus scleraet"
+},
+{
+"id": "Equator_of_eyeballr",
+"label": "Equator of eyeball right"
+},
+{
+"id": "External_axis_of_eyeball",
+"label": "External axis of eyebal left"
+},
+{
+"id": "Optic_axist",
+"label": "Optic axist"
+},
+{
+"id": "Internal_axis_of_eyeballr",
+"label": "Internal axis of eyeball right"
+},
+{
+"id": "Irisl",
+"label": "Iris left"
+},
+{
+"id": "Irisr",
+"label": "Iris right"
+},
+{
+"id": "Anterior_surface_of_irist",
+"label": "Anterior surface of irist"
+},
+{
+"id": "Dilator_pupillaet",
+"label": "Dilator pupillaet"
+},
+{
+"id": "Folds_of_irist",
+"label": "Folds of irist"
+},
+{
+"id": "Posterior_surface_of_irist",
+"label": "Posterior surface of irist"
+},
+{
+"id": "Pupilt",
+"label": "Pupilt"
+},
+{
+"id": "Pupillary_margin_of_irist",
+"label": "Pupillary margin of irist"
+},
+{
+"id": "Sphincter_pupillaet",
+"label": "Sphincter pupillaet"
+},
+{
+"id": "Lensl",
+"label": "Lens left"
+},
+{
+"id": "Lensr",
+"label": "Lens right"
+},
+{
+"id": "Meridians_of_eyeballr",
+"label": "Meridians of eyeball right"
+},
+{
+"id": "Posterior_segment_of_eyeballl",
+"label": "Posterior segment of eyeball left"
+},
+{
+"id": "Vitreous_bodyl",
+"label": "Vitreous body left"
+},
+{
+"id": "Posterior_segment_of_eyeballr",
+"label": "Posterior segment of eyeball right"
+},
+{
+"id": "Vitreous_bodyr",
+"label": "Vitreous body right"
+},
+{
+"id": "Retinal",
+"label": "Retina left"
+},
+{
+"id": "Retinar",
+"label": "Retina right"
+},
+{
+"id": "Scleral",
+"label": "Sclera left"
+},
+{
+"id": "Sclerar",
+"label": "Sclera right"
+},
+{
+"id": "Eyeballt",
+"label": "Eyeballt"
+},
+{
+"id": "Posterior_pole_of_eyeballt",
+"label": "Posterior pole of eyeballt"
+},
+{
+"id": "Zonular_fibers-curver",
+"label": "Zonular fibers-curve right"
+},
+{
+"id": "Fourth_ventricle",
+"label": "Fourth ventricle"
+},
+{
+"id": "Medulla_oblongatal",
+"label": "Medulla oblongata left"
+},
+{
+"id": "Inferior_medulla_oblongatat",
+"label": "Inferior medulla oblongatat"
+},
+{
+"id": "Olivel",
+"label": "Olive left"
+},
+{
+"id": "Pyramid_of_medulla_oblongatal",
+"label": "Pyramid of medulla oblongata left"
+},
+{
+"id": "Superior_medulla_oblongatat",
+"label": "Superior medulla oblongatat"
+},
+{
+"id": "Medulla_oblongatar",
+"label": "Medulla oblongata right"
+},
+{
+"id": "Anterior_median_fissure_of_medulla_oblongatat",
+"label": "Anterior median fissure of medulla oblongatat"
+},
+{
+"id": "Anterolateral_sulcus_of_medulla_oblongatat",
+"label": "Anterolateral sulcus of medulla oblongatat"
+},
+{
+"id": "Cuneate_tuberclet",
+"label": "Cuneate tuberclet"
+},
+{
+"id": "Gracile_tuberclet",
+"label": "Gracile tuberclet"
+},
+{
+"id": "Grey_matter_of_medulla_oblongata",
+"label": "Grey matter of medulla oblongata"
+},
+{
+"id": "Anterior_cochlear_nucleusl",
+"label": "Anterior cochlear nucleus left"
+},
+{
+"id": "Anterior_cochlear_nucleusr",
+"label": "Anterior cochlear nucleus right"
+},
+{
+"id": "Inferior_salivatory_nucleusl",
+"label": "Inferior salivatory nucleus left"
+},
+{
+"id": "Inferior_salivatory_nucleusr",
+"label": "Inferior salivatory nucleus right"
+},
+{
+"id": "Nucleus_ambiguusl",
+"label": "Nucleus ambiguus left"
+},
+{
+"id": "Nucleus_ambiguusr",
+"label": "Nucleus ambiguus right"
+},
+{
+"id": "Nucleus_of_hypoglossal_nervel",
+"label": "Nucleus of hypoglossal nerve left"
+},
+{
+"id": "Nucleus_of_hypoglossal_nerver",
+"label": "Nucleus of hypoglossal nerve right"
+},
+{
+"id": "Nucleus_of_solitary_tractl",
+"label": "Nucleus of solitary tract left"
+},
+{
+"id": "Nucleus_of_solitary_tractr",
+"label": "Nucleus of solitary tract right"
+},
+{
+"id": "Posterior_cochlear_nucleusl",
+"label": "Posterior cochlear nucleus left"
+},
+{
+"id": "Posterior_cochlear_nucleusr",
+"label": "Posterior cochlear nucleus right"
+},
+{
+"id": "Posterior_nucleus_of_vagus_nervel",
+"label": "Posterior nucleus of vagus nerve left"
+},
+{
+"id": "Posterior_nucleus_of_vagus_nerver",
+"label": "Posterior nucleus of vagus nerve right"
+},
+{
+"id": "Lateral_funiculus_of_medulla_oblongatat",
+"label": "Lateral funiculus of medulla oblongatat"
+},
+{
+"id": "Oliver",
+"label": "Olive right"
+},
+{
+"id": "Olivet",
+"label": "Olivet"
+},
+{
+"id": "Posterior_median_sulcus_of_medulla_oblongatat",
+"label": "Posterior median sulcus of medulla oblongatat"
+},
+{
+"id": "Posterolateral_sulcus_of_medulla_oblongatat",
+"label": "Posterolateral sulcus of medulla oblongatat"
+},
+{
+"id": "Pyramid_of_medulla_oblongatar",
+"label": "Pyramid of medulla oblongata right"
+},
+{
+"id": "Pyramid_of_medulla_oblongatat",
+"label": "Pyramid of medulla oblongatat"
+},
+{
+"id": "Retro-olivary_groovet",
+"label": "Retro-olivary groovet"
+},
+{
+"id": "Trigeminal_tuberclet",
+"label": "Trigeminal tuberclet"
+},
+{
+"id": "Aqueduct_of_midbrain",
+"label": "Aqueduct of midbrain"
+},
+{
+"id": "Base_of_pedunclel",
+"label": "Base of peduncle left"
+},
+{
+"id": "Base_of_peduncler",
+"label": "Base of peduncle right"
+},
+{
+"id": "Nucleus_of_trochlear_nervel",
+"label": "Nucleus of trochlear nerve left"
+},
+{
+"id": "Nucleus_of_trochlear_nerver",
+"label": "Nucleus of trochlear nerve right"
+},
+{
+"id": "Accessory_nucleus_of_oculomotor_nervel",
+"label": "Accessory nucleus of oculomotor nerve left"
+},
+{
+"id": "Accessory_nucleus_of_oculomotor_nerver",
+"label": "Accessory nucleus of oculomotor nerve right"
+},
+{
+"id": "Nucleus_of_oculomotor_nervel",
+"label": "Nucleus of oculomotor nerve left"
+},
+{
+"id": "Nucleus_of_oculomotor_nerver",
+"label": "Nucleus of oculomotor nerve right"
+},
+{
+"id": "Red_nucleusl",
+"label": "Red nucleus left"
+},
+{
+"id": "Red_nucleusr",
+"label": "Red nucleus right"
+},
+{
+"id": "Interpeduncular_fossal",
+"label": "Interpeduncular fossa left"
+},
+{
+"id": "Interpeduncular_fossar",
+"label": "Interpeduncular fossa right"
+},
+{
+"id": "Midbrainl",
+"label": "Midbrain left"
+},
+{
+"id": "Midbrainr",
+"label": "Midbrain right"
+},
+{
+"id": "Inferior_colliculusl",
+"label": "Inferior colliculus left"
+},
+{
+"id": "Inferior_colliculusr",
+"label": "Inferior colliculus right"
+},
+{
+"id": "Superior_colliculusl",
+"label": "Superior colliculus left"
+},
+{
+"id": "Superior_colliculusr",
+"label": "Superior colliculus right"
+},
+{
+"id": "Ponsl",
+"label": "Pons left"
+},
+{
+"id": "Ponsr",
+"label": "Pons right"
+},
+{
+"id": "Motor_nucleus_of_facial_nervel",
+"label": "Motor nucleus of facial nerve left"
+},
+{
+"id": "Motor_nucleus_of_facial_nerver",
+"label": "Motor nucleus of facial nerve right"
+},
+{
+"id": "Nucleus_of_abducens_nervel",
+"label": "Nucleus of abducens nerve left"
+},
+{
+"id": "Nucleus_of_abducens_nerver",
+"label": "Nucleus of abducens nerve right"
+},
+{
+"id": "Superior_salivatory_nucleusl",
+"label": "Superior salivatory nucleus left"
+},
+{
+"id": "Superior_salivatory_nucleusr",
+"label": "Superior salivatory nucleus right"
+},
+{
+"id": "Vestibular_nucleil",
+"label": "Vestibular nuclei left"
+},
+{
+"id": "Vestibular_nucleir",
+"label": "Vestibular nuclei right"
+},
+{
+"id": "Anterior_quadrangular_lobulel",
+"label": "Anterior quadrangular lobule left"
+},
+{
+"id": "Anterior_quadrangular_lobuler",
+"label": "Anterior quadrangular lobule right"
+},
+{
+"id": "Biventral_lobulel",
+"label": "Biventral lobule left"
+},
+{
+"id": "Biventral_lobuler",
+"label": "Biventral lobule right"
+},
+{
+"id": "Central_lobule",
+"label": "Central lobule"
+},
+{
+"id": "Culmen",
+"label": "Culmen"
+},
+{
+"id": "Declive",
+"label": "Declive"
+},
+{
+"id": "Flocculusl",
+"label": "Flocculus left"
+},
+{
+"id": "Flocculusr",
+"label": "Flocculus right"
+},
+{
+"id": "Folium_of_vermis",
+"label": "Folium of vermis"
+},
+{
+"id": "Gracile_lobulel",
+"label": "Gracile lobule left"
+},
+{
+"id": "Gracile_lobuler",
+"label": "Gracile lobule right"
+},
+{
+"id": "Inferior_semilunar_lobulel",
+"label": "Inferior semilunar lobule left"
+},
+{
+"id": "Inferior_semilunar_lobuler",
+"label": "Inferior semilunar lobule right"
+},
+{
+"id": "Lingula_of_cerebellum",
+"label": "Lingula of cerebellum"
+},
+{
+"id": "Nodule_of_vermis",
+"label": "Nodule of vermis"
+},
+{
+"id": "Peduncle_of_flocculusl",
+"label": "Peduncle of flocculus left"
+},
+{
+"id": "Peduncle_of_flocculusr",
+"label": "Peduncle of flocculus right"
+},
+{
+"id": "Posterior_quadrangular_lobulel",
+"label": "Posterior quadrangular lobule left"
+},
+{
+"id": "Posterior_quadrangular_lobuler",
+"label": "Posterior quadrangular lobule right"
+},
+{
+"id": "Pyramis_of_vermis",
+"label": "Pyramis of vermis"
+},
+{
+"id": "Superior_cerebellar_pedunclel",
+"label": "Superior cerebellar peduncle left"
+},
+{
+"id": "Superior_cerebellar_peduncler",
+"label": "Superior cerebellar peduncle right"
+},
+{
+"id": "Superior_semilunar_lobulel",
+"label": "Superior semilunar lobule left"
+},
+{
+"id": "Superior_semilunar_lobuler",
+"label": "Superior semilunar lobule right"
+},
+{
+"id": "Tonsil_of_cerebelluml",
+"label": "Tonsil of cerebellum left"
+},
+{
+"id": "Tonsil_of_cerebellumr",
+"label": "Tonsil of cerebellum right"
+},
+{
+"id": "Tuber_of_vermis",
+"label": "Tuber of vermis"
+},
+{
+"id": "Uvula_of_vermis",
+"label": "Uvula of vermis"
+},
+{
+"id": "Wing_of_central_lobulel",
+"label": "Wing of central lobule left"
+},
+{
+"id": "Wing_of_central_lobuler",
+"label": "Wing of central lobule right"
+},
+{
+"id": "Habenula",
+"label": "Habenula"
+},
+{
+"id": "Hypothalamus",
+"label": "Hypothalamus"
+},
+{
+"id": "Lateral_geniculate_bodyl",
+"label": "Lateral geniculate body left"
+},
+{
+"id": "Lateral_geniculate_bodyr",
+"label": "Lateral geniculate body right"
+},
+{
+"id": "Mamillary_bodyl",
+"label": "Mamillary body left"
+},
+{
+"id": "Mamillary_bodyr",
+"label": "Mamillary body right"
+},
+{
+"id": "Medial_geniculate_bodyl",
+"label": "Medial geniculate body left"
+},
+{
+"id": "Medial_geniculate_bodyr",
+"label": "Medial geniculate body right"
+},
+{
+"id": "Optic_chiasml",
+"label": "Optic chiasm left"
+},
+{
+"id": "Optic_chiasmr",
+"label": "Optic chiasm right"
+},
+{
+"id": "Optic_tractl",
+"label": "Optic tract left"
+},
+{
+"id": "Optic_tractr",
+"label": "Optic tract right"
+},
+{
+"id": "Thalamusl",
+"label": "Thalamus left"
+},
+{
+"id": "Thalamusr",
+"label": "Thalamus right"
+},
+{
+"id": "Third_ventricle",
+"label": "Third ventricle"
+},
+{
+"id": "Posterior_commissure",
+"label": "Posterior commissure"
+},
+{
+"id": "Stria_medullaris_thalamil",
+"label": "Stria medullaris thalami left"
+},
+{
+"id": "Stria_medullaris_thalamir",
+"label": "Stria medullaris thalami right"
+},
+{
+"id": "Amygdaloid_bodyl",
+"label": "Amygdaloid body left"
+},
+{
+"id": "Amygdaloid_bodyr",
+"label": "Amygdaloid body right"
+},
+{
+"id": "Septal_nuclei",
+"label": "Septal nuclei"
+},
+{
+"id": "Caudate_nucleusl",
+"label": "Caudate nucleus left"
+},
+{
+"id": "Caudate_nucleusr",
+"label": "Caudate nucleus right"
+},
+{
+"id": "Putamenl",
+"label": "Putamen left"
+},
+{
+"id": "Putamenr",
+"label": "Putamen right"
+},
+{
+"id": "Globus_pallidusl",
+"label": "Globus pallidus left"
+},
+{
+"id": "Globus_pallidusr",
+"label": "Globus pallidus right"
+},
+{
+"id": "Lentiform_nucleusl",
+"label": "Lentiform nucleus left"
+},
+{
+"id": "Lentiform_nucleusr",
+"label": "Lentiform nucleus right"
+},
+{
+"id": "Inferior_frontal_sulcusl",
+"label": "Inferior frontal sulcus left"
+},
+{
+"id": "Inferior_frontal_sulcusr",
+"label": "Inferior frontal sulcus right"
+},
+{
+"id": "Orbital_part_of__inferior_frontal_gyrusr",
+"label": "Orbital part of  inferior frontal gyrus right"
+},
+{
+"id": "Lat_Fis-ant-Horizontl",
+"label": "Lat Fis-ant-Horizont left"
+},
+{
+"id": "Lat_Fis-ant-Horizontr",
+"label": "Lat Fis-ant-Horizont right"
+},
+{
+"id": "Lat_Fis-ant-Verticall",
+"label": "Lat Fis-ant-Vertical left"
+},
+{
+"id": "Lat_Fis-ant-Verticalr",
+"label": "Lat Fis-ant-Vertical right"
+},
+{
+"id": "Middle_frontal_gyrusl",
+"label": "Middle frontal gyrus left"
+},
+{
+"id": "Middle_frontal_gyrusr",
+"label": "Middle frontal gyrus right"
+},
+{
+"id": "Olfactory_sulcusl",
+"label": "Olfactory sulcus left"
+},
+{
+"id": "Olfactory_sulcusr",
+"label": "Olfactory sulcus right"
+},
+{
+"id": "Opercular_part_of_inferior_frontal_gyrusl",
+"label": "Opercular part of inferior frontal gyrus left"
+},
+{
+"id": "Opercular_part_of_inferior_frontal_gyrusr",
+"label": "Opercular part of inferior frontal gyrus right"
+},
+{
+"id": "Orbital_gyri_(Frontomarginal_gyrus_and_sulcus*)l",
+"label": "Orbital gyri (Frontomarginal gyrus and sulcus*) left"
+},
+{
+"id": "Orbital_gyri_(Frontomarginal_gyrus_and_sulcus*)r",
+"label": "Orbital gyri (Frontomarginal gyrus and sulcus*) right"
+},
+{
+"id": "Orbital_gyril",
+"label": "Orbital gyri left"
+},
+{
+"id": "Orbital_gyrir",
+"label": "Orbital gyri right"
+},
+{
+"id": "Orbital_part_of__inferior_frontal_gyrusl",
+"label": "Orbital part of  inferior frontal gyrus left"
+},
+{
+"id": "Orbital_sulci_(H-shaped_orbital_sulci*)l",
+"label": "Orbital sulci (H-shaped orbital sulci*) left"
+},
+{
+"id": "Orbital_sulci_(H-shaped_orbital_sulci*)r",
+"label": "Orbital sulci (H-shaped orbital sulci*) right"
+},
+{
+"id": "Orbital_sulci_(Lateral_Orbital_sulcus*)l",
+"label": "Orbital sulci (Lateral Orbital sulcus*) left"
+},
+{
+"id": "Orbital_sulci_(Lateral_Orbital_sulcus*)r",
+"label": "Orbital sulci (Lateral Orbital sulcus*) right"
+},
+{
+"id": "Paracentral_gyrus_and_sulcus*l",
+"label": "Paracentral gyrus and sulcus* left"
+},
+{
+"id": "Paracentral_gyrus_and_sulcus*r",
+"label": "Paracentral gyrus and sulcus* right"
+},
+{
+"id": "Paracentral_sulcusl",
+"label": "Paracentral sulcus left"
+},
+{
+"id": "Paracentral_sulcusr",
+"label": "Paracentral sulcus right"
+},
+{
+"id": "Precentral_gyrusl",
+"label": "Precentral gyrus left"
+},
+{
+"id": "Precentral_gyrusr",
+"label": "Precentral gyrus right"
+},
+{
+"id": "Precentral_sulcus_(inferior_part)*l",
+"label": "Precentral sulcus (inferior part)* left"
+},
+{
+"id": "Precentral_sulcus_(inferior_part)*r",
+"label": "Precentral sulcus (inferior part)* right"
+},
+{
+"id": "Precentral_sulcus_(Superior_part)*l",
+"label": "Precentral sulcus (Superior part)* left"
+},
+{
+"id": "Precentral_sulcus_(Superior_part)*r",
+"label": "Precentral sulcus (Superior part)* right"
+},
+{
+"id": "Straight_gyrus_(Gyrus_rectus)l",
+"label": "Straight gyrus (Gyrus rectus) left"
+},
+{
+"id": "Straight_gyrus_(Gyrus_rectus)r",
+"label": "Straight gyrus (Gyrus rectus) right"
+},
+{
+"id": "Superior_frontal_gyrusl",
+"label": "Superior frontal gyrus left"
+},
+{
+"id": "Superior_frontal_gyrusr",
+"label": "Superior frontal gyrus right"
+},
+{
+"id": "Superior_frontal_sulcusl",
+"label": "Superior frontal sulcus left"
+},
+{
+"id": "Superior_frontal_sulcusr",
+"label": "Superior frontal sulcus right"
+},
+{
+"id": "Transverse_frontopolar_gyrus_and_sulcus*l",
+"label": "Transverse frontopolar gyrus and sulcus* left"
+},
+{
+"id": "Transverse_frontopolar_gyrus_and_sulcus*r",
+"label": "Transverse frontopolar gyrus and sulcus* right"
+},
+{
+"id": "Triangular_part_of_inferior_frontal_gyrusl",
+"label": "Triangular part of inferior frontal gyrus left"
+},
+{
+"id": "Triangular_part_of_inferior_frontal_gyrusr",
+"label": "Triangular part of inferior frontal gyrus right"
+},
+{
+"id": "Insula_(Subcentral_gyrus_and_ant_and_post_sulci*)l",
+"label": "Insula (Subcentral gyrus and ant and post sulci*) left"
+},
+{
+"id": "Insula_(Subcentral_gyrus_and_ant_and_post_sulci*)r",
+"label": "Insula (Subcentral gyrus and ant and post sulci*) right"
+},
+{
+"id": "_Posterior_transverse_collateral_sulcusl",
+"label": " Posterior transverse collateral sulcus left"
+},
+{
+"id": "_Posterior_transverse_collateral_sulcusr",
+"label": " Posterior transverse collateral sulcus right"
+},
+{
+"id": "Anterior_occipital_sulcus*l",
+"label": "Anterior occipital sulcus* left"
+},
+{
+"id": "Anterior_occipital_sulcus*r",
+"label": "Anterior occipital sulcus* right"
+},
+{
+"id": "Central_sulcusl",
+"label": "Central sulcus left"
+},
+{
+"id": "Central_sulcusr",
+"label": "Central sulcus right"
+},
+{
+"id": "Circular_sulcus_of_insulal",
+"label": "Circular sulcus of insula left"
+},
+{
+"id": "Circular_sulcus_of_insular",
+"label": "Circular sulcus of insula right"
+},
+{
+"id": "Collateral_sulcusl",
+"label": "Collateral sulcus left"
+},
+{
+"id": "Collateral_sulcusr",
+"label": "Collateral sulcus right"
+},
+{
+"id": "Lat_Fis-postl",
+"label": "Lat Fis-post left"
+},
+{
+"id": "Lat_Fis-postr",
+"label": "Lat Fis-post right"
+},
+{
+"id": "Parieto-occipital_sulcusl",
+"label": "Parieto-occipital sulcus left"
+},
+{
+"id": "Parieto-occipital_sulcusr",
+"label": "Parieto-occipital sulcus right"
+},
+{
+"id": "Subparietal_sulcusl",
+"label": "Subparietal sulcus left"
+},
+{
+"id": "Subparietal_sulcusr",
+"label": "Subparietal sulcus right"
+},
+{
+"id": "Sulcus_interm_prim-Jensenl",
+"label": "Sulcus interm prim-Jensen left"
+},
+{
+"id": "Sulcus_interm_prim-Jensenr",
+"label": "Sulcus interm prim-Jensen right"
+},
+{
+"id": "Lateral_ventriclel",
+"label": "Lateral ventricle left"
+},
+{
+"id": "Lateral_ventricler",
+"label": "Lateral ventricle right"
+},
+{
+"id": "Cingulate_gyrus_(Posteroventral_part*)l",
+"label": "Cingulate gyrus (Posteroventral part*) left"
+},
+{
+"id": "Cingulate_gyrus_(Posteroventral_part*)r",
+"label": "Cingulate gyrus (Posteroventral part*) right"
+},
+{
+"id": "Cingulate_gyrus_and_sulcus_(Middle_anterior_part)l",
+"label": "Cingulate gyrus and sulcus (Middle anterior part) left"
+},
+{
+"id": "Cingulate_gyrus_and_sulcus_(Middle_anterior_part)r",
+"label": "Cingulate gyrus and sulcus (Middle anterior part) right"
+},
+{
+"id": "Cingulate_gyrus_and_sulcus_(Middle_posterior_part)l",
+"label": "Cingulate gyrus and sulcus (Middle posterior part) left"
+},
+{
+"id": "Cingulate_gyrus_and_sulcus_(Middle_posterior_part)r",
+"label": "Cingulate gyrus and sulcus (Middle posterior part) right"
+},
+{
+"id": "Cingulate_gyrus_and_sulcus_(Posterior_dorsal_part)l",
+"label": "Cingulate gyrus and sulcus (Posterior dorsal part) left"
+},
+{
+"id": "Cingulate_gyrus_and_sulcus_(Posterior_dorsal_part)r",
+"label": "Cingulate gyrus and sulcus (Posterior dorsal part) right"
+},
+{
+"id": "Cingulate_sulcus_(Marginal_part*)l",
+"label": "Cingulate sulcus (Marginal part*) left"
+},
+{
+"id": "Cingulate_sulcus_(Marginal_part*)r",
+"label": "Cingulate sulcus (Marginal part*) right"
+},
+{
+"id": "Hippocampusl",
+"label": "Hippocampus left"
+},
+{
+"id": "Hippocampusr",
+"label": "Hippocampus right"
+},
+{
+"id": "Calcarine_sulcusl",
+"label": "Calcarine sulcus left"
+},
+{
+"id": "Calcarine_sulcusr",
+"label": "Calcarine sulcus right"
+},
+{
+"id": "Cuneusl",
+"label": "Cuneus left"
+},
+{
+"id": "Cuneusr",
+"label": "Cuneus right"
+},
+{
+"id": "Inferior_occipital_gyrus_and_sulcus*l",
+"label": "Inferior occipital gyrus and sulcus* left"
+},
+{
+"id": "Inferior_occipital_gyrus_and_sulcus*r",
+"label": "Inferior occipital gyrus and sulcus* right"
+},
+{
+"id": "Lateral_occipital_gyrus_(Middle_occipital_gyrus*)l",
+"label": "Lateral occipital gyrus (Middle occipital gyrus*) left"
+},
+{
+"id": "Lateral_occipital_gyrus_(Middle_occipital_gyrus*)r",
+"label": "Lateral occipital gyrus (Middle occipital gyrus*) right"
+},
+{
+"id": "Lingual_gyrusl",
+"label": "Lingual gyrus left"
+},
+{
+"id": "Lingual_gyrusr",
+"label": "Lingual gyrus right"
+},
+{
+"id": "Lunate_sulcusl",
+"label": "Lunate sulcus left"
+},
+{
+"id": "Lunate_sulcusr",
+"label": "Lunate sulcus right"
+},
+{
+"id": "Occipital_polel",
+"label": "Occipital pole left"
+},
+{
+"id": "Occipital_poler",
+"label": "Occipital pole right"
+},
+{
+"id": "Superior_occipital_gyril",
+"label": "Superior occipital gyri left"
+},
+{
+"id": "Superior_occipital_gyrir",
+"label": "Superior occipital gyri right"
+},
+{
+"id": "Transverse_occipital_sulcusl",
+"label": "Transverse occipital sulcus left"
+},
+{
+"id": "Transverse_occipital_sulcusr",
+"label": "Transverse occipital sulcus right"
+},
+{
+"id": "Angular_gyrusl",
+"label": "Angular gyrus left"
+},
+{
+"id": "Angular_gyrusr",
+"label": "Angular gyrus right"
+},
+{
+"id": "Intraparietal_sulcusl",
+"label": "Intraparietal sulcus left"
+},
+{
+"id": "Intraparietal_sulcusr",
+"label": "Intraparietal sulcus right"
+},
+{
+"id": "Postcentral_gyrusl",
+"label": "Postcentral gyrus left"
+},
+{
+"id": "Postcentral_gyrusr",
+"label": "Postcentral gyrus right"
+},
+{
+"id": "Postcentral_sulcusl",
+"label": "Postcentral sulcus left"
+},
+{
+"id": "Postcentral_sulcusr",
+"label": "Postcentral sulcus right"
+},
+{
+"id": "Precuneusl",
+"label": "Precuneus left"
+},
+{
+"id": "Precuneusr",
+"label": "Precuneus right"
+},
+{
+"id": "Superior_parietal_lobulel",
+"label": "Superior parietal lobule left"
+},
+{
+"id": "Superior_parietal_lobuler",
+"label": "Superior parietal lobule right"
+},
+{
+"id": "Supramarginal_gyrusl",
+"label": "Supramarginal gyrus left"
+},
+{
+"id": "Supramarginal_gyrusr",
+"label": "Supramarginal gyrus right"
+},
+{
+"id": "Inferior_temporal_gyrusl",
+"label": "Inferior temporal gyrus left"
+},
+{
+"id": "Inferior_temporal_gyrusr",
+"label": "Inferior temporal gyrus right"
+},
+{
+"id": "Inferior_temporal_sulcusl",
+"label": "Inferior temporal sulcus left"
+},
+{
+"id": "Inferior_temporal_sulcusr",
+"label": "Inferior temporal sulcus right"
+},
+{
+"id": "Lateral_occipitotemporal_gyrusl",
+"label": "Lateral occipitotemporal gyrus left"
+},
+{
+"id": "Lateral_occipitotemporal_gyrusr",
+"label": "Lateral occipitotemporal gyrus right"
+},
+{
+"id": "Medial_occipitotemporal_gyrus_(Parahippocampal*)l",
+"label": "Medial occipitotemporal gyrus (Parahippocampal*) left"
+},
+{
+"id": "Medial_occipitotemporal_gyrus_(Parahippocampal*)r",
+"label": "Medial occipitotemporal gyrus (Parahippocampal*) right"
+},
+{
+"id": "Middle_temporal_gyrusl",
+"label": "Middle temporal gyrus left"
+},
+{
+"id": "Middle_temporal_gyrusr",
+"label": "Middle temporal gyrus right"
+},
+{
+"id": "Occipitotemporal_sulcus_(Lateral_part*)l",
+"label": "Occipitotemporal sulcus (Lateral part*) left"
+},
+{
+"id": "Occipitotemporal_sulcus_(Lateral_part*)r",
+"label": "Occipitotemporal sulcus (Lateral part*) right"
+},
+{
+"id": "Superior_temporal_gyrus_(Lateral_part)l",
+"label": "Superior temporal gyrus (Lateral part) left"
+},
+{
+"id": "Superior_temporal_gyrus_(Lateral_part)r",
+"label": "Superior temporal gyrus (Lateral part) right"
+},
+{
+"id": "Superior_temporal_sulcusl",
+"label": "Superior temporal sulcus left"
+},
+{
+"id": "Superior_temporal_sulcusr",
+"label": "Superior temporal sulcus right"
+},
+{
+"id": "Temporal_planel",
+"label": "Temporal plane left"
+},
+{
+"id": "Temporal_planer",
+"label": "Temporal plane right"
+},
+{
+"id": "Temporal_polel",
+"label": "Temporal pole left"
+},
+{
+"id": "Temporal_poler",
+"label": "Temporal pole right"
+},
+{
+"id": "Transverse_temporal_gyril",
+"label": "Transverse temporal gyri left"
+},
+{
+"id": "Transverse_temporal_gyrir",
+"label": "Transverse temporal gyri right"
+},
+{
+"id": "Septum_pellucidum",
+"label": "Septum pellucidum"
+},
+{
+"id": "White_matter_of_telencephalonl",
+"label": "White matter of telencephalon left"
+},
+{
+"id": "Anterior_commissure",
+"label": "Anterior commissure"
+},
+{
+"id": "Corpus_callosum",
+"label": "Corpus callosum"
+},
+{
+"id": "Hippocampal_commissure",
+"label": "Hippocampal commissure"
+},
+{
+"id": "Fornixl",
+"label": "Fornix left"
+},
+{
+"id": "Fornixr",
+"label": "Fornix right"
+},
+{
+"id": "Stria_terminalisl",
+"label": "Stria terminalis left"
+},
+{
+"id": "Stria_terminalisr",
+"label": "Stria terminalis right"
+},
+{
+"id": "White_matter_of_telencephalonr",
+"label": "White matter of telencephalon right"
+},
+{
+"id": "Falx_cerebri",
+"label": "Falx cerebri"
+},
+{
+"id": "Tentorium_cerebellil",
+"label": "Tentorium cerebelli left"
+},
+{
+"id": "Tentorium_cerebellir",
+"label": "Tentorium cerebelli right"
+},
+{
+"id": "Spinal_dura",
+"label": "Spinal dura"
+},
+{
+"id": "Choroid_plexusl",
+"label": "Choroid plexus left"
+},
+{
+"id": "Choroid_plexusr",
+"label": "Choroid plexus right"
+},
+{
+"id": "Central_canal",
+"label": "Central cana left"
+},
+{
+"id": "Central_canal'",
+"label": "Central canal'"
+},
+{
+"id": "Anterior_horn_of_spinal_cord",
+"label": "Anterior horn of spinal cord"
+},
+{
+"id": "Nucleus_of_accessory_nervel",
+"label": "Nucleus of accessory nerve left"
+},
+{
+"id": "Nucleus_of_accessory_nerver",
+"label": "Nucleus of accessory nerve right"
+},
+{
+"id": "Intermediolateral_nucleus",
+"label": "Intermediolateral nucleus"
+},
+{
+"id": "Intermediomedial_nucleus",
+"label": "Intermediomedial nucleus"
+},
+{
+"id": "Lateral_intermediate_substance",
+"label": "Lateral intermediate substance"
+},
+{
+"id": "Nucleus_proprius",
+"label": "Nucleus proprius"
+},
+{
+"id": "Posterior_horn_of_spinal_cord",
+"label": "Posterior horn of spinal cord"
+},
+{
+"id": "Spinal_reticular_process",
+"label": "Spinal reticular process"
+},
+{
+"id": "Anterior_corticospinal_tract",
+"label": "Anterior corticospinal tract"
+},
+{
+"id": "Anterior_fasciculus_proprius",
+"label": "Anterior fasciculus proprius"
+},
+{
+"id": "Lateral_vestibulospinal_tract",
+"label": "Lateral vestibulospinal tract"
+},
+{
+"id": "Medial_reticulospinal_tract",
+"label": "Medial reticulospinal tract"
+},
+{
+"id": "Medial_vestibulospinal_tract",
+"label": "Medial vestibulospinal tract"
+},
+{
+"id": "Tectospinal_tract",
+"label": "Tectospinal tract"
+},
+{
+"id": "Anterior_spinothalamic_tract",
+"label": "Anterior spinothalamic tract"
+},
+{
+"id": "Lateral_spinothalamic_tract",
+"label": "Lateral spinothalamic tract"
+},
+{
+"id": "Spinotectal_tract",
+"label": "Spinotectal tract"
+},
+{
+"id": "Anterior_spinocerebellar_tract",
+"label": "Anterior spinocerebellar tract"
+},
+{
+"id": "Lateral_corticospinal_tract",
+"label": "Lateral corticospinal tract"
+},
+{
+"id": "Lateral_fasciculus_proprius",
+"label": "Lateral fasciculus proprius"
+},
+{
+"id": "Lateral_reticulospinal_tract",
+"label": "Lateral reticulospinal tract"
+},
+{
+"id": "Posterior_spinocerebellar_tract",
+"label": "Posterior spinocerebellar tract"
+},
+{
+"id": "Rubrospinal_tract",
+"label": "Rubrospinal tract"
+},
+{
+"id": "Cuneate_fasciculus",
+"label": "Cuneate fasciculus"
+},
+{
+"id": "Gracile_fasciculus",
+"label": "Gracile fasciculus"
+},
+{
+"id": "Posterior_fasciculus_proprius",
+"label": "Posterior fasciculus proprius"
+},
+{
+"id": "Posterolateral_tract",
+"label": "Posterolateral tract"
+},
+{
+"id": "White_matter_of_spinal_cord",
+"label": "White matter of spinal cord"
+},
+{
+"id": "Sympathetic_nervesl",
+"label": "Sympathetic nerves left"
+},
+{
+"id": "Sympathetic_nervesr",
+"label": "Sympathetic nerves right"
+},
+{
+"id": "Sympathetic_trunkl",
+"label": "Sympathetic trunk left"
+},
+{
+"id": "Ganglia_of_sympathetic_trunkl",
+"label": "Ganglia of sympathetic trunk left"
+},
+{
+"id": "Sympathetic_trunkr",
+"label": "Sympathetic trunk right"
+},
+{
+"id": "Ganglia_of_sympathetic_trunkr",
+"label": "Ganglia of sympathetic trunk right"
+},
+{
+"id": "Abducens_nerve_(VI)l",
+"label": "Abducens nerve (VI) left"
+},
+{
+"id": "Abducens_nerve_(VI)r",
+"label": "Abducens nerve (VI) right"
+},
+{
+"id": "Facial_nerve_(VII)l",
+"label": "Facial nerve (VII) left"
+},
+{
+"id": "Chorda_tympanil",
+"label": "Chorda tympani left"
+},
+{
+"id": "Facial_nerve_(VII)r",
+"label": "Facial nerve (VII) right"
+},
+{
+"id": "Chorda_tympanir",
+"label": "Chorda tympani right"
+},
+{
+"id": "Glossopharyngeal_nerve_(IX)l",
+"label": "Glossopharyngeal nerve (IX) left"
+},
+{
+"id": "Glossopharyngeal_nerve_(IX)r",
+"label": "Glossopharyngeal nerve (IX) right"
+},
+{
+"id": "Hypoglossal_nerve_(XII)l",
+"label": "Hypoglossal nerve (XII) left"
+},
+{
+"id": "Hypoglossal_nerve_(XII)r",
+"label": "Hypoglossal nerve (XII) right"
+},
+{
+"id": "Oculomotor_nerve_(III)l",
+"label": "Oculomotor nerve (III) left"
+},
+{
+"id": "Oculomotor_nerve_(III)r",
+"label": "Oculomotor nerve (III) right"
+},
+{
+"id": "Olfactory_nerve_(I)l",
+"label": "Olfactory nerve (I) left"
+},
+{
+"id": "Olfactory_nerve_(I)r",
+"label": "Olfactory nerve (I) right"
+},
+{
+"id": "Optic_nerve_(II)l",
+"label": "Optic nerve (II) left"
+},
+{
+"id": "Optic_nerve_(II)r",
+"label": "Optic nerve (II) right"
+},
+{
+"id": "Trigeminal_nerve_(V)l",
+"label": "Trigeminal nerve (V) left"
+},
+{
+"id": "Maxillary_nervel",
+"label": "Maxillary nerve left"
+},
+{
+"id": "Meningeal_branch_of_maxillary_nervel",
+"label": "Meningeal branch of maxillary nerve left"
+},
+{
+"id": "Motor_root_of_trigeminal_nervel",
+"label": "Motor root of trigeminal nerve left"
+},
+{
+"id": "Ophthalmic_nervel",
+"label": "Ophthalmic nerve left"
+},
+{
+"id": "Sensory_root_of_trigeminal_nervel",
+"label": "Sensory root of trigeminal nerve left"
+},
+{
+"id": "Trigeminal_nerve_(V)r",
+"label": "Trigeminal nerve (V) right"
+},
+{
+"id": "Anterior_division_of_mandibular_nervel",
+"label": "Anterior division of mandibular nerve left"
+},
+{
+"id": "Buccal_nervel",
+"label": "Buccal nerve left"
+},
+{
+"id": "Anterior_division_of_mandibular_nerver",
+"label": "Anterior division of mandibular nerve right"
+},
+{
+"id": "Buccal_nerver",
+"label": "Buccal nerve right"
+},
+{
+"id": "Posterior_division_of_mandibular_nervel",
+"label": "Posterior division of mandibular nerve left"
+},
+{
+"id": "Inferior_alveolar_nervel",
+"label": "Inferior alveolar nerve left"
+},
+{
+"id": "Mental_nervel",
+"label": "Mental nerve left"
+},
+{
+"id": "Nerve_to_mylohyoid_musclel",
+"label": "Nerve to mylohyoid muscle left"
+},
+{
+"id": "Lingual_nervel",
+"label": "Lingual nerve left"
+},
+{
+"id": "Posterior_division_of_mandibular_nerver",
+"label": "Posterior division of mandibular nerve right"
+},
+{
+"id": "Inferior_alveolar_nerver",
+"label": "Inferior alveolar nerve right"
+},
+{
+"id": "Mental_nerver",
+"label": "Mental nerve right"
+},
+{
+"id": "Nerve_to_mylohyoid_muscler",
+"label": "Nerve to mylohyoid muscle right"
+},
+{
+"id": "Lingual_nerver",
+"label": "Lingual nerve right"
+},
+{
+"id": "Maxillary_nerver",
+"label": "Maxillary nerve right"
+},
+{
+"id": "Meningeal_branch_of_maxillary_nerver",
+"label": "Meningeal branch of maxillary nerve right"
+},
+{
+"id": "Motor_root_of_trigeminal_nerver",
+"label": "Motor root of trigeminal nerve right"
+},
+{
+"id": "Ophthalmic_nerver",
+"label": "Ophthalmic nerve right"
+},
+{
+"id": "Sensory_root_of_trigeminal_nerver",
+"label": "Sensory root of trigeminal nerve right"
+},
+{
+"id": "Trochlear_nerve_(IV)l",
+"label": "Trochlear nerve (IV) left"
+},
+{
+"id": "Trochlear_nerve_(IV)r",
+"label": "Trochlear nerve (IV) right"
+},
+{
+"id": "Vagus_nerve_(X)l",
+"label": "Vagus nerve (X) left"
+},
+{
+"id": "Vagus_nerve_(X)r",
+"label": "Vagus nerve (X) right"
+},
+{
+"id": "Vestibulocochlear_nerve_(VIII)l",
+"label": "Vestibulocochlear nerve (VIII) left"
+},
+{
+"id": "Cochlear_nervel",
+"label": "Cochlear nerve left"
+},
+{
+"id": "Vestibular_nervel",
+"label": "Vestibular nerve left"
+},
+{
+"id": "Vestibulocochlear_nerve_(VIII)r",
+"label": "Vestibulocochlear nerve (VIII) right"
+},
+{
+"id": "Cochlear_nerve",
+"label": "Cochlear nerve"
+},
+{
+"id": "Vestibular_nerver",
+"label": "Vestibular nerve right"
+},
+{
+"id": "Spinal_ganglionl",
+"label": "Spinal ganglion left"
+},
+{
+"id": "Spinal_ganglionr",
+"label": "Spinal ganglion right"
+},
+{
+"id": "Cauda_equina",
+"label": "Cauda equina"
+},
+{
+"id": "Anterior_root_of_spinal_nervel",
+"label": "Anterior root of spinal nerve left"
+},
+{
+"id": "Anterior_root_of_spinal_nerver",
+"label": "Anterior root of spinal nerve right"
+},
+{
+"id": "Lateral_pectoral_nervel",
+"label": "Lateral pectoral nerve left"
+},
+{
+"id": "Lateral_pectoral_nerver",
+"label": "Lateral pectoral nerve right"
+},
+{
+"id": "Musculocutaneous_nervel",
+"label": "Musculocutaneous nerve left"
+},
+{
+"id": "Lateral_antebrachial_cutaneous_nervel",
+"label": "Lateral antebrachial cutaneous nerve left"
+},
+{
+"id": "Musculocutaneous_nerver",
+"label": "Musculocutaneous nerve right"
+},
+{
+"id": "Lateral_antebrachial_cutaneous_nerver",
+"label": "Lateral antebrachial cutaneous nerve right"
+},
+{
+"id": "Medial_antebrachial_cutaneous_nervel",
+"label": "Medial antebrachial cutaneous nerve left"
+},
+{
+"id": "Anterior_branch_of_medial_antebrachial_cutaneous_nervel",
+"label": "Anterior branch of medial antebrachial cutaneous nerve left"
+},
+{
+"id": "Posterior_branch_of_medial_antebrachial_cutaneous_nervel",
+"label": "Posterior branch of medial antebrachial cutaneous nerve left"
+},
+{
+"id": "Medial_antebrachial_cutaneous_nerver",
+"label": "Medial antebrachial cutaneous nerve right"
+},
+{
+"id": "Anterior_branch_of_medial_antebrachial_cutaneous_nerver",
+"label": "Anterior branch of medial antebrachial cutaneous nerve right"
+},
+{
+"id": "Posterior_branch_of_medial_antebrachial_cutaneous_nerver",
+"label": "Posterior branch of medial antebrachial cutaneous nerve right"
+},
+{
+"id": "Medial_brachial_cutaneous_nervel",
+"label": "Medial brachial cutaneous nerve left"
+},
+{
+"id": "Medial_brachial_cutaneous_nerver",
+"label": "Medial brachial cutaneous nerve right"
+},
+{
+"id": "Medial_pectoral_nervel",
+"label": "Medial pectoral nerve left"
+},
+{
+"id": "Medial_pectoral_nerver",
+"label": "Medial pectoral nerve right"
+},
+{
+"id": "Ulnar_nervel",
+"label": "Ulnar nerve left"
+},
+{
+"id": "Deep_branch_of_ulnar_nervel",
+"label": "Deep branch of ulnar nerve left"
+},
+{
+"id": "Dorsal_branch_of_ulnar_nervel",
+"label": "Dorsal branch of ulnar nerve left"
+},
+{
+"id": "Dorsal_digital_branches_of_ulnar_nervel",
+"label": "Dorsal digital branches of ulnar nerve left"
+},
+{
+"id": "Muscular_branches_of_ulnar_nervel",
+"label": "Muscular branches of ulnar nerve left"
+},
+{
+"id": "Palmar_branch_of_ulnar_nervel",
+"label": "Palmar branch of ulnar nerve left"
+},
+{
+"id": "Superficial_branch_of_ulnar_nervel",
+"label": "Superficial branch of ulnar nerve left"
+},
+{
+"id": "Common_palmar_digital_branches_of_ulnar_nervel",
+"label": "Common palmar digital branches of ulnar nerve left"
+},
+{
+"id": "Proper_palmar_digital_branches_of_ulnar_nervel",
+"label": "Proper palmar digital branches of ulnar nerve left"
+},
+{
+"id": "Ulnar_nerver",
+"label": "Ulnar nerve right"
+},
+{
+"id": "Deep_branch_of_ulnar_nerver",
+"label": "Deep branch of ulnar nerve right"
+},
+{
+"id": "Dorsal_branch_of_ulnar_nerver",
+"label": "Dorsal branch of ulnar nerve right"
+},
+{
+"id": "Dorsal_digital_branches_of_ulnar_nerver",
+"label": "Dorsal digital branches of ulnar nerve right"
+},
+{
+"id": "Muscular_branches_of_ulnar_nerver",
+"label": "Muscular branches of ulnar nerve right"
+},
+{
+"id": "Palmar_branch_of_ulnar_nerver",
+"label": "Palmar branch of ulnar nerve right"
+},
+{
+"id": "Superficial_branch_of_ulnar_nerver",
+"label": "Superficial branch of ulnar nerve right"
+},
+{
+"id": "Common_palmar_digital_branches_of_ulnar_nerver",
+"label": "Common palmar digital branches of ulnar nerve right"
+},
+{
+"id": "Proper_palmar_digital_branches_of_ulnar_nerver",
+"label": "Proper palmar digital branches of ulnar nerve right"
+},
+{
+"id": "Axillary_nervel",
+"label": "Axillary nerve left"
+},
+{
+"id": "Muscular_branches_of_axillary_nervel",
+"label": "Muscular branches of axillary nerve left"
+},
+{
+"id": "Superior_lateral_brachial_cutaneous_nervel",
+"label": "Superior lateral brachial cutaneous nerve left"
+},
+{
+"id": "Axillary_nerver",
+"label": "Axillary nerve right"
+},
+{
+"id": "Muscular_branches_of_axillary_nerver",
+"label": "Muscular branches of axillary nerve right"
+},
+{
+"id": "Superior_lateral_brachial_cutaneous_nerver",
+"label": "Superior lateral brachial cutaneous nerve right"
+},
+{
+"id": "Inferior_subscapular_nervel",
+"label": "Inferior subscapular nerve left"
+},
+{
+"id": "Inferior_subscapular_nerver",
+"label": "Inferior subscapular nerve right"
+},
+{
+"id": "Radial_nervel",
+"label": "Radial nerve left"
+},
+{
+"id": "Deep_branch_of_radial_nervel",
+"label": "Deep branch of radial nerve left"
+},
+{
+"id": "Posterior_interosseous_nerve_of_forearml",
+"label": "Posterior interosseous nerve of forearm left"
+},
+{
+"id": "Inferior_lateral_brachial_cutaneous_nervel",
+"label": "Inferior lateral brachial cutaneous nerve left"
+},
+{
+"id": "Muscular_branches_of_radial_nervel",
+"label": "Muscular branches of radial nerve left"
+},
+{
+"id": "Posterior_antebrachial_cutaneous_nervel",
+"label": "Posterior antebrachial cutaneous nerve left"
+},
+{
+"id": "Superficial_branch_of_radial_nervel",
+"label": "Superficial branch of radial nerve left"
+},
+{
+"id": "Dorsal_digital_branches_of_radial_nervel",
+"label": "Dorsal digital branches of radial nerve left"
+},
+{
+"id": "Radial_nerver",
+"label": "Radial nerve right"
+},
+{
+"id": "Deep_branch_of_radial_nerver",
+"label": "Deep branch of radial nerve right"
+},
+{
+"id": "Posterior_interosseous_nerve_of_forearmr",
+"label": "Posterior interosseous nerve of forearm right"
+},
+{
+"id": "Inferior_lateral_brachial_cutaneous_nerver",
+"label": "Inferior lateral brachial cutaneous nerve right"
+},
+{
+"id": "Muscular_branches_of_radial_nerver",
+"label": "Muscular branches of radial nerve right"
+},
+{
+"id": "Posterior_antebrachial_cutaneous_nerver",
+"label": "Posterior antebrachial cutaneous nerve right"
+},
+{
+"id": "Superficial_branch_of_radial_nerver",
+"label": "Superficial branch of radial nerve right"
+},
+{
+"id": "Dorsal_digital_branches_of_radial_nerver",
+"label": "Dorsal digital branches of radial nerve right"
+},
+{
+"id": "Superior_subscapular_nervel",
+"label": "Superior subscapular nerve left"
+},
+{
+"id": "Thoracodorsal_nervel",
+"label": "Thoracodorsal nerve left"
+},
+{
+"id": "Thoracodorsal_nerver",
+"label": "Thoracodorsal nerve right"
+},
+{
+"id": "Posterior_cord_of_brachial_plexusl",
+"label": "Posterior cord of brachial plexus left"
+},
+{
+"id": "Posterior_cord_of_brachial_plexusr",
+"label": "Posterior cord of brachial plexus right"
+},
+{
+"id": "Median_nervel",
+"label": "Median nerve left"
+},
+{
+"id": "(Communicating_branch_of_median_nerve_with_ulnar_nerve)l",
+"label": "(Communicating branch of median nerve with ulnar nerve) left"
+},
+{
+"id": "Anterior_interosseous_nerve_of_forearml",
+"label": "Anterior interosseous nerve of forearm left"
+},
+{
+"id": "Common_palmar_digital_branches_of_median_nervel",
+"label": "Common palmar digital branches of median nerve left"
+},
+{
+"id": "Proper_palmar_digital_branches_of_median_nervel",
+"label": "Proper palmar digital branches of median nerve left"
+},
+{
+"id": "Muscular_branches_of_median_nervel",
+"label": "Muscular branches of median nerve left"
+},
+{
+"id": "Palmar_branch_of_median_nervel",
+"label": "Palmar branch of median nerve left"
+},
+{
+"id": "Median_nerver",
+"label": "Median nerve right"
+},
+{
+"id": "(Communicating_branch_of_median_nerve_with_ulnar_nerve)r",
+"label": "(Communicating branch of median nerve with ulnar nerve) right"
+},
+{
+"id": "Anterior_interosseous_nerve_of_forearmr",
+"label": "Anterior interosseous nerve of forearm right"
+},
+{
+"id": "Common_palmar_digital_branches_of_median_nerver",
+"label": "Common palmar digital branches of median nerve right"
+},
+{
+"id": "Proper_palmar_digital_branches_of_median_nerver",
+"label": "Proper palmar digital branches of median nerve right"
+},
+{
+"id": "Muscular_branches_of_median_nerver",
+"label": "Muscular branches of median nerve right"
+},
+{
+"id": "Palmar_branch_of_median_nerver",
+"label": "Palmar branch of median nerve right"
+},
+{
+"id": "Dorsal_scapular_nervel",
+"label": "Dorsal scapular nerve left"
+},
+{
+"id": "Dorsal_scapular_nerver",
+"label": "Dorsal scapular nerve right"
+},
+{
+"id": "Long_thoracic_nervel",
+"label": "Long thoracic nerve left"
+},
+{
+"id": "Long_thoracic_nerver",
+"label": "Long thoracic nerve right"
+},
+{
+"id": "Subclavian_nervel",
+"label": "Subclavian nerve left"
+},
+{
+"id": "Subclavian_nerver",
+"label": "Subclavian nerve right"
+},
+{
+"id": "Suprascapular_nervel",
+"label": "Suprascapular nerve left"
+},
+{
+"id": "Suprascapular_nerver",
+"label": "Suprascapular nerve right"
+},
+{
+"id": "Inferior_trunk_of_brachial_plexusl",
+"label": "Inferior trunk of brachial plexus left"
+},
+{
+"id": "Anterior_division_of_inferior_trunk_of_brachial_plexusl",
+"label": "Anterior division of inferior trunk of brachial plexus left"
+},
+{
+"id": "Posterior_division_of_inferior_trunk_of_brachial_plexusl",
+"label": "Posterior division of inferior trunk of brachial plexus left"
+},
+{
+"id": "Inferior_trunk_of_brachial_plexusr",
+"label": "Inferior trunk of brachial plexus right"
+},
+{
+"id": "Anterior_division_of_inferior_trunk_of_brachial_plexusr",
+"label": "Anterior division of inferior trunk of brachial plexus right"
+},
+{
+"id": "Posterior_division_of_inferior_trunk_of_brachial_plexusr",
+"label": "Posterior division of inferior trunk of brachial plexus right"
+},
+{
+"id": "Middle_trunk_of_brachial_plexusl",
+"label": "Middle trunk of brachial plexus left"
+},
+{
+"id": "Anterior_division_of_middle_trunk_of_brachial_plexusl",
+"label": "Anterior division of middle trunk of brachial plexus left"
+},
+{
+"id": "Posterior_division_of_middle_trunk_of_brachial_plexusl",
+"label": "Posterior division of middle trunk of brachial plexus left"
+},
+{
+"id": "Middle_trunk_of_brachial_plexusr",
+"label": "Middle trunk of brachial plexus right"
+},
+{
+"id": "Anterior_division_of_middle_trunk_of_brachial_plexusr",
+"label": "Anterior division of middle trunk of brachial plexus right"
+},
+{
+"id": "Posterior_division_of_middle_trunk_of_brachial_plexusr",
+"label": "Posterior division of middle trunk of brachial plexus right"
+},
+{
+"id": "Roots_of_brachial_plexusl",
+"label": "Roots of brachial plexus left"
+},
+{
+"id": "Roots_of_brachial_plexusr",
+"label": "Roots of brachial plexus right"
+},
+{
+"id": "Superior_trunk_of_brachial_plexusl",
+"label": "Superior trunk of brachial plexus left"
+},
+{
+"id": "Anterior_division_of_superior_trunk_of_brachial_plexusl",
+"label": "Anterior division of superior trunk of brachial plexus left"
+},
+{
+"id": "Posterior_division_of_superior_trunk_of_brachial_plexusl",
+"label": "Posterior division of superior trunk of brachial plexus left"
+},
+{
+"id": "Superior_trunk_of_brachial_plexusr",
+"label": "Superior trunk of brachial plexus right"
+},
+{
+"id": "Anterior_division_of_superior_trunk_of_brachial_plexusr",
+"label": "Anterior division of superior trunk of brachial plexus right"
+},
+{
+"id": "Posterior_division_of_superior_trunk_of_brachial_plexusr",
+"label": "Posterior division of superior trunk of brachial plexus right"
+},
+{
+"id": "Accessory_nerve_(XI)l",
+"label": "Accessory nerve (XI) left"
+},
+{
+"id": "Accessory_nerve_(XI)r",
+"label": "Accessory nerve (XI) right"
+},
+{
+"id": "Ilio-inguinal_nervel",
+"label": "Ilio-inguinal nerve left"
+},
+{
+"id": "Ilio-inguinal_nerver",
+"label": "Ilio-inguinal nerve right"
+},
+{
+"id": "Iliohypogastric_nervel",
+"label": "Iliohypogastric nerve left"
+},
+{
+"id": "Iliohypogastric_nerver",
+"label": "Iliohypogastric nerve right"
+},
+{
+"id": "Genitofemoral_nervel",
+"label": "Genitofemoral nerve left"
+},
+{
+"id": "Femoral_branch_of_genitofemoral_nervel",
+"label": "Femoral branch of genitofemoral nerve left"
+},
+{
+"id": "Genital_branch_of_genitofemoral_nervel",
+"label": "Genital branch of genitofemoral nerve left"
+},
+{
+"id": "Genitofemoral_nerver",
+"label": "Genitofemoral nerve right"
+},
+{
+"id": "Femoral_branch_of_genitofemoral_nerver",
+"label": "Femoral branch of genitofemoral nerve right"
+},
+{
+"id": "Genital_branch_of_genitofemoral_nerver",
+"label": "Genital branch of genitofemoral nerve right"
+},
+{
+"id": "Obturator_nervel",
+"label": "Obturator nerve left"
+},
+{
+"id": "Anterior_branch_of_obturator_nervel",
+"label": "Anterior branch of obturator nerve left"
+},
+{
+"id": "Posterior_branch_of_obturator_nervel",
+"label": "Posterior branch of obturator nerve left"
+},
+{
+"id": "Obturator_nerver",
+"label": "Obturator nerve right"
+},
+{
+"id": "Anterior_branch_of_obturator_nerver",
+"label": "Anterior branch of obturator nerve right"
+},
+{
+"id": "Posterior_branch_of_obturator_nerver",
+"label": "Posterior branch of obturator nerve right"
+},
+{
+"id": "Femoral_nervel",
+"label": "Femoral nerve left"
+},
+{
+"id": "Anterior_cutaneous_branches_of_femoral_nervel",
+"label": "Anterior cutaneous branches of femoral nerve left"
+},
+{
+"id": "Saphenous_nervel",
+"label": "Saphenous nerve left"
+},
+{
+"id": "Infrapatellar_branch_of_saphenous_nervel",
+"label": "Infrapatellar branch of saphenous nerve left"
+},
+{
+"id": "Medial_crural_cutaneous_branches_of_saphenous_nervel",
+"label": "Medial crural cutaneous branches of saphenous nerve left"
+},
+{
+"id": "Femoral_nerver",
+"label": "Femoral nerve right"
+},
+{
+"id": "Anterior_cutaneous_branches_of_femoral_nerver",
+"label": "Anterior cutaneous branches of femoral nerve right"
+},
+{
+"id": "Saphenous_nerver",
+"label": "Saphenous nerve right"
+},
+{
+"id": "Infrapatellar_branch_of_saphenous_nerver",
+"label": "Infrapatellar branch of saphenous nerve right"
+},
+{
+"id": "Medial_crural_cutaneous_branches_of_saphenous_nerver",
+"label": "Medial crural cutaneous branches of saphenous nerve right"
+},
+{
+"id": "Lateral_femoral_cutaneous_nervel",
+"label": "Lateral femoral cutaneous nerve left"
+},
+{
+"id": "Lateral_femoral_cutaneous_nerver",
+"label": "Lateral femoral cutaneous nerve right"
+},
+{
+"id": "Superior_subscapular_nerver",
+"label": "Superior subscapular nerve right"
+},
+{
+"id": "Anterior_root_of_posterior_femoral_cutaneous_nervel",
+"label": "Anterior root of posterior femoral cutaneous nerve left"
+},
+{
+"id": "Anterior_root_of_posterior_femoral_cutaneous_nerver",
+"label": "Anterior root of posterior femoral cutaneous nerve right"
+},
+{
+"id": "Nerve_to_piriformis_musclel",
+"label": "Nerve to piriformis muscle left"
+},
+{
+"id": "Nerve_to_piriformis_muscler",
+"label": "Nerve to piriformis muscle right"
+},
+{
+"id": "Nerve_to_quadratus_femoris_musclel",
+"label": "Nerve to quadratus femoris muscle left"
+},
+{
+"id": "Nerve_to_quadratus_femoris_muscler",
+"label": "Nerve to quadratus femoris muscle right"
+},
+{
+"id": "Posterior_femoral_cutaneous_nervel",
+"label": "Posterior femoral cutaneous nerve left"
+},
+{
+"id": "Posterior_femoral_cutaneous_nerver",
+"label": "Posterior femoral cutaneous nerve right"
+},
+{
+"id": "Posterior_root_of_posterior_femoral_cutaneous_nervel",
+"label": "Posterior root of posterior femoral cutaneous nerve left"
+},
+{
+"id": "Posterior_root_of_posterior_femoral_cutaneous_nerver",
+"label": "Posterior root of posterior femoral cutaneous nerve right"
+},
+{
+"id": "Pudendal_nervel",
+"label": "Pudendal nerve left"
+},
+{
+"id": "Pudendal_nerver",
+"label": "Pudendal nerve right"
+},
+{
+"id": "Sciatic_nervel",
+"label": "Sciatic nerve left"
+},
+{
+"id": "Common_fibular_nervel",
+"label": "Common fibular nerve left"
+},
+{
+"id": "Deep_fibular_nervel",
+"label": "Deep fibular nerve left"
+},
+{
+"id": "Dorsal_digital_branches_of_deep_fibular_nervel",
+"label": "Dorsal digital branches of deep fibular nerve left"
+},
+{
+"id": "Muscular_branches_of_deep_fibular_nervel",
+"label": "Muscular branches of deep fibular nerve left"
+},
+{
+"id": "Superficial_fibular_nervel",
+"label": "Superficial fibular nerve left"
+},
+{
+"id": "Dorsal_digital_branches_of_superficial_fibular_nervel",
+"label": "Dorsal digital branches of superficial fibular nerve left"
+},
+{
+"id": "Intermediate_dorsal_cutaneous_nerve_of_footl",
+"label": "Intermediate dorsal cutaneous nerve of foot left"
+},
+{
+"id": "Medial_dorsal_cutaneous_nerve_of_footl",
+"label": "Medial dorsal cutaneous nerve of foot left"
+},
+{
+"id": "Sural_communicating_branch_of_common_fibular_nervel",
+"label": "Sural communicating branch of common fibular nerve left"
+},
+{
+"id": "Tibial_nervel",
+"label": "Tibial nerve left"
+},
+{
+"id": "Lateral_plantar_nervel",
+"label": "Lateral plantar nerve left"
+},
+{
+"id": "Common_plantar_digital_branches_of_lateral_plantar_nervel",
+"label": "Common plantar digital branches of lateral plantar nerve left"
+},
+{
+"id": "Proper_plantar_digital_branches_of_lateral_plantar_nervel",
+"label": "Proper plantar digital branches of lateral plantar nerve left"
+},
+{
+"id": "Medial_plantar_nervel",
+"label": "Medial plantar nerve left"
+},
+{
+"id": "Common_plantar_digital_branches_of_medial_plantar_nervel",
+"label": "Common plantar digital branches of medial plantar nerve left"
+},
+{
+"id": "Proper_plantar_digital_branches_of_medial_plantar_nervel",
+"label": "Proper plantar digital branches of medial plantar nerve left"
+},
+{
+"id": "Medial_sural_cutaneous_nervel",
+"label": "Medial sural cutaneous nerve left"
+},
+{
+"id": "Sural_nervel",
+"label": "Sural nerve left"
+},
+{
+"id": "Sciatic_nerver",
+"label": "Sciatic nerve right"
+},
+{
+"id": "Common_fibular_nerver",
+"label": "Common fibular nerve right"
+},
+{
+"id": "Deep_fibular_nerver",
+"label": "Deep fibular nerve right"
+},
+{
+"id": "Dorsal_digital_branches_of_deep_fibular_nerver",
+"label": "Dorsal digital branches of deep fibular nerve right"
+},
+{
+"id": "Muscular_branches_of_deep_fibular_nerver",
+"label": "Muscular branches of deep fibular nerve right"
+},
+{
+"id": "Superficial_fibular_nerver",
+"label": "Superficial fibular nerve right"
+},
+{
+"id": "Dorsal_digital_branches_of_superficial_fibular_nerver",
+"label": "Dorsal digital branches of superficial fibular nerve right"
+},
+{
+"id": "Intermediate_dorsal_cutaneous_nerve_of_footr",
+"label": "Intermediate dorsal cutaneous nerve of foot right"
+},
+{
+"id": "Medial_dorsal_cutaneous_nerve_of_footr",
+"label": "Medial dorsal cutaneous nerve of foot right"
+},
+{
+"id": "Sural_communicating_branch_of_common_fibular_nerver",
+"label": "Sural communicating branch of common fibular nerve right"
+},
+{
+"id": "Tibial_nerver",
+"label": "Tibial nerve right"
+},
+{
+"id": "Lateral_plantar_nerver",
+"label": "Lateral plantar nerve right"
+},
+{
+"id": "Common_plantar_digital_branches_of_lateral_plantar_nerver",
+"label": "Common plantar digital branches of lateral plantar nerve right"
+},
+{
+"id": "Proper_plantar_digital_branches_of_lateral_plantar_nerver",
+"label": "Proper plantar digital branches of lateral plantar nerve right"
+},
+{
+"id": "Medial_plantar_nerver",
+"label": "Medial plantar nerve right"
+},
+{
+"id": "Common_plantar_digital_branches_of_medial_plantar_nerve",
+"label": "Common plantar digital branches of medial plantar nerve"
+},
+{
+"id": "Proper_plantar_digital_branches_of_medial_plantar_nerver",
+"label": "Proper plantar digital branches of medial plantar nerve right"
+},
+{
+"id": "Medial_sural_cutaneous_nerver",
+"label": "Medial sural cutaneous nerve right"
+},
+{
+"id": "Sural_nerver",
+"label": "Sural nerve right"
+},
+{
+"id": "Superior_gluteal_nervel",
+"label": "Superior gluteal nerve left"
+},
+{
+"id": "Superior_gluteal_nerver",
+"label": "Superior gluteal nerve right"
+},
+{
+"id": "Posterior_root_of_spinal_nervel",
+"label": "Posterior root of spinal nerve left"
+},
+{
+"id": "Posterior_root_of_spinal_nerver",
+"label": "Posterior root of spinal nerve right"
+},
+{
+"id": "Intercostal_nervesl",
+"label": "Intercostal nerves left"
+},
+{
+"id": "Intercostal_nervesr",
+"label": "Intercostal nerves right"
+},
+{
+"id": "Medulla-path",
+"label": "Medulla-path"
+}
+]
