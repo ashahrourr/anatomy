@@ -20,7 +20,7 @@ language in, a specific named structure out, shown in place.
 | | |
 |---|---|
 | ![Shoulder](docs/img/shoulder.jpg) | ![Median nerve](docs/img/median-nerve.jpg) |
-| *"sharp pain in my right shoulder when I lift my arm overhead"* → supraspinatus, with the subacromial bursa and rotator cuff as alternatives | *"pins and needles in my right hand at night"* → median nerve and its palmar branches |
+| *"sharp pain in my right shoulder when I lift my arm overhead"* → **supraspinatus** in red, deltoid in green, with the subacromial bursa, infraspinatus and teres minor as alternatives | *"pins and needles in my right hand at night"* → the **median nerve** traced down the arm in red, with its palmar branches |
 
 ---
 
