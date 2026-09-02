@@ -5,9 +5,9 @@
 Type *"pins and needles in my right hand at night"* and the median nerve lights up on a 3D
 anatomical model — primary structure first, plausible alternatives alongside it.
 
-🔗 **[talktoanatomy.com](https://talktoanatomy.com)** · ⚠️ see [Status](#status)
+![TalkToAnatomy](docs/demo.gif)
 
-![Landing](docs/img/landing.jpg)
+▶️ **[Full walkthrough (50s)](docs/demo.mp4)** · 🔗 **[talktoanatomy.com](https://talktoanatomy.com)** · ⚠️ see [Status](#status)
 
 ---
 
@@ -21,6 +21,8 @@ language in, a specific named structure out, shown in place.
 |---|---|
 | ![Shoulder](docs/img/shoulder.jpg) | ![Median nerve](docs/img/median-nerve.jpg) |
 | *"sharp pain in my right shoulder when I lift my arm overhead"* → **supraspinatus** in red, deltoid in green, with the subacromial bursa, infraspinatus and teres minor as alternatives | *"pins and needles in my right hand at night"* → the **median nerve** traced down the arm in red, with its palmar branches |
+
+![Landing](docs/img/landing.jpg)
 
 ---
 
